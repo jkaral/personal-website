@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { toggleLike, STORAGE } from "../../../../lib/chatStore";
+import { toggleLike, withinLimits, STORAGE } from "../../../../lib/chatStore";
 
 export const dynamic = "force-dynamic";
 
@@ -19,7 +19,12 @@ export async function POST(request) {
   if (!VISITOR.test(visitor) || !TARGET.test(target)) {
     return NextResponse.json({ error: "Bad request" }, { status: 400, headers: HEADERS });
   }
+  const ip = (request.headers.get("x-forwarded-for") || "").split(",")[0].trim() || "local";
   try {
+    // 40 like/unlike taps per 10 minutes per person, so a script can't pump the counts
+    if (!(await withinLimits([[`like:${ip}`, 40, 600]]))) {
+      return NextResponse.json({ error: "Easy on the likes, try again in a few minutes" }, { status: 429, headers: HEADERS });
+    }
     return NextResponse.json(await toggleLike(target, visitor), { headers: HEADERS });
   } catch (e) {
     console.error("chat like", e);

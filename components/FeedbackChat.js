@@ -51,6 +51,7 @@ export default function FeedbackChat() {
   const visitor = useRef("");
   const listRef = useRef(null);
   const panelRef = useRef(null);
+  const trap = useRef(null); // hidden bot-trap input
   const btnRef = useRef(null);
   const lastCount = useRef(0);
 
@@ -140,7 +141,7 @@ export default function FeedbackChat() {
       const r = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), text: text.trim(), kind, visitor: visitor.current }),
+        body: JSON.stringify({ name: name.trim(), text: text.trim(), kind, visitor: visitor.current, website: trap.current?.value || "" }),
       });
       const data = await r.json();
       if (!r.ok) setError(data.error || "Couldn't send that, try again");
@@ -240,6 +241,8 @@ export default function FeedbackChat() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
               </button>
             </div>
+            {/* bot trap: hidden from people; a bot that fills every field gets turned away */}
+            <div className="hp" aria-hidden="true"><input ref={trap} name="website" tabIndex={-1} autoComplete="off" /></div>
             {error && <p className="chat-error" role="alert">{error}</p>}
           </form>
         </div>

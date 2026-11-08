@@ -358,6 +358,7 @@ p { margin: 0 0 1em; }
 .project-link { color: var(--text); text-decoration: none; border-bottom: 1.5px solid var(--border); transition: border-color .2s; }
 .project-link:hover, .project-link:focus-visible { border-color: var(--accent); }
 .project-link::after { content: " ↗"; font-family: var(--font-sans), sans-serif; font-size: .6em; vertical-align: .35em; color: var(--muted); }
+.project-head .project-link::after { content: none; } /* project titles: no arrow (the underline marks the GitHub link) */
 .year { font-family: var(--font-sans), sans-serif; font-size: 15px; font-weight: 400; color: var(--muted); margin-left: 6px; }
 .project-desc { font-size: 17px; margin-bottom: 6px; }
 .award { font-size: 16px; color: var(--body); }
@@ -950,3 +951,36 @@ body { overflow-x: clip; }                                   /* full-bleed banne
 .chat-send { width: 42px; flex: none; border: 0; border-radius: 12px; background: #ff6a1a; color: #fff; display: grid; place-items: center; cursor: pointer; transition: opacity .2s; }
 .chat-send:disabled { opacity: .4; cursor: default; }
 .chat-error { margin: 0; font-size: 12px; color: #e5484d; }
+
+/* ---- Visible link underlines: every text link is underlined so it reads as a link ---- */
+.underline, .inline, .project-link, .essay-link, .prose a, .form-note a, .logo-link:not(.plain) > span, .contact-links a > span {
+  text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: .22em;
+  text-decoration-color: color-mix(in srgb, currentColor 55%, transparent); border-bottom: 0;
+  transition: text-decoration-color .2s, opacity .2s;
+}
+:is(.underline, .inline, .project-link, .essay-link, .prose a, .form-note a):hover,
+.logo-link:hover > span, .contact-links a:hover > span { text-decoration-color: var(--accent); }
+
+/* ---- Stacking: the top bar always stays above page content (incl. videos on iPhone Safari) ---- */
+.topbar { z-index: 100; }
+.pile, .shot.video { isolation: isolate; } /* keep their videos' z-index inside the card */
+
+/* ---- Forms: bot-trap field (hidden from people) and the email check message ---- */
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.contact-form { position: relative; }
+.field-error { font-size: 13px; font-weight: 500; color: #e5484d; }
+.contact-form input[aria-invalid="true"] { border-color: #e5484d; }
+.contact-form .row { align-items: start; } /* an email error under one field doesn't stretch its neighbour */
+
+/* ---- Dark-mode logo (the inverted hands) + the Shift+Y hint by the theme button ---- */
+.logo .logo-dark { display: none; }
+:root[data-theme="dark"] .logo .logo-light { display: none; }
+:root[data-theme="dark"] .logo .logo-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .logo .logo-light { display: none; }
+  :root:not([data-theme="light"]) .logo .logo-dark { display: block; }
+}
+.theme-hint { margin-left: 14px; padding: 4px 8px; border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 1px 0 var(--border); /* keycap-style box */
+  font: 500 12px/1 var(--font-sans), sans-serif; letter-spacing: .02em; color: var(--muted); white-space: nowrap; user-select: none; }
+.theme-hint + .theme-toggle { margin-left: 8px; }
+@media (max-width: 760px), (hover: none) { .theme-hint { display: none; } } /* phones/tablets have no keyboard shortcut */

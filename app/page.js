@@ -275,7 +275,7 @@ export default async function Home() {
                       ))}
                       {p.writeup && (
                         <a className="btn project-btn" href={p.writeup} target="_blank" rel="noreferrer">
-                          Write-up <span aria-hidden="true">→</span>
+                          Write-up <span aria-hidden="true">↗</span>
                         </a>
                       )}
                     </div>
@@ -381,13 +381,13 @@ export default async function Home() {
           <div>
             <p className="lead">{contact.blurb}</p>
             <div className="contact-links">
-              <a href={`mailto:${site.email}`}><Icon name="email" /> {site.email}</a>
+              <a href={`mailto:${site.email}`}><Icon name="email" /> <span>{site.email}</span></a>
               {site.social.map((s) => (
-                <a key={s.url} href={s.url} target="_blank" rel="noreferrer"><Icon name={s.icon} /> {s.label}</a>
+                <a key={s.url} href={s.url} target="_blank" rel="noreferrer"><Icon name={s.icon} /> <span>{s.label}</span></a>
               ))}
             </div>
           </div>
-          <ContactForm formspreeId={contact.formspreeId} email={site.email} />
+          <ContactForm email={site.email} />
         </div>
       </Section>
 

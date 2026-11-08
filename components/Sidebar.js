@@ -56,6 +56,13 @@ export default function Sidebar({ links, songs }) {
               </a>
             </li>
           ))}
+          {/* right after contact; no section for this one, it opens the resume PDF in a new tab */}
+          <li>
+            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="sidebar-link">
+              resume
+              <MarkerCircle index={links.length} />
+            </a>
+          </li>
         </ul>
       </nav>
       {songs?.length > 0 && <VinylPlayer songs={songs} />}

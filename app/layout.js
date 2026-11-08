@@ -48,6 +48,7 @@ const nav = [
   { href: "/#hobbies", label: "Hobbies" },
   { href: "/#uses", label: "Uses" },
   { href: "/#contact", label: "Contact" },
+  { href: "/resume.pdf", label: "Resume", newTab: true }, // smaller screens (the sidebar has it on wide ones)
 ];
 
 // Sidebar sections (wide screens). ids match the sections on the homepage.
@@ -79,12 +80,12 @@ export default function RootLayout({ children }) {
           <div className="topbar-inner">
             {/* the Creation of Adam hands; the Greek flag slides up in on hover */}
             <a href="/" className="logo" aria-label="Home">
-              <span className="en"><img src="/images/logo/hands.webp" alt="" /></span>
+              <span className="en"><img className="logo-light" src="/images/logo/hands.webp" alt="" /><img className="logo-dark" src="/images/logo/hands-dark.webp" alt="" /></span>
               <span className="gr" aria-hidden="true"><img src="/images/logo/greek-flag.svg" alt="" /></span>
             </a>
             <nav aria-label="Main">
               {nav.map((n) => (
-                <a key={n.href} href={n.href}>{n.label}</a>
+                <a key={n.href} href={n.href} {...(n.newTab ? { target: "_blank", rel: "noreferrer" } : {})}>{n.label}</a>
               ))}
             </nav>
             <div className="top-actions">
@@ -106,7 +107,7 @@ export default function RootLayout({ children }) {
         <footer className="footer">
           <div className="footer-inner">
             <span className="logo small" aria-hidden="true">
-              <span className="en"><img src="/images/logo/hands.webp" alt="" /></span>
+              <span className="en"><img className="logo-light" src="/images/logo/hands.webp" alt="" /><img className="logo-dark" src="/images/logo/hands-dark.webp" alt="" /></span>
               <span className="gr"><img src="/images/logo/greek-flag.svg" alt="" /></span>
             </span>
             <p>© {new Date().getFullYear()} {site.name}</p>

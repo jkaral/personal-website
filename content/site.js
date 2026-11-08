@@ -63,7 +63,7 @@ const site = {
         { text: "UTMIST", url: "https://www.utmist.ca/", logo: "/images/logos/utmist.png" },
         " and ",
         { text: "UTBIOME", url: "https://utbiome.skule.ca/", logo: "/images/logos/utbiome.png" },
-        " as a Machine Learning Engineer. Outside of work: rugby, lifting, and reading.",
+        " as a Machine Learning Engineer. Outside of school and work I enjoy mma, rugby, lifting, reading and learning languages.",
       ],
     ],
     exploring: ["Agent swarms", "ML for markets & healthcare", "Building human-focused products"],
@@ -168,7 +168,10 @@ const site = {
       // 0:52-0:57, 1:07-1:44 joined into one 42s clip.
       videoFile: "/videos/memory-debugger-demo.mp4",
       videoPoster: "/videos/memory-debugger-demo-poster.jpg",
-      links: [{ label: "GitHub", url: "https://github.com/jkaral/shadowrecall" }],
+      links: [
+        { label: "GitHub", url: "https://github.com/jkaral/shadowrecall" },
+        { label: "Devpost", url: "https://devpost.com/software/shadowrecall" },
+      ],
     },
     {
       title: "Personal Website",
@@ -292,9 +295,7 @@ const site = {
   // ---------- Contact ----------
   contact: {
     blurb: "You're more than welcome to reach out if you'd like to discuss opportunities, have a quick chat, or just to say hi! I'm always looking forward to meeting new people.",
-    // Free form backend: create a form at https://formspree.io and paste its ID (e.g. "xyzabcd").
-    // Leave "" and the form will open the visitor's email app instead.
-    formspreeId: "",
+    // The form emails you through app/api/contact/route.js (needs RESEND_API_KEY on Vercel).
   },
 
   // ---------- Bottom banner: interactive collage (above the footer) ----------

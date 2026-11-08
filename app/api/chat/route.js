@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getChat, addMessage, claimCooldown, LIMITS, STORAGE } from "../../../lib/chatStore";
+import { getChat, addMessage, claimCooldown, withinLimits, LIMITS, STORAGE } from "../../../lib/chatStore";
 
 export const dynamic = "force-dynamic";
 
@@ -28,6 +28,7 @@ export async function POST(request) {
   }
   const visitor = String(body.visitor || "");
   if (!VISITOR.test(visitor)) return fail("Bad request", 400);
+  if (body.website) return fail("Bad request", 400); // hidden bot-trap field that people never fill in
   const text = clean(body.text, LIMITS.text);
   if (!text) return fail("Write something first", 400);
   const name = clean(body.name, LIMITS.name);
@@ -36,6 +37,10 @@ export async function POST(request) {
   try {
     if (!(await claimCooldown([`ip:${ip}`, `v:${visitor}`]))) {
       return fail("Slow down a little, try again in a few seconds", 429);
+    }
+    // on top of the 15s gap: at most 20 messages an hour per person, 300 a day across everyone
+    if (!(await withinLimits([[`chat:hour:${ip}`, 20, 3600], ["chat:day:all", 300, 86400]]))) {
+      return fail("That's a lot of messages, take a break and try again later", 429);
     }
     return NextResponse.json(await addMessage({ name, text, kind: body.kind, visitor }), { headers: HEADERS });
   } catch (e) {
