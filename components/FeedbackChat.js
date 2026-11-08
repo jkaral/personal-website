@@ -47,6 +47,7 @@ export default function FeedbackChat() {
   const [kind, setKind] = useState("comment");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const [offline, setOffline] = useState(false); // the chat server couldn't be reached
   const visitor = useRef("");
   const listRef = useRef(null);
   const panelRef = useRef(null);
@@ -67,8 +68,12 @@ export default function FeedbackChat() {
   const load = useCallback(async () => {
     try {
       const r = await fetch(`/api/chat?v=${encodeURIComponent(visitor.current)}`, { cache: "no-store" });
-      if (r.ok) setChat(await r.json());
-    } catch {}
+      if (!r.ok) throw new Error();
+      setChat(await r.json());
+      setOffline(false);
+    } catch {
+      setOffline(true);
+    }
   }, []);
 
   // while open: fetch now and every few seconds; close on Esc or a click outside
@@ -96,15 +101,31 @@ export default function FeedbackChat() {
     lastCount.current = n;
   }, [chat]);
 
+  // flip a like on screen straight away, then settle on the server's exact counts
+  const flip = (c, target) => {
+    if (!c) return c;
+    if (target === "site") return { ...c, likedSite: !c.likedSite, siteLikes: c.siteLikes + (c.likedSite ? -1 : 1) };
+    return { ...c, messages: c.messages.map((m) => (m.id === target ? { ...m, liked: !m.liked, likes: m.likes + (m.liked ? -1 : 1) } : m)) };
+  };
+  const pendingLikes = useRef(new Set()); // ignore double-taps while a like is on its way
   const like = async (target) => {
+    if (pendingLikes.current.has(target)) return;
+    pendingLikes.current.add(target);
+    setChat((c) => flip(c, target));
     try {
       const r = await fetch("/api/chat/like", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ target, visitor: visitor.current }),
       });
-      if (r.ok) setChat(await r.json());
-    } catch {}
+      if (!r.ok) throw new Error();
+      setChat(await r.json());
+      setOffline(false);
+    } catch {
+      setChat((c) => flip(c, target)); // didn't save: put it back
+      setError("Couldn't save that like, try again");
+    }
+    pendingLikes.current.delete(target);
   };
 
   const send = async (e) => {
@@ -126,6 +147,7 @@ export default function FeedbackChat() {
       else {
         setChat(data);
         setText("");
+        setOffline(false);
       }
     } catch {
       setError("Couldn't reach the chat, try again");
@@ -166,7 +188,7 @@ export default function FeedbackChat() {
         <div id="feedback-chat" ref={panelRef} className="chat-panel" role="dialog" aria-label="Feedback group chat">
           <div className="chat-head">
             <div>
-              <p className="chat-title">UI feedback chat</p>
+              <p className="chat-title">chat</p>
               <p className="chat-sub">everyone visiting the site can see this</p>
             </div>
             <button className={`chat-site-like ${chat?.likedSite ? "liked" : ""}`} onClick={() => like("site")} aria-pressed={!!chat?.likedSite} title="Like the site">
@@ -175,7 +197,7 @@ export default function FeedbackChat() {
           </div>
 
           <ol className="chat-list" ref={listRef} aria-live="polite">
-            {!chat && <li className="chat-empty">loading…</li>}
+            {!chat && <li className="chat-empty">{offline ? "the chat is offline right now, try again soon" : "loading…"}</li>}
             {chat && count === 0 && <li className="chat-empty">no messages yet, be the first to roast the UI</li>}
             {chat?.messages.map((m) => (
               <li key={m.id} className={`chat-msg ${m.kind}`}>
