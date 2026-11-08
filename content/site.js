@@ -170,6 +170,19 @@ const site = {
       videoPoster: "/videos/memory-debugger-demo-poster.jpg",
       links: [{ label: "GitHub", url: "https://github.com/jkaral/shadowrecall" }],
     },
+    {
+      title: "Personal Website",
+      year: "2026",
+      description:
+        "The site you're on, built from scratch with Next.js 15, React 19 and hand-written CSS, and deployed on Vercel. Server components pull live data from GitHub, Duolingo and Fable, and the group chat runs on Upstash Redis with one set per like, so simultaneous likes are counted exactly. Hand-drawn SVG details include a cartoon highlighter that strikes as you scroll, pencil circles, squiggly arrows, a spinning vinyl player and a cut-out collage banner.",
+      stack: ["Next.js", "React", "CSS", "Redis", "Vercel"],
+      award: "",
+      image: "",
+      // Self-hosted demo clip (silent, loops): the full 63s site walkthrough, compressed to 1280px.
+      videoFile: "/videos/personal-website.mp4",
+      videoPoster: "/videos/personal-website-poster.jpg",
+      links: [{ label: "GitHub", url: "https://github.com/jkaral/personal-website" }],
+    },
   ],
 
   // ---------- Hobbies ----------
