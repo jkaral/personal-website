@@ -173,8 +173,12 @@ const site = {
     {
       title: "Personal Website",
       year: "2026",
-      description:
-        "The site you're on, built from scratch with Next.js 15, React 19 and hand-written CSS, and deployed on Vercel. Server components pull live data from GitHub, Duolingo and Fable, and the group chat runs on Upstash Redis with one set per like, so simultaneous likes are counted exactly. Hand-drawn SVG details include a cartoon highlighter that strikes as you scroll, pencil circles, squiggly arrows, a spinning vinyl player and a cut-out collage banner.",
+      // a list so "writing section" can link down to the Writing section
+      description: [
+        "The site you're built on, and one of the coolest front-end projects I've ever completed. Built from scratch with Next.js 15 and deployed on Vercel, with web analytics from a Vercel Bot. The server components pull live data (e.g. streaks on Duolingo or GitHub) and the group chat runs on Upstash Redis with one set per like so the count is live. I also added cool components like the string tracer, uses bubble and cartoon highlighter to my ",
+        { text: "writing section", url: "#writing" },
+        ". Hope you like it!",
+      ],
       stack: ["Next.js", "React", "CSS", "Redis", "Vercel"],
       award: "",
       image: "",

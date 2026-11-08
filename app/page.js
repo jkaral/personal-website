@@ -281,7 +281,16 @@ export default async function Home() {
                     </div>
                   )}
                 </div>
-                <p className="project-desc">{p.description}</p>
+                {/* a description is text, or a list of text pieces and { text, url } links */}
+                <p className="project-desc">
+                  {(Array.isArray(p.description) ? p.description : [p.description]).map((piece, j) =>
+                    typeof piece === "string" ? (
+                      <span key={j}>{piece}</span>
+                    ) : (
+                      <a key={j} className="underline" href={piece.url}>{piece.text}</a>
+                    )
+                  )}
+                </p>
                 {p.stack?.length > 0 && <p className="stack">{p.stack.join(" · ")}</p>}
                 {p.award && <p className="award">{p.award}</p>}
               </article>
