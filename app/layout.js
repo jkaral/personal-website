@@ -19,6 +19,7 @@ import ParticleBackground from "../components/ParticleBackground";
 import SwirlLine from "../components/SwirlLine";
 import Sidebar from "../components/Sidebar";
 import FeedbackChat from "../components/FeedbackChat";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const sans = Inter({ subsets: ["latin", "greek"], variable: "--font-sans" });
@@ -120,6 +121,7 @@ export default function RootLayout({ children }) {
           </div>
         </footer>
         <Reveal />
+        <Analytics />
       </body>
     </html>
   );
