@@ -85,9 +85,10 @@ export default function RootLayout({ children }) {
         <a className="skip" href="#main">Skip to content</a>
         <header className="topbar">
           <div className="topbar-inner">
+            {/* the Creation of Adam hands; the Greek flag slides up in on hover */}
             <a href="/" className="logo" aria-label="Home">
-              <span className="en">{site.initials}</span>
-              <span className="gr" lang="el" aria-hidden="true">{site.greekInitials}</span>
+              <span className="en"><img src="/images/logo/hands.webp" alt="" /></span>
+              <span className="gr" aria-hidden="true"><img src="/images/logo/greek-flag.svg" alt="" /></span>
             </a>
             <nav aria-label="Main">
               {nav.map((n) => (
@@ -113,8 +114,8 @@ export default function RootLayout({ children }) {
         <footer className="footer">
           <div className="footer-inner">
             <span className="logo small" aria-hidden="true">
-              <span className="en">{site.initials}</span>
-              <span className="gr" lang="el">{site.greekInitials}</span>
+              <span className="en"><img src="/images/logo/hands.webp" alt="" /></span>
+              <span className="gr"><img src="/images/logo/greek-flag.svg" alt="" /></span>
             </span>
             <p>© {new Date().getFullYear()} {site.name}</p>
             <p className="muted">{site.footer}</p>

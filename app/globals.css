@@ -203,6 +203,7 @@ p { margin: 0 0 1em; }
 .logo .gr { font-family: var(--font-greek), serif; transform: translateY(100%); opacity: 0; }
 .logo:hover .en, .logo:focus-visible .en { transform: translateY(-100%); opacity: 0; }
 .logo:hover .gr, .logo:focus-visible .gr { transform: none; opacity: 1; }
+.logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .logo.small { width: 32px; height: 32px; }
 .logo.small > span { font-size: 13px; }
 
