@@ -3,10 +3,6 @@ import {
   Noto_Serif_Display,
   Space_Grotesk,
   DM_Serif_Display,
-  Bebas_Neue,
-  JetBrains_Mono,
-  Pacifico,
-  Unbounded,
   Instrument_Serif,
   Caveat,
 } from "next/font/google";
@@ -36,13 +32,9 @@ const greek = Noto_Serif_Display({ subsets: ["greek"], variable: "--font-greek",
 // Extra display fonts the hero name cycles through (components/NameCycle.js)
 const grotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-grotesk", weight: ["700"], display: "swap" });
 const dmserif = DM_Serif_Display({ subsets: ["latin"], variable: "--font-dmserif", weight: ["400"], display: "swap" });
-const bebas = Bebas_Neue({ subsets: ["latin"], variable: "--font-bebas", weight: ["400"], display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", weight: ["700"], display: "swap" });
-const pacifico = Pacifico({ subsets: ["latin"], variable: "--font-pacifico", weight: ["400"], display: "swap" });
-const unbounded = Unbounded({ subsets: ["latin"], variable: "--font-unbounded", weight: ["700"], display: "swap" });
 const instrument = Instrument_Serif({ subsets: ["latin"], variable: "--font-instrument", weight: ["400"], style: ["italic"], display: "swap" });
 const caveat = Caveat({ subsets: ["latin"], variable: "--font-caveat", weight: ["700"], display: "swap" });
-const cycleFonts = [grotesk, dmserif, bebas, mono, pacifico, unbounded, instrument, caveat].map((f) => f.variable).join(" ");
+const cycleFonts = [grotesk, dmserif, instrument, caveat].map((f) => f.variable).join(" ");
 
 export const metadata = {
   title: { default: site.siteTitle, template: `%s · ${site.siteTitle}` },

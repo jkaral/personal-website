@@ -605,7 +605,11 @@ p { margin: 0 0 1em; }
 /* ---- Hero name cycling through fonts ---- */
 /* fixed line box so the tagline/buttons below never jump as the font changes */
 .name-swap .en { height: 1.15em; display: flex; align-items: center; justify-content: center; white-space: nowrap; }
-.name-cycle { line-height: 1; display: inline-block; }
+/* every typeface version shares one grid cell: the box is as wide as the widest, all sit on one
+   baseline and are centred, so a font change never moves anything. Changes fade out, then in. */
+.name-cycle { display: inline-grid; align-items: baseline; justify-items: center; line-height: 1.15; }
+.name-face { grid-area: 1 / 1; white-space: nowrap; opacity: 0; transition: opacity .35s ease; }
+.name-face.on { opacity: 1; transition-delay: .3s; }
 
 /* ---- GitHub contribution graph (hero) ---- */
 .contrib { margin-top: 36px; max-width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px;
@@ -738,7 +742,7 @@ a.uses-tile { cursor: pointer; }
 .name-swap { font-size: clamp(48px, 7vw, 96px); }
 /* phones: size the cycling name by the screen width so even the widest font (about 8.1em wide)
    fits inside the page gutters; otherwise those fonts stretch the page sideways as they flash by */
-@media (max-width: 700px) { .name-swap { font-size: min(48px, calc((100vw - 48px) / 8.6)); } }
+@media (max-width: 700px) { .name-swap { font-size: min(48px, calc((100vw - 48px) / 9)); } }
 .tagline { font-size: clamp(19px, 1.6vw, 24px); max-width: 640px; }
 .greeting { font-size: 16px; }
 .btn { font-size: 16px; padding: 14px 28px; }
@@ -872,7 +876,27 @@ body { overflow-x: clip; }                                   /* full-bleed banne
 .chat-arrow-head { animation: pencil-draw .3s ease-out 1.35s forwards; }
 .chat-note-text { margin: 36px 0 0 4px; width: 250px; font: 700 22px/1.05 var(--font-caveat), cursive; color: var(--text); transform: rotate(-2deg); transform-origin: left top; }
 @media (prefers-reduced-motion: reduce) { .chat-arrow path { stroke-dashoffset: 0; animation: none; } }
-@media (max-width: 760px) { .chat-note { display: none; } } /* the nav links take the row under the icons on small screens */
+@media (max-width: 760px) { .chat-note { display: none; } }
+
+/* "Click Me" nudge by the Uses bubble (same hand-drawn style as the chat note); sits to the right,
+   outside the orbiting app icons, and draws in once scrolled into view */
+.uses-bubble-wrap { position: relative; display: grid; place-items: center; }
+.uses-note { position: absolute; left: calc(100% + 58px); top: 42%; display: flex; align-items: flex-start; pointer-events: none; }
+.uses-arrow { flex: none; overflow: visible; }
+.uses-arrow path { fill: none; stroke: #ff6a1a; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.uses-note.drawn .uses-arrow-line { animation: pencil-draw .9s cubic-bezier(.5,.1,.35,1) .15s forwards; }
+.uses-note.drawn .uses-arrow-head { animation: pencil-draw .3s ease-out 1s forwards; }
+.uses-note-text { margin: 22px 0 0 6px; white-space: nowrap; font: 700 32px/1 var(--font-caveat), cursive; color: var(--text); transform: rotate(-4deg); transform-origin: left top;
+  opacity: 0; transition: opacity .5s ease .1s; }
+.uses-note.drawn .uses-note-text { opacity: 1; }
+/* phones: no room beside the bubble, so the note sits underneath with the arrow pointing up at it */
+@media (max-width: 700px) {
+  .uses-bubble-wrap { margin-bottom: 96px; }
+  .uses-note { left: 50%; top: calc(100% + 40px); flex-direction: column; align-items: center; transform: translateX(-50%); }
+  .uses-arrow { width: 72px; height: 48px; transform: rotate(62deg); margin-bottom: 4px; }
+  .uses-note-text { margin: 0; font-size: 28px; transform: rotate(-3deg); transform-origin: center; }
+}
+@media (prefers-reduced-motion: reduce) { .uses-arrow path { stroke-dashoffset: 0; animation: none !important; } .uses-note-text { opacity: 1; transition: none; } } /* the nav links take the row under the icons on small screens */
 
 .chat-panel { position: fixed; z-index: 60; top: 78px; right: max(16px, calc((100vw - 1120px) / 2 + 24px)); width: min(380px, calc(100vw - 32px)); height: min(560px, calc(100vh - 100px));
   display: flex; flex-direction: column; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 24px 60px rgba(0,0,0,.22); overflow: hidden;

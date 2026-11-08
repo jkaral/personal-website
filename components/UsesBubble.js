@@ -15,6 +15,17 @@ export default function UsesBubble({ intro, groups }) {
 
   const closeFn = useRef(() => {});
 
+  // "Click Me" note: its arrow draws itself in the first time the bubble scrolls into view
+  const wrapRef = useRef(null);
+  const [noteDrawn, setNoteDrawn] = useState(false);
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el || noteDrawn) return;
+    const io = new IntersectionObserver(([e]) => e.isIntersecting && setNoteDrawn(true), { threshold: 0.6 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [open, noteDrawn]);
+
   useEffect(() => {
     if (!open) return;
     closeRef.current?.focus();
@@ -41,6 +52,7 @@ export default function UsesBubble({ intro, groups }) {
   return (
     <div className={`uses-stage ${open ? "is-open" : ""}`}>
       {!open ? (
+        <div className="uses-bubble-wrap" ref={wrapRef}>
         <button ref={bubbleRef} className={`uses-bubble ${returned ? "returning" : ""}`} onClick={() => setOpen(true)} aria-expanded="false" aria-controls="uses-panel">
           <span className="uses-bubble-core">
             <span className="uses-bubble-title">Uses</span>
@@ -55,6 +67,16 @@ export default function UsesBubble({ intro, groups }) {
             />
           ))}
         </button>
+        {/* handwritten nudge, like the one by the chat button: a squiggly arrow curls from the
+            words to the bubble */}
+        <div className={`uses-note ${noteDrawn ? "drawn" : ""}`} aria-hidden="true">
+          <svg className="uses-arrow" viewBox="0 0 72 48" width="96" height="64">
+            <path className="uses-arrow-line" pathLength="1" d="M70 30 C 58 42, 45 38, 47 28 C 49 18, 33 15, 29 25 C 25 35, 13 34, 6 24" />
+            <path className="uses-arrow-head" pathLength="1" d="M6.5 32.5 L6 24 L14 26.5" />
+          </svg>
+          <span className="uses-note-text">Click Me</span>
+        </div>
+        </div>
       ) : (
         <div
           id="uses-panel"
