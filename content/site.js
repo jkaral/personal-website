@@ -404,6 +404,34 @@ const site = {
         title: "can of dc",
         caption: "best grey loot refreshment",
       },
+      {
+        src: "/images/banner/curtis.png",
+        ratio: 0.703,
+        x: 63, y: 64, w: 13, r: 4,
+        title: "curtis blue vinyl",
+        caption: "first vinyl i ever bought on my first trip to san francisco",
+      },
+      {
+        src: "/images/banner/slugterra.webp",
+        ratio: 0.5625,
+        x: 64.5, y: 1, w: 12, r: 3,
+        title: "slugterra",
+        caption: "my favourite childhood show",
+      },
+      {
+        src: "/images/banner/pink-polo.png",
+        ratio: 1.087,
+        x: 19.5, y: 2, w: 9.5, r: -6,
+        title: "pink polo",
+        caption: "my favourite colour on my favourite shirt",
+      },
+      {
+        src: "/images/banner/skis.png",
+        ratio: 4.569,
+        x: 47.5, y: 23, w: 5, r: 4, // centred on the banner
+        title: "skis",
+        caption: "been skiing since i was 3 yrs",
+      },
     ],
   },
 

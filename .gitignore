@@ -2,5 +2,5 @@ node_modules
 .next
 out
 .env*
-.next-old-2/ .next-old-3/ .next-old/ .next/
+.next*/
 data/chat.json
