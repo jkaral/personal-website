@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getEssays, getEssay, formatDate } from "../../../lib/writing";
+import ScrollHighlight from "../../../components/ScrollHighlight";
 
 export function generateStaticParams() {
   return getEssays().map((e) => ({ slug: e.slug }));
@@ -21,7 +22,8 @@ export default async function Essay({ params }) {
       <a className="inline back" href="/#writing">← All writing</a>
       <h1 className="page-title">{essay.title}</h1>
       {essay.date && <p className="dates">{formatDate(essay.date)}</p>}
-      <div className="prose" dangerouslySetInnerHTML={{ __html: essay.html }} />
+      <div className="prose hl-scroll" dangerouslySetInnerHTML={{ __html: essay.html }} />
+      <ScrollHighlight />
     </article>
   );
 }

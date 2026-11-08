@@ -489,6 +489,7 @@ p { margin: 0 0 1em; }
 /* ============ Inner pages (Uses, Essays) ============ */
 .page, .container.narrow { padding-top: 64px; padding-bottom: 96px; }
 .container.narrow { max-width: 720px; }
+.container.narrow.essay { max-width: 920px; } /* essays: a wider column so lines run longer and the page is less of a narrow strip */
 .page-title { font-size: clamp(36px, 6vw, 56px); font-weight: 700; letter-spacing: -0.02em; margin: 20px 0 12px; }
 .uses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 48px 64px; margin-top: 48px; }
 .uses-group h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
@@ -518,6 +519,11 @@ p { margin: 0 0 1em; }
 .prose pre code { background: none; padding: 0; }
 .prose img { border-radius: 10px; margin: 1.4em 0; }
 .prose mark { background: linear-gradient(transparent 12%, var(--highlight) 12%, var(--highlight) 90%, transparent 90%); color: var(--text); padding: 0 2px; border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+/* essays: the highlight sweeps in with scroll (components/ScrollHighlight.js sets --hl from 0 to 1).
+   "slice" lays the lines end to end, so the sweep runs along line 1, then line 2, and so on */
+.prose.hl-scroll mark { background-color: transparent; background-repeat: no-repeat; background-size: calc(var(--hl, 0) * 100%) 100%;
+  box-decoration-break: slice; -webkit-box-decoration-break: slice; }
+:root[data-palette="punk"] .prose.hl-scroll mark:not([data-lit]) { color: var(--text); } /* dark ink only once the highlight is under it */
 .prose hr { border: 0; border-top: 1px solid var(--border); margin: 3em 0 0; }
 .prose .bibliography p { font-size: 14px; line-height: 1.6; padding-left: 2em; text-indent: -2em; margin-bottom: .9em; color: var(--muted); overflow-wrap: anywhere; }
 .prose .bibliography a { color: var(--muted); }
@@ -689,18 +695,22 @@ a.uses-tile { cursor: pointer; }
 
 /* vinyl player */
 .vinyl { display: flex; flex-direction: column; align-items: center; width: 150px; }
-.vinyl-row { display: flex; align-items: center; gap: 12px; }
+.vinyl-row { display: flex; align-items: center; gap: 8px; }
 .vinyl-btn { background: none; border: 0; padding: 4px; color: var(--muted); cursor: pointer; display: grid; place-items: center; transition: color .2s; }
 .vinyl-btn:hover { color: var(--text); }
-.vinyl-disc { position: relative; width: 62px; height: 62px; border-radius: 50%; overflow: hidden; background: #111;
+.vinyl-disc { position: relative; width: 92px; height: 92px; padding: 0; border: 0; cursor: pointer; display: block; flex: none; border-radius: 50%; overflow: hidden; background: #111; -webkit-tap-highlight-color: transparent;
   box-shadow: 0 3px 10px rgba(0,0,0,.3), inset 0 0 0 1px rgba(255,255,255,.06); animation: vinyl-spin 3s linear infinite; animation-play-state: paused; }
 .vinyl-disc.spinning { animation-play-state: running; }
-.vinyl-disc img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.vinyl-disc:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.vinyl-disc img { display: block; pointer-events: none; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .vinyl-disc::after { content: ""; position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
   background: repeating-radial-gradient(circle, transparent 0 2px, rgba(0,0,0,.14) 2px 3px); -webkit-mask: radial-gradient(circle, transparent 38%, #000 40%); mask: radial-gradient(circle, transparent 38%, #000 40%); }
-.vinyl-hole { position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--bg); box-shadow: 0 0 0 2px #111; }
-.vinyl-play { position: absolute; right: -2px; bottom: -2px; width: 22px; height: 22px; border-radius: 50%; border: 0; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,.3); animation: none; }
+.vinyl-hole { position: absolute; top: 50%; left: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--bg); box-shadow: 0 0 0 2px #111; }
+/* play/pause badge sits in the middle of the record and shows on hover (always while paused) */
+.vinyl-play { position: absolute; top: 50%; left: 50%; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.35); animation: none; transition: opacity .2s ease, scale .2s ease; }
+.vinyl-disc.spinning .vinyl-play { opacity: 0; scale: .8; }
+.vinyl-disc.spinning:hover .vinyl-play, .vinyl-disc.spinning:focus-visible .vinyl-play { opacity: 1; scale: 1; }
 .vinyl-disc.spinning .vinyl-play { animation: vinyl-spin 3s linear infinite reverse; } /* keep the button upright while the disc spins */
 @keyframes vinyl-spin { to { transform: rotate(360deg); } }
 .vinyl-title { display: flex; align-items: center; gap: 5px; margin: 10px 0 0; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text); }

@@ -31,6 +31,8 @@ export default function VinylPlayer({ songs = [] }) {
   const [started, setStarted] = useState(false); // show the Spotify strip once music has been started
   const mount = useRef(null);
   const controller = useRef(null);
+  const wantPlay = useRef(false); // tapped before Spotify finished loading: start once it is ready
+  const hasPlayed = useRef(false);
   const song = songs[index];
 
   useEffect(() => {
@@ -44,6 +46,13 @@ export default function VinylPlayer({ songs = [] }) {
         (c) => {
           controller.current = c;
           c.addListener("playback_update", (e) => setPlaying(!e.data.isPaused));
+          c.addListener("ready", () => {
+            if (wantPlay.current) {
+              wantPlay.current = false;
+              hasPlayed.current = true;
+              c.play();
+            }
+          });
         }
       );
     });
@@ -56,9 +65,18 @@ export default function VinylPlayer({ songs = [] }) {
 
   if (!song) return null;
 
+  // tap the record: first tap starts the song, after that it pauses / resumes
   const play = () => {
     setStarted(true);
-    controller.current?.togglePlay();
+    const c = controller.current;
+    if (!c) {
+      wantPlay.current = !wantPlay.current;
+      return;
+    }
+    if (!hasPlayed.current) {
+      hasPlayed.current = true;
+      c.play();
+    } else c.togglePlay(); // pause / resume
   };
   const go = (d) => {
     const next = (index + d + songs.length) % songs.length;
@@ -72,6 +90,7 @@ export default function VinylPlayer({ songs = [] }) {
       c.loadUri(`spotify:track:${songs[next].spotifyId}`);
       c.play();
     }
+    hasPlayed.current = true;
     setStarted(true);
   };
 
@@ -81,17 +100,17 @@ export default function VinylPlayer({ songs = [] }) {
         <button className="vinyl-btn" onClick={() => go(-1)} aria-label="Previous / restart">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" /></svg>
         </button>
-        <div className={`vinyl-disc ${playing ? "spinning" : ""}`}>
-          <img src={song.cover} alt={`${song.title} cover`} />
+        <button className={`vinyl-disc ${playing ? "spinning" : ""}`} onClick={play} aria-pressed={playing} aria-label={playing ? `Pause ${song.title}` : `Play ${song.title}`} title={playing ? "Pause" : "Play"}>
+          <img src={song.cover} alt="" draggable={false} />
           <span className="vinyl-hole" aria-hidden="true" />
-          <button className="vinyl-play" onClick={play} aria-label={playing ? "Pause" : "Play"}>
+          <span className="vinyl-play" aria-hidden="true">
             {playing ? (
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z" /></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z" /></svg>
             ) : (
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
             )}
-          </button>
-        </div>
+          </span>
+        </button>
         <button className="vinyl-btn" onClick={() => go(1)} aria-label="Next">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" /></svg>
         </button>
