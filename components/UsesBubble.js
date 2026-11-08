@@ -10,7 +10,8 @@ export default function UsesBubble({ intro, groups }) {
   const [returned, setReturned] = useState(false); // bubble just came back: pop it in
   const closeRef = useRef(null);
   const bubbleRef = useRef(null);
-  const orbit = groups.flatMap((g) => g.items).filter((it) => it.icon).slice(0, 5);
+  // every app with an icon orbits the bubble
+  const orbit = groups.flatMap((g) => g.items).filter((it) => it.icon);
 
   const closeFn = useRef(() => {});
 
@@ -48,7 +49,7 @@ export default function UsesBubble({ intro, groups }) {
           {orbit.map((it, i) => (
             <span
               key={it.name}
-              className="uses-orbit"
+              className={`uses-orbit ${it.fullColor ? "full" : ""}`}
               style={{ "--i": i, "--n": orbit.length, "--icon": `url(${it.icon})`, ...(it.color ? { "--tint": it.color } : {}) }}
               aria-hidden="true"
             />
@@ -75,7 +76,7 @@ export default function UsesBubble({ intro, groups }) {
                   const inner = (
                     <>
                       {it.icon ? (
-                        <span className="app-glyph" aria-hidden="true" style={{ "--icon": `url(${it.icon})`, ...(it.color ? { "--tint": it.color } : {}) }} />
+                        <span className={`app-glyph ${it.fullColor ? "full" : ""}`} aria-hidden="true" style={{ "--icon": `url(${it.icon})`, ...(it.color ? { "--tint": it.color } : {}) }} />
                       ) : (
                         <span className="app-glyph line" aria-hidden="true"><Icon name={it.glyph || "external"} size={20} /></span>
                       )}

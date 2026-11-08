@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/writing/layout,_N_T_/writing/[slug]/layout,_N_T_/writing/[slug]/page,_N_T_/writing/example-essay"
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/97f8451ff79e7e6603899ed18546c8ad0c405cc4167d9991c29affc05c6a3e28/$/writing/example-essay",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/writing/[slug]/page"
+    },
+    "isFallback": false
+  }
+}

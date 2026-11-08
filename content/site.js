@@ -245,6 +245,7 @@ const site = {
     // Optional per item: note (shown under the name), url, icon (a file in /public/images/icons),
     // glyph (a built-in line icon: laptop, tablet, headphones)
     // and color (icon tint; leave out to follow the text color in light/dark mode).
+    // fullColor: true shows the icon file as-is (a coloured app icon) instead of tinting it.
     groups: [
       {
         title: "Hardware",
@@ -252,6 +253,7 @@ const site = {
           { name: "Dell 15 (DC15250)", note: "Laptop", glyph: "laptop" },
           { name: "iPad (13th generation)", note: "Tablet", glyph: "tablet" },
           { name: "Sony WH-1000XM5", note: "Headphones", glyph: "headphones" },
+          { name: "GoPro HERO7", note: "Action camera", glyph: "camera" },
         ],
       },
       {
@@ -262,6 +264,9 @@ const site = {
           { name: "Claude", url: "https://claude.ai", icon: "/images/icons/claude.svg", color: "#D97757" },
           { name: "ChatGPT", url: "https://chatgpt.com", icon: "/images/icons/openai.svg" },
           { name: "Google Calendar", url: "https://calendar.google.com", icon: "/images/icons/googlecalendar.svg", color: "#4285F4" },
+          { name: "Git", url: "https://git-scm.com", icon: "/images/icons/git.svg", color: "#F05032" },
+          { name: "VS Code", url: "https://code.visualstudio.com", icon: "/images/icons/vscode.svg", color: "#007ACC" },
+          { name: "YPT", icon: "/images/icons/ypt.png", fullColor: true },
         ],
       },
     ],

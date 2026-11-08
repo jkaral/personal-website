@@ -55,7 +55,7 @@ export default function Collection({ title, intro, items }) {
     const small = window.matchMedia("(max-width: 700px)");
     const sync = () => {
       reduced.current = mq.matches;
-      spacing.current = small.matches ? 300 : 285; // px between items (matches .wheel-item height + gap)
+      spacing.current = small.matches ? 218 : 178; // px between items (matches .wheel-item height + gap)
     };
     sync();
     mq.addEventListener("change", sync);
@@ -202,7 +202,8 @@ export default function Collection({ title, intro, items }) {
                 onClick={() => { pos.current = i; lastIdx.current = i; setIndex(i); setView("carousel"); }}
                 aria-label={`${it.title} (open in carousel)`}
               >
-                <img src={it.src} alt="" draggable="false" loading="lazy" />
+                {/* every picture covers the same area whatever its shape (ratio = height / width) */}
+                <img src={it.src} alt="" draggable="false" loading="lazy" style={{ width: `${(60 / Math.sqrt(it.ratio || 1)).toFixed(1)}%` }} />
                 <span className="gallery-name">{it.title}</span>
               </button>
             </li>

@@ -3,6 +3,8 @@ title: "Critiquing Transactional Altruism and the Erosion of Genuine Community S
 date: "2026-03"
 summary: "Thoughts on Uni Apps and their Effects on the pursuit of Altruism"
 draft: false
+# words in the title that get the marker highlight
+titleHighlights: ["Transactional Altruism", "Erosion of", "Community Service"]
 ---
 
 When the unstoppable force of students rushing towards post-secondary greatness meets the immovable object of university admissions standards, what’s to happen? The high-pressure nature of modern university admissions has put an emphasis on secondary school students’ involvement in community service. As a consequence, for many nowadays the motivations behind service are based on extrinsic demand rather than an intrinsic passion to help and contribute to something greater than oneself. This shift in mindset, coupled with the increasing competitiveness of university admissions, has amalgamated into a degradation of genuine social responsibility. To understand this erosion, one must look past the individual student and into the systemic pressures that have redefined the purpose of civic engagement. <mark>Only from expanding altruism beyond the reward system of university admissions can we as a society return to a more grounded sense of civic responsibility.</mark>
