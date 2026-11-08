@@ -736,6 +736,9 @@ a.uses-tile { cursor: pointer; }
 
 /* hero */
 .name-swap { font-size: clamp(48px, 7vw, 96px); }
+/* phones: size the cycling name by the screen width so even the widest font (about 8.1em wide)
+   fits inside the page gutters; otherwise those fonts stretch the page sideways as they flash by */
+@media (max-width: 700px) { .name-swap { font-size: min(48px, calc((100vw - 48px) / 8.6)); } }
 .tagline { font-size: clamp(19px, 1.6vw, 24px); max-width: 640px; }
 .greeting { font-size: 16px; }
 .btn { font-size: 16px; padding: 14px 28px; }
