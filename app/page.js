@@ -124,7 +124,17 @@ export default async function Home() {
             <span className="en" aria-hidden="true"><NameCycle name={site.name} /></span>
             <span className="gr" lang="el" aria-hidden="true">{site.greekName}</span>
           </h1>
-          <p className="tagline">{site.tagline}</p>
+          <div className="tagline-wrap">
+            <p className="tagline">{site.tagline}</p>
+            {/* handwritten note off to the left; a squiggly arrow leaves the tagline and curls left to "meaningful" */}
+            <div className="tagline-note" aria-hidden="true">
+              <span className="tagline-note-text">wait until the end for a meaningful display</span>
+              <svg className="tagline-arrow" viewBox="0 0 200 90" width="200" height="90">
+                <path className="tagline-arrow-line" pathLength="1" d="M196 30 C 182 40, 168 40, 170 30 C 172 20, 155 18, 150 28 C 144 42, 118 84, 80 84 C 58 84, 48 77, 47 65" />
+                <path className="tagline-arrow-head" pathLength="1" d="M41 71 L47 63 L53 71" />
+              </svg>
+            </div>
+          </div>
           <div className="cta">
             <a className="btn primary" href="#projects">View My Work</a>
             <a className="btn" href="#contact">Let&apos;s Talk</a>

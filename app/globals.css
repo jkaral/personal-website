@@ -258,6 +258,9 @@ p { margin: 0 0 1em; }
 .logo-link:hover span { border-color: var(--accent); }
 .logo-link.plain span { border-bottom: 0; }
 .row-title .logo-link img { width: 24px; height: 24px; }
+/* cut-out logos: no white tile or square outline, just the logo itself */
+.logo-link img:is([src$="spiritofmath.png"], [src$="utbiome.png"], [src$="utmist.png"], [src$="wac.png"], [src$="qfc.png"]) { background: none; box-shadow: none; border-radius: 0; }
+.logo-link img[src$="spiritofmath.png"] { border-radius: 50%; }
 .project .stack { margin: 4px 0 8px; }
 .quote { margin: 0 0 32px; padding-left: 20px; border-left: 2px solid var(--text); }
 .quote blockquote { margin: 0 0 6px; font-family: var(--font-greek), serif; font-weight: 700; font-size: clamp(24px, 3.4vw, 32px); line-height: 1.25; color: var(--text); }
@@ -877,6 +880,20 @@ body { overflow-x: clip; }                                   /* full-bleed banne
 .chat-note-text { margin: 36px 0 0 4px; width: 250px; font: 700 22px/1.05 var(--font-caveat), cursive; color: var(--text); transform: rotate(-2deg); transform-origin: left top; }
 @media (prefers-reduced-motion: reduce) { .chat-arrow path { stroke-dashoffset: 0; animation: none; } }
 @media (max-width: 760px) { .chat-note { display: none; } }
+
+/* hero note left of the tagline (same hand-drawn style as the chat note); only where there's room */
+.tagline-wrap { position: relative; }
+.tagline-note { display: none; }
+@media (min-width: 1280px) {
+  .tagline-note { position: absolute; right: calc(100% + 85px); top: 50%; transform: translateY(-50%); display: block; pointer-events: none; }
+}
+/* the arrow leaves the tagline, loops under the note and points up at "meaningful" */
+.tagline-arrow { position: absolute; left: 50px; top: 0; overflow: visible; }
+.tagline-arrow path { fill: none; stroke: #ff6a1a; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.tagline-arrow-line { animation: pencil-draw .9s cubic-bezier(.5,.1,.35,1) .8s forwards; }
+.tagline-arrow-head { animation: pencil-draw .3s ease-out 1.65s forwards; }
+.tagline-note-text { display: block; width: 170px; margin-bottom: 18px; text-align: right; font: 700 22px/1.05 var(--font-caveat), cursive; color: var(--text); transform: rotate(-3deg); transform-origin: right center; }
+@media (prefers-reduced-motion: reduce) { .tagline-arrow path { stroke-dashoffset: 0; animation: none; } }
 
 /* "Click Me" nudge by the Uses bubble (same hand-drawn style as the chat note); sits to the right,
    outside the orbiting app icons, and draws in once scrolled into view */
