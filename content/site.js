@@ -175,7 +175,7 @@ const site = {
       year: "2026",
       // a list so "writing section" can link down to the Writing section
       description: [
-        "The site you're built on, and one of the coolest front-end projects I've ever completed. Built from scratch with Next.js 15 and deployed on Vercel, with web analytics from a Vercel Bot. The server components pull live data (e.g. streaks on Duolingo or GitHub) and the group chat runs on Upstash Redis with one set per like so the count is live. I also added cool components like the string tracer, uses bubble and cartoon highlighter to my ",
+        "The site you're on right now, and one of the coolest front-end projects I've ever completed. Built from scratch with Next.js 15 and deployed on Vercel, with web analytics from a Vercel Bot. The server components pull live data (e.g. streaks on Duolingo or GitHub) and the group chat runs on Upstash Redis with one set per like so the count is live. I also added cool components like the string tracer, uses bubble and cartoon highlighter to my ",
         { text: "writing section", url: "#writing" },
         ". Hope you like it!",
       ],
