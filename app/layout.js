@@ -56,12 +56,13 @@ const sideLinks = [
   { id: "about", label: "about" },
   { id: "work", label: "experience" },
   { id: "projects", label: "projects" },
+  { id: "awards", label: "awards" },
   { id: "writing", label: "writing" },
   { id: "hobbies", label: "hobbies" },
   { id: "uses", label: "uses" },
   { id: "inspirations", label: "inspirations" },
   { id: "contact", label: "contact" },
-];
+].filter((l) => l.id !== "awards" || site.awards?.length > 0); // no empty awards section to jump to
 
 // Applies the saved light/dark choice before paint (no flash).
 const themeScript = `try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}`;

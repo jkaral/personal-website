@@ -178,9 +178,9 @@ const site = {
       year: "2026",
       // a list so "writing section" can link down to the Writing section
       description: [
-        "The site you're on right now, and one of the coolest front-end projects I've ever completed. Built from scratch with Next.js 15 and deployed on Vercel, with web analytics from a Vercel Bot. The server components pull live data (e.g. streaks on Duolingo or GitHub) and the group chat runs on Upstash Redis with one set per like so the count is live. I also added cool components like the string tracer, uses bubble and cartoon highlighter to my ",
-        { text: "writing section", url: "#writing" },
-        ". Hope you like it!",
+        "Built from scratch with Next.js 15 and deployed on Vercel, with web analytics from a Vercel Bot. The server components pull live data (e.g. streaks on Duolingo or GitHub) and the group chat runs on Upstash Redis with one set per like so the count is live. I added features like the string tracer, the \"uses bubble\" and highlighting meaningful parts of my ",
+        { text: "writing", url: "#writing" },
+        ".",
       ],
       stack: ["Next.js", "React", "CSS", "Redis", "Vercel"],
       award: "",
@@ -189,6 +189,19 @@ const site = {
       videoFile: "/videos/personal-website.mp4",
       videoPoster: "/videos/personal-website-poster.jpg",
       links: [{ label: "GitHub", url: "https://github.com/jkaral/personal-website" }],
+    },
+  ],
+
+  // ---------- Awards ----------
+  // { title: "1st place", org: "Some Hackathon", year: "2025", description: "", url: "", image: "" }
+  // description, url and image (shown to the left) are optional. The section hides itself while this list is empty.
+  awards: [
+    {
+      title: "International Climate Science Olympiad Champion",
+      org: "ClimateScience Olympiad",
+      year: "2024",
+      description: "Awarded a $3,500 USD cash prize and a sponsored trip to Baku, Azerbaijan for COP29.",
+      image: "/images/awards/climate-olympiad-2024.jpg",
     },
   ],
 

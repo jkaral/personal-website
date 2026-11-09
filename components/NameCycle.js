@@ -15,7 +15,7 @@ const FONTS = [
   { family: "var(--font-dmserif), serif", weight: 400, size: 1.07, tracking: "0" }, // DM Serif Display
   { family: "var(--font-instrument), serif", weight: 400, style: "italic", size: 0.985, tracking: "0.01em" }, // Instrument Serif
 ];
-const HOLD_MS = 6000; // how long each typeface stays before the next one fades in
+const HOLD_MS = 100; // how long each typeface stays before the next one fades in
 
 export default function NameCycle({ name }) {
   const [i, setI] = useState(0);

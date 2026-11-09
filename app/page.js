@@ -111,7 +111,7 @@ export default async function Home() {
     getFable(site.live?.fableProfile),
     getGitHubContributions(site.live?.githubUsername),
   ]);
-  const { about, work, projects, hobbies, contact, banner } = site;
+  const { about, work, projects, awards, hobbies, contact, banner } = site;
 
   return (
     <>
@@ -296,6 +296,36 @@ export default async function Home() {
               </article>
             ))}
           </div>
+        </Section>
+      )}
+
+      {/* Awards */}
+      {awards?.length > 0 && (
+        <Section id="awards" title="Awards">
+          <ol className="rows">
+            {awards.map((a, i) => (
+              <li key={i} className={`row award-row ${a.image ? "has-image" : ""}`}>
+                {a.image && (
+                  // certificate on the left; click to open it full size
+                  <a className="award-cert" href={a.image} target="_blank" rel="noreferrer" aria-label={`${a.title} certificate (full size)`}>
+                    <img src={a.image} alt={`${a.title} certificate`} loading="lazy" />
+                  </a>
+                )}
+                <div className="row-main">
+                  <h3 className="row-title">
+                    {a.url ? (
+                      <a className="underline" href={a.url} target="_blank" rel="noreferrer">{a.title}</a>
+                    ) : (
+                      a.title
+                    )}
+                    {a.org && <span className="award-org">{a.org}</span>}
+                  </h3>
+                  {a.description && <p className="row-desc">{a.description}</p>}
+                  {a.year && <p className="dates work-dates">{a.year}</p>}
+                </div>
+              </li>
+            ))}
+          </ol>
         </Section>
       )}
 
