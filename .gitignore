@@ -4,3 +4,6 @@ out
 .env*
 .next*/
 data/chat.json
+
+# local handoff notes for Claude sessions
+docs/STATUS.md
