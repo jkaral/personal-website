@@ -86,7 +86,7 @@ const site = {
       company: "The Quantitative Finance Club",
       url: "https://www.linkedin.com/company/the-quantitative-finance-club-university-of-toronto/posts/?feedView=all",
       logo: "/images/logos/qfc.png",
-      description: "Project focus TBD",
+      description: "Building a hybrid ML and statistical model that forecasts NHL skater performance, quantifies uncertainty, and prices each player’s fair contract value to find overpaid and underpaid players.",
       stack: ["pandas", "NumPy", "statsmodels", "SciPy"],
       dates: "Oct 2026 — Present",
     },
