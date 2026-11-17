@@ -9,6 +9,7 @@ import YouTubeLoop from "../components/YouTubeLoop";
 import NameCycle from "../components/NameCycle";
 import ContributionGraph from "../components/ContributionGraph";
 import UsesBubble from "../components/UsesBubble";
+import ReadAloud from "../components/ReadAloud";
 import { getEssays, formatDate } from "../lib/writing";
 import { getDuolingo, getFable, getGitHubContributions } from "../lib/live";
 
@@ -149,7 +150,12 @@ export default async function Home() {
           <div>
             {about.quote && (
               <figure className="quote">
-                <blockquote lang="el">{about.quote.text}</blockquote>
+                <div className="quote-line">
+                  <blockquote lang="el">{about.quote.text}</blockquote>
+                  {about.quote.audio && (
+                    <ReadAloud audio={about.quote.audio} note={about.quote.audioNote} label="Hear the quote read aloud" />
+                  )}
+                </div>
                 <figcaption>
                   “{about.quote.translation}”
                   {about.quote.source && <span> — {about.quote.source}</span>}

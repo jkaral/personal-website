@@ -1,0 +1,670 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - navigation "Main" [ref=e8]:
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: /#about
+        - link "Experience" [ref=e10] [cursor=pointer]:
+          - /url: /#work
+        - link "Writing" [ref=e11] [cursor=pointer]:
+          - /url: /#writing
+        - link "Hobbies" [ref=e12] [cursor=pointer]:
+          - /url: /#hobbies
+        - link "Uses" [ref=e13] [cursor=pointer]:
+          - /url: /#uses
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /#contact
+        - link "Resume" [ref=e15] [cursor=pointer]:
+          - /url: /resume.pdf
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - button "Feedback group chat" [ref=e18] [cursor=pointer]
+          - generic [aria-hidden]:
+            - generic: as an engineer i'm always looking for feedback
+        - link "Email" [ref=e21] [cursor=pointer]:
+          - /url: mailto:j.karal2008@gmail.com
+        - link "GitHub" [ref=e24] [cursor=pointer]:
+          - /url: https://github.com/jkaral
+        - link "LinkedIn" [ref=e27] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/john-karakoulas
+        - link "X" [ref=e30] [cursor=pointer]:
+          - /url: https://x.com/yiannibuilds
+        - generic [aria-hidden] [ref=e33]: ⇧shift+y
+        - button "Toggle dark mode" [ref=e34] [cursor=pointer]
+  - main [ref=e38]:
+    - generic [ref=e40]:
+      - paragraph [ref=e41]: Hi, I'm
+      - heading "Yianni Karakoulas (Γιάννη)" [level=1] [ref=e42]:
+        - generic [ref=e44]:
+          - generic [ref=e45]: Yianni Karakoulas
+          - generic [aria-hidden] [ref=e46]: Yianni Karakoulas
+          - generic [aria-hidden] [ref=e47]: Yianni Karakoulas
+          - generic [aria-hidden] [ref=e48]: Yianni Karakoulas
+        - generic [aria-hidden] [ref=e49]: Γιάννη
+      - paragraph [ref=e51]: Creating human-first software projects, exploring agentic AI, and giving everything one hundred percent.
+      - generic [ref=e52]:
+        - link "View My Work" [ref=e53] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Let's Talk" [ref=e54] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e55]:
+        - paragraph [ref=e56]:
+          - strong [ref=e57]: "613"
+          - text: contributions since August 2026 ·
+          - link "@jkaral ↗" [ref=e58] [cursor=pointer]:
+            - /url: https://github.com/jkaral
+        - img "613 GitHub contributions since August 2026" [ref=e672]:
+          - generic [aria-hidden] [ref=e61]:
+            - generic [ref=e62]: Aug
+            - generic [ref=e68]: Sep
+            - generic [ref=e72]: Oct
+            - generic [ref=e76]: Nov
+          - generic [ref=e78]:
+            - generic "3 contributions on Aug 1, 2026" [ref=e86]
+            - generic [ref=e87]:
+              - generic "1 contribution on Aug 2, 2026" [ref=e88]
+              - generic "5 contributions on Aug 3, 2026" [ref=e89]
+              - generic "4 contributions on Aug 4, 2026" [ref=e90]
+              - generic "2 contributions on Aug 5, 2026" [ref=e91]
+              - generic "1 contribution on Aug 6, 2026" [ref=e92]
+              - generic "4 contributions on Aug 7, 2026" [ref=e93]
+              - generic "6 contributions on Aug 8, 2026" [ref=e94]
+            - generic [ref=e95]:
+              - generic "3 contributions on Aug 9, 2026" [ref=e96]
+              - generic "3 contributions on Aug 10, 2026" [ref=e97]
+              - generic "6 contributions on Aug 11, 2026" [ref=e98]
+              - generic "3 contributions on Aug 12, 2026" [ref=e99]
+              - generic "7 contributions on Aug 13, 2026" [ref=e100]
+              - generic "1 contribution on Aug 14, 2026" [ref=e101]
+              - generic "2 contributions on Aug 15, 2026" [ref=e102]
+            - generic [ref=e103]:
+              - generic "7 contributions on Aug 16, 2026" [ref=e104]
+              - generic "2 contributions on Aug 17, 2026" [ref=e105]
+              - generic "3 contributions on Aug 18, 2026" [ref=e106]
+              - generic "6 contributions on Aug 19, 2026" [ref=e107]
+              - generic "8 contributions on Aug 20, 2026" [ref=e108]
+              - generic "3 contributions on Aug 21, 2026" [ref=e109]
+              - generic "4 contributions on Aug 22, 2026" [ref=e110]
+            - generic [ref=e111]:
+              - generic "5 contributions on Aug 23, 2026" [ref=e112]
+              - generic "7 contributions on Aug 24, 2026" [ref=e113]
+              - generic "5 contributions on Aug 25, 2026" [ref=e114]
+              - generic "2 contributions on Aug 26, 2026" [ref=e115]
+              - generic "3 contributions on Aug 27, 2026" [ref=e116]
+              - generic "8 contributions on Aug 28, 2026" [ref=e117]
+              - generic "1 contribution on Aug 29, 2026" [ref=e118]
+            - generic [ref=e119]:
+              - generic "5 contributions on Aug 30, 2026" [ref=e120]
+              - generic "6 contributions on Aug 31, 2026" [ref=e121]
+              - generic "8 contributions on Sep 1, 2026" [ref=e122]
+              - generic "5 contributions on Sep 2, 2026" [ref=e123]
+              - generic "7 contributions on Sep 3, 2026" [ref=e124]
+              - generic "6 contributions on Sep 4, 2026" [ref=e125]
+              - generic "5 contributions on Sep 5, 2026" [ref=e126]
+            - generic [ref=e127]:
+              - generic "5 contributions on Sep 6, 2026" [ref=e128]
+              - generic "3 contributions on Sep 7, 2026" [ref=e129]
+              - generic "4 contributions on Sep 8, 2026" [ref=e130]
+              - generic "5 contributions on Sep 9, 2026" [ref=e131]
+              - generic "6 contributions on Sep 10, 2026" [ref=e132]
+              - generic "3 contributions on Sep 11, 2026" [ref=e133]
+              - generic "7 contributions on Sep 12, 2026" [ref=e134]
+            - generic [ref=e135]:
+              - generic "4 contributions on Sep 13, 2026" [ref=e136]
+              - generic "10 contributions on Sep 14, 2026" [ref=e137]
+              - generic "15 contributions on Sep 15, 2026" [ref=e138]
+              - generic "2 contributions on Sep 16, 2026" [ref=e139]
+              - generic "2 contributions on Sep 17, 2026" [ref=e140]
+              - generic "6 contributions on Sep 18, 2026" [ref=e141]
+              - generic "2 contributions on Sep 19, 2026" [ref=e142]
+            - generic [ref=e143]:
+              - generic "6 contributions on Sep 20, 2026" [ref=e144]
+              - generic "3 contributions on Sep 21, 2026" [ref=e145]
+              - generic "1 contribution on Sep 22, 2026" [ref=e146]
+              - generic "2 contributions on Sep 23, 2026" [ref=e147]
+              - generic "4 contributions on Sep 24, 2026" [ref=e148]
+              - generic "5 contributions on Sep 25, 2026" [ref=e149]
+              - generic "3 contributions on Sep 26, 2026" [ref=e150]
+            - generic [ref=e151]:
+              - generic "6 contributions on Sep 27, 2026" [ref=e152]
+              - generic "1 contribution on Sep 28, 2026" [ref=e153]
+              - generic "6 contributions on Sep 29, 2026" [ref=e154]
+              - generic "2 contributions on Sep 30, 2026" [ref=e155]
+              - generic "2 contributions on Oct 1, 2026" [ref=e156]
+              - generic "2 contributions on Oct 2, 2026" [ref=e157]
+              - generic "8 contributions on Oct 3, 2026" [ref=e158]
+            - generic [ref=e159]:
+              - generic "2 contributions on Oct 4, 2026" [ref=e160]
+              - generic "3 contributions on Oct 5, 2026" [ref=e161]
+              - generic "3 contributions on Oct 6, 2026" [ref=e162]
+              - generic "1 contribution on Oct 7, 2026" [ref=e163]
+              - generic "7 contributions on Oct 8, 2026" [ref=e164]
+              - generic "2 contributions on Oct 9, 2026" [ref=e165]
+              - generic "6 contributions on Oct 10, 2026" [ref=e166]
+            - generic [ref=e167]:
+              - generic "6 contributions on Oct 11, 2026" [ref=e168]
+              - generic "6 contributions on Oct 12, 2026" [ref=e169]
+              - generic "3 contributions on Oct 13, 2026" [ref=e170]
+              - generic "10 contributions on Oct 14, 2026" [ref=e171]
+              - generic "64 contributions on Oct 15, 2026" [ref=e172]
+              - generic "3 contributions on Oct 16, 2026" [ref=e173]
+              - generic "39 contributions on Oct 17, 2026" [ref=e174]
+            - generic [ref=e175]:
+              - generic "8 contributions on Oct 18, 2026" [ref=e176]
+              - generic "1 contribution on Oct 19, 2026" [ref=e177]
+              - generic "2 contributions on Oct 20, 2026" [ref=e178]
+              - generic "5 contributions on Oct 21, 2026" [ref=e179]
+              - generic "2 contributions on Oct 22, 2026" [ref=e180]
+              - generic "10 contributions on Oct 23, 2026" [ref=e181]
+              - generic "4 contributions on Oct 24, 2026" [ref=e182]
+            - generic [ref=e183]:
+              - generic "6 contributions on Oct 25, 2026" [ref=e184]
+              - generic "8 contributions on Oct 26, 2026" [ref=e185]
+              - generic "7 contributions on Oct 27, 2026" [ref=e186]
+              - generic "8 contributions on Oct 28, 2026" [ref=e187]
+              - generic "10 contributions on Oct 29, 2026" [ref=e188]
+              - generic "3 contributions on Oct 30, 2026" [ref=e189]
+              - generic "2 contributions on Oct 31, 2026" [ref=e190]
+            - generic [ref=e191]:
+              - generic "6 contributions on Nov 1, 2026" [ref=e192]
+              - generic "7 contributions on Nov 2, 2026" [ref=e193]
+              - generic "3 contributions on Nov 3, 2026" [ref=e194]
+              - generic "19 contributions on Nov 4, 2026" [ref=e195]
+              - generic "11 contributions on Nov 5, 2026" [ref=e196]
+              - generic "10 contributions on Nov 6, 2026" [ref=e197]
+              - generic "12 contributions on Nov 7, 2026" [ref=e198]
+            - generic [ref=e199]:
+              - generic "6 contributions on Nov 8, 2026" [ref=e200]
+              - generic "2 contributions on Nov 9, 2026" [ref=e674]
+              - generic "1 contribution on Nov 10, 2026" [ref=e675]
+              - generic "7 contributions on Nov 11, 2026" [ref=e676]
+              - generic "5 contributions on Nov 12, 2026" [ref=e677]
+              - generic "2 contributions on Nov 13, 2026" [ref=e678]
+              - generic "No contributions on Nov 14, 2026" [ref=e679]
+            - generic [ref=e680]:
+              - generic "1 contribution on Nov 15, 2026" [ref=e681]
+              - generic "6 contributions on Nov 16, 2026" [ref=e682]
+              - generic "2 contributions on Nov 17, 2026" [ref=e683]
+        - paragraph [aria-hidden] [ref=e207]: LessMore
+    - generic [ref=e214]:
+      - heading "About" [level=2] [ref=e215]
+      - generic [ref=e216]:
+        - generic [ref=e217]:
+          - figure "“Good things are acquired through toil.” — Socrates" [ref=e218]:
+            - generic [ref=e219]:
+              - blockquote [ref=e220]: Τα αγαθά κόποις κτώνται
+              - generic [ref=e688]:
+                - button "Hear the quote read aloud" [ref=e689] [cursor=pointer]
+                - generic [aria-hidden]:
+                  - generic: hear it in greek
+            - generic [ref=e225]:
+              - text: “Good things are acquired through toil.”
+              - generic [ref=e226]: — Socrates
+          - paragraph [ref=e227]: My grandma instilled this principle in me, and I have always strived to embody it. I apply it to everything, from building my own products and projects to athletic pursuits and building meaningful relationships. I always strive to do what I can, while I can.
+          - paragraph [ref=e228]:
+            - text: I study Computer Science at the University of Toronto and work as a Quantitative Researcher at
+            - link "The Quantitative Finance Club" [ref=e229] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/the-quantitative-finance-club-university-of-toronto/posts/?feedView=all
+            - text: ", and at"
+            - link "UTMIST" [ref=e231] [cursor=pointer]:
+              - /url: https://www.utmist.ca/
+            - text: and
+            - link "UTBIOME" [ref=e233] [cursor=pointer]:
+              - /url: https://utbiome.skule.ca/
+            - text: as a Machine Learning Engineer. Outside of school and work I enjoy mma, rugby, lifting, reading and learning languages.
+            - link "See my hobbies ↘" [ref=e235] [cursor=pointer]:
+              - /url: "#hobbies"
+          - heading "What I'm exploring" [level=3] [ref=e236]
+          - list [ref=e237]:
+            - listitem [ref=e238]: • Agent swarms
+            - listitem [ref=e239]: • ML for markets & healthcare
+            - listitem [ref=e240]: • Building human-focused products
+        - generic [ref=e241]:
+          - paragraph [ref=e243]:
+            - text: Recently
+            - generic [aria-hidden] [ref=e244]: ↓
+          - generic "Show all 6 recent photos and videos" [ref=e245] [cursor=pointer]:
+            - figure [ref=e246]:
+              - button [aria-hidden] [ref=e247]
+              - button "Turn sound on" [ref=e249]
+            - figure [ref=e252]:
+              - button [aria-hidden] [ref=e253]
+            - figure [ref=e254]:
+              - button [aria-hidden] [ref=e255]
+            - figure [ref=e256]:
+              - button [aria-hidden] [ref=e257]
+            - figure [ref=e258]:
+              - button [aria-hidden] [ref=e259]
+            - figure [ref=e260]:
+              - button [aria-hidden] [ref=e261]
+          - paragraph [ref=e262]:
+            - text: favella baller academy graduates from ucc summer camps '26
+            - generic [ref=e263]: Click to see all 6
+    - generic [ref=e265]:
+      - heading "Work" [level=2] [ref=e266]
+      - list [ref=e267]:
+        - listitem [ref=e268]:
+          - generic [ref=e269]:
+            - heading [level=3] [ref=e270]:
+              - text: Quantitative Researcher at
+              - link "The Quantitative Finance Club" [ref=e272] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/the-quantitative-finance-club-university-of-toronto/posts/?feedView=all
+            - paragraph [ref=e274]: Building a hybrid ML and statistical model that forecasts NHL skater performance, quantifies uncertainty, and prices each player’s fair contract value to find overpaid and underpaid players.
+            - paragraph [ref=e275]: pandas · NumPy · statsmodels · SciPy
+            - paragraph [ref=e276]: Oct 2026 — Present
+        - listitem [ref=e277]:
+          - generic [ref=e278]:
+            - heading [level=3] [ref=e279]:
+              - text: Machine Learning Engineer at
+              - link "UTMIST" [ref=e281] [cursor=pointer]:
+                - /url: https://www.utmist.ca/
+              - generic [ref=e283]:
+                - text: and
+                - link "UTBIOME" [ref=e284] [cursor=pointer]:
+                  - /url: https://utbiome.skule.ca/
+            - paragraph [ref=e286]: Evaluating MEG decoders to isolate neural truth from language bias.
+            - paragraph [ref=e287]: PyTorch · scikit-learn · LLMs & Fine-Tuning · Experiment Tracking
+            - paragraph [ref=e288]: Oct 2026 — Present
+        - listitem [ref=e289]:
+          - generic [ref=e290]:
+            - heading [level=3] [ref=e291]:
+              - text: Director of Programs and Events at
+              - link "World Affairs Conference" [ref=e293] [cursor=pointer]:
+                - /url: https://worldaffairscon.org/
+            - paragraph [ref=e295]: Led program and event operations for North America's largest current-affairs conference, serving 1,000+ delegates from 50+ schools, and launched its Service Fair for student-led philanthropy.
+            - paragraph [ref=e296]: Operations · Leadership · Event Planning · Interviewing
+            - paragraph [ref=e297]: June 2025 — Mar 2026
+        - listitem [ref=e298]:
+          - generic [ref=e299]:
+            - heading [level=3] [ref=e300]:
+              - text: Mathematics Tutor at
+              - link "Spirit of Math Schools" [ref=e302] [cursor=pointer]:
+                - /url: https://spiritofmath.com/
+            - paragraph [ref=e304]: Taught linear algebra and calculus to classes of 20 high-school students twice a week, diagnosing errors and giving targeted feedback.
+            - paragraph [ref=e305]: Teaching · Linear Algebra · Calculus · Communication
+            - paragraph [ref=e306]: Aug 2023 — June 2026
+    - generic [ref=e308]:
+      - heading "Projects" [level=2] [ref=e309]
+      - generic [ref=e310]:
+        - article [ref=e311]:
+          - img "Pathology Foundation-Model Fusion screenshot" [ref=e313]
+          - generic [ref=e314]:
+            - heading [level=3] [ref=e315]:
+              - link "Pathology Foundation-Model Fusion" [ref=e316] [cursor=pointer]:
+                - /url: https://github.com/jkaral/pathology-fusion-AI
+              - text: "2026"
+            - link "Write-up" [ref=e318] [cursor=pointer]:
+              - /url: https://drive.google.com/file/d/1foNjjot6dfQ7pVC8Ln-FAHIOEeQ0KkZY/view?usp=sharing
+              - text: Write-up
+              - generic [aria-hidden] [ref=e319]: ↗
+          - paragraph [ref=e320]: A weakly supervised pathology pipeline that runs 368,250 tiles from 203 whole-slide images through three foundation models (UNI2-h, Virchow2, Phikon-v2) and classifies seven lung adenocarcinoma growth patterns with attention-based multiple-instance learning. Agent-selected fusion strategies reached 0.874 macro-AUROC on a one-time test set of 41 patients.
+          - paragraph [ref=e321]: Python · PyTorch · Hugging Face · scikit-learn · W&B
+        - article [ref=e322]:
+          - generic "Your Trusted Circle demo" [ref=e324]
+          - generic [ref=e325]:
+            - heading [level=3] [ref=e326]:
+              - link "Your Trusted Circle" [ref=e327] [cursor=pointer]:
+                - /url: https://github.com/MightyTMZ/your_trusted_circle
+              - text: "2026"
+            - link "Devpost" [ref=e329] [cursor=pointer]:
+              - /url: https://devpost.com/software/ytc
+              - text: Devpost
+              - generic [aria-hidden] [ref=e330]: ↗
+          - paragraph [ref=e331]: "A group-safety platform whose Hono/MongoDB API runs check-in deadlines and alert escalation server-side, so incidents keep progressing even when phones disconnect. 12 merged PRs in 36 hours: consent-checked location sharing, hash-chained incident timelines, and voice-agent APIs, backed by a 169-test suite."
+          - paragraph [ref=e332]: TypeScript · Node.js · Hono · MongoDB · Railway
+        - article [ref=e333]:
+          - generic "Memory Influence Debugger demo" [ref=e335]
+          - generic [ref=e336]:
+            - heading [level=3] [ref=e337]:
+              - link "Memory Influence Debugger" [ref=e338] [cursor=pointer]:
+                - /url: https://github.com/jkaral/shadowrecall
+              - text: "2026"
+            - link "Devpost" [ref=e340] [cursor=pointer]:
+              - /url: https://devpost.com/software/shadowrecall
+              - text: Devpost
+              - generic [aria-hidden] [ref=e341]: ↗
+          - paragraph [ref=e342]: A Next.js tool that compares an agent's plans with and without memory, surfaces field-level differences, and flags likely memory influence before anything executes. After a 40-scenario benchmark exposed retrieval failures, a redesign raised regression correctness from 2.5% to 95%.
+          - paragraph [ref=e343]: Next.js · TypeScript · React · Backboard API · Vitest
+        - article [ref=e344]:
+          - generic "Personal Website demo" [ref=e346]
+          - heading [level=3] [ref=e348]:
+            - link "Personal Website" [ref=e349] [cursor=pointer]:
+              - /url: https://github.com/jkaral/personal-website
+            - text: "2026"
+          - paragraph [ref=e350]:
+            - text: Built from scratch with Next.js 15 and deployed on Vercel, with web analytics from a Vercel Bot. The server components pull live data (e.g. streaks on Duolingo or GitHub) and the group chat runs on Upstash Redis with one set per like so the count is live. I added features like the string tracer, the "uses bubble" and highlighting meaningful parts of my
+            - link "writing" [ref=e351] [cursor=pointer]:
+              - /url: "#writing"
+            - text: .
+          - paragraph [ref=e352]: Next.js · React · CSS · Redis · Vercel
+    - generic [ref=e354]:
+      - heading "Awards" [level=2] [ref=e355]
+      - list [ref=e356]:
+        - listitem [ref=e357]:
+          - link "International Climate Science Olympiad Champion certificate (full size)":
+            - /url: /images/awards/climate-olympiad-2024.jpg
+            - img "International Climate Science Olympiad Champion certificate"
+          - generic [ref=e358]:
+            - heading "International Climate Science Olympiad Champion ClimateScience Olympiad" [level=3] [ref=e359]:
+              - text: International Climate Science Olympiad Champion
+              - generic [ref=e360]: ClimateScience Olympiad
+            - paragraph [ref=e361]: Awarded a $3,500 USD cash prize and a sponsored trip to Baku, Azerbaijan for COP29.
+            - paragraph [ref=e362]: "2024"
+    - generic [ref=e364]:
+      - heading "Writing" [level=2] [ref=e365]
+      - list [ref=e366]:
+        - listitem [ref=e367]:
+          - generic [ref=e368]:
+            - heading [level=3] [ref=e369]:
+              - link "What Yann LeCun Taught Me About the Limits of Language" [ref=e370] [cursor=pointer]:
+                - /url: /writing/yann-lecun-limits-of-language
+            - paragraph [ref=e371]: The data wall, model collapse, and why a four-year-old has seen more than an LLM
+          - generic [ref=e372]: Nov 11, 2026
+        - listitem [ref=e373]:
+          - generic [ref=e374]:
+            - heading [level=3] [ref=e375]:
+              - link "Critiquing Transactional Altruism and the Erosion of Genuine Community Service among Youth" [ref=e376] [cursor=pointer]:
+                - /url: /writing/transactional-altruism
+            - paragraph [ref=e377]: Thoughts on Uni Apps and their Effects on the pursuit of Altruism
+          - generic [ref=e378]: March 2026
+    - generic [ref=e380]:
+      - heading "Hobbies" [level=2] [ref=e381]
+      - generic [ref=e382]:
+        - article [ref=e383]:
+          - generic:
+            - img "Rugby"
+          - generic [ref=e384]:
+            - heading "Rugby" [level=3] [ref=e385]
+            - paragraph [ref=e386]: During my short career on the Varsity Rugby team I played as a right winger, and, on occasion, blindside flanker (scrum in the photo). As my first contact sport, it taught me resilience and endurance.
+        - article [ref=e387]:
+          - generic:
+            - img "Kickboxing + BJJ"
+          - generic [ref=e388]:
+            - heading [level=3] [ref=e389]:
+              - text: Kickboxing + BJJ @
+              - link "The Academy ↗" [ref=e390] [cursor=pointer]:
+                - /url: https://www.google.com/maps/place/The+Academy+Toronto/data=!4m2!3m1!1s0x0:0x2d3e94d392d94ea1?sa=X&ved=1t:2428&ictx=111
+            - paragraph [ref=e391]: I started both kickboxing and BJJ in June 2026 after years of being a dedicated UFC fan (Volk is my GOAT). It's been an important part of my discipline and athletic growth.
+        - article [ref=e392]:
+          - link "My Currently Reading shelf on Fable" [ref=e394] [cursor=pointer]:
+            - /url: https://fable.co/fabler/yianni-256745595137
+            - img "The Picture of Dorian Gray cover" [ref=e395]
+            - img "The Will to Power cover" [ref=e396]
+            - img "Another Country cover" [ref=e397]
+            - img "The Rebel cover" [ref=e398]
+          - generic [ref=e399]:
+            - heading "Reading" [level=3] [ref=e400]
+            - paragraph [ref=e401]: Currently reading
+            - list [ref=e402]:
+              - listitem [ref=e403]:
+                - emphasis [ref=e404]: The Picture of Dorian Gray
+                - generic [ref=e405]: — Oscar Wilde
+              - listitem [ref=e406]:
+                - emphasis [ref=e407]: The Will to Power
+                - generic [ref=e408]: — Friedrich Nietzsche
+              - listitem [ref=e409]:
+                - emphasis [ref=e410]: Another Country
+                - generic [ref=e411]: — James Baldwin
+              - listitem [ref=e412]:
+                - emphasis [ref=e413]: The Rebel
+                - generic [ref=e414]: — Albert Camus
+            - paragraph [ref=e415]:
+              - text: 11 books finished ·
+              - link "My shelf on Fable ↗" [ref=e416] [cursor=pointer]:
+                - /url: https://fable.co/fabler/yianni-256745595137
+        - article [ref=e417]:
+          - link "246-day Duolingo streak" [ref=e693] [cursor=pointer]:
+            - /url: https://www.duolingo.com/profile/Yianni868569
+            - generic [aria-hidden] [ref=e420]:
+              - generic [ref=e421]: ES
+              - text: ¡Hola!
+            - generic [aria-hidden] [ref=e422]:
+              - generic [ref=e423]: IT
+              - text: Ciao!
+            - generic [aria-hidden] [ref=e424]:
+              - generic [ref=e425]: FR
+              - text: Bonjour!
+            - generic [ref=e426]:
+              - generic [aria-hidden] [ref=e427]: 🔥
+              - generic [ref=e428]: "246"
+              - generic [ref=e429]: day streak
+              - generic [ref=e430]: since Feb 10, 2026
+          - generic [ref=e431]:
+            - heading "Learning Languages" [level=3] [ref=e432]
+            - paragraph [ref=e433]: Speaking
+            - list [ref=e434]:
+              - listitem [ref=e435]: Spanish A2
+              - listitem [ref=e436]: French B2
+              - listitem [ref=e437]: Greek Native
+            - paragraph [ref=e438]: On Duolingo
+            - list [ref=e439]:
+              - listitem [ref=e440]:
+                - text: Spanish
+                - generic [ref=e441]: 10,823 XP
+              - listitem [ref=e442]:
+                - text: Italian
+                - generic [ref=e443]: 1,093 XP
+              - listitem [ref=e444]:
+                - text: French
+                - generic [ref=e445]: 484 XP
+            - paragraph [ref=e446]:
+              - link "My Duolingo profile ↗" [ref=e447] [cursor=pointer]:
+                - /url: https://www.duolingo.com/profile/Yianni868569
+    - generic [ref=e449]:
+      - heading "Uses" [level=2] [ref=e450]
+      - generic [ref=e452]:
+        - button "Uses what I use daily ✦" [ref=e453] [cursor=pointer]:
+          - generic [ref=e454]:
+            - generic [ref=e455]: Uses
+            - generic [ref=e456]: what I use daily ✦
+        - generic [aria-hidden]:
+          - generic: Click Me
+    - generic [ref=e466]:
+      - heading "Contact" [level=2] [ref=e467]
+      - generic [ref=e468]:
+        - generic [ref=e469]:
+          - paragraph [ref=e470]: You're more than welcome to reach out if you'd like to discuss opportunities, have a quick chat, or just to say hi! I'm always looking forward to meeting new people.
+          - generic [ref=e471]:
+            - link "j.karal2008@gmail.com" [ref=e472] [cursor=pointer]:
+              - /url: mailto:j.karal2008@gmail.com
+            - link "GitHub" [ref=e476] [cursor=pointer]:
+              - /url: https://github.com/jkaral
+            - link "LinkedIn" [ref=e480] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/john-karakoulas
+            - link "X" [ref=e484] [cursor=pointer]:
+              - /url: https://x.com/yiannibuilds
+        - generic [ref=e488]:
+          - generic [ref=e489]:
+            - generic [ref=e490]:
+              - generic [ref=e491]: Full Name *
+              - textbox "Full Name" [ref=e492]
+            - generic [ref=e493]:
+              - generic [ref=e494]: Email Address *
+              - textbox "Email Address" [ref=e495]
+          - generic [ref=e496]:
+            - generic [ref=e497]:
+              - text: Company
+              - emphasis [ref=e498]: (optional)
+            - textbox "Company (optional)" [ref=e499]
+          - generic [ref=e500]:
+            - generic [ref=e501]: Message *
+            - textbox "Message" [ref=e502]
+          - generic [ref=e503]:
+            - generic [ref=e504]:
+              - text: GitHub
+              - emphasis [ref=e505]: (optional)
+            - textbox "GitHub (optional)" [ref=e506]:
+              - /placeholder: github.com/username
+          - generic [ref=e508]:
+            - text: Website
+            - textbox [ref=e509]
+          - paragraph [ref=e510]: "* Required"
+          - button "Send message" [ref=e511] [cursor=pointer]
+    - generic [ref=e514]:
+      - generic [ref=e515]:
+        - heading "Inspirations" [level=2] [ref=e516]
+        - paragraph [ref=e517]: The people, art and things that shape how I think.
+        - tablist "View" [ref=e518]:
+          - tab "carousel" [selected] [ref=e519] [cursor=pointer]
+          - tab "gallery" [ref=e521] [cursor=pointer]
+      - generic [ref=e523]:
+        - 'region "Inspirations: backgammon board" [ref=e694]':
+          - generic:
+            - generic [ref=e525] [cursor=pointer]:
+              - generic [ref=e526]:
+                - img "the blacker the berry the sweeter the juice"
+              - generic [ref=e527]:
+                - text: "001"
+                - heading "the blacker the berry the sweeter the juice" [level=3] [ref=e528]
+                - paragraph [ref=e529]: the epitome of counter culture from one of my favourite (and arguably the best) rapper OAT
+            - generic [ref=e530] [cursor=pointer]:
+              - generic [ref=e531]:
+                - img "Yukio Mishima"
+              - generic [ref=e532]:
+                - text: "002"
+                - heading "Yukio Mishima" [level=3] [ref=e533]
+                - paragraph [ref=e534]: a closeted gay man that led the nationalists of post-wwii japan; one of the most interesting people i've read about
+            - generic [ref=e535] [cursor=pointer]:
+              - generic [ref=e536]:
+                - img "chicken joe"
+              - generic [ref=e537]:
+                - text: "003"
+                - heading "chicken joe" [level=3] [ref=e538]
+                - paragraph [ref=e539]: the epitome of "chill"; my reminder to, sometimes, take things slow
+            - generic [ref=e540] [cursor=pointer]:
+              - generic [ref=e541]:
+                - img "cloud runners"
+              - generic [ref=e542]:
+                - text: "004"
+                - heading "cloud runners" [level=3] [ref=e543]
+                - paragraph [ref=e544]: hands down the most comfortable sneakers ive ever worn (not sponsored)
+            - generic [ref=e545] [cursor=pointer]:
+              - generic [ref=e546]:
+                - img "mma gloves"
+              - generic [ref=e547]:
+                - text: "005"
+                - heading "mma gloves" [level=3] [ref=e548]
+                - paragraph [ref=e549]: "my #1 instrument of stress-relief and discipline building"
+            - generic [ref=e550] [cursor=pointer]:
+              - generic [ref=e551]:
+                - img "backgammon board"
+              - generic [ref=e552]:
+                - text: "006"
+                - heading "backgammon board" [level=3] [ref=e553]
+                - paragraph [ref=e554]: a game I played as a kid with my grandpa (παππού)
+            - generic [ref=e555] [cursor=pointer]:
+              - generic [ref=e556]:
+                - img "uniqlo blank hoodie"
+              - generic [ref=e557]:
+                - text: "007"
+                - heading "uniqlo blank hoodie" [level=3] [ref=e558]
+                - paragraph [ref=e559]: my go-to sweatshirt
+            - generic [ref=e560] [cursor=pointer]:
+              - generic [ref=e561]:
+                - img "man united"
+              - generic [ref=e562]:
+                - text: "008"
+                - heading "man united" [level=3] [ref=e563]
+                - paragraph [ref=e564]: "this club is an emotional rollercoaster #glazersout"
+            - generic [ref=e565] [cursor=pointer]:
+              - generic [ref=e566]:
+                - img "olympiacos"
+              - generic [ref=e567]:
+                - text: "009"
+                - heading "olympiacos" [level=3] [ref=e568]
+                - paragraph [ref=e569]: είσαι στο μυαλοοοοοοοοο κάτι μαγικοοοοοοοοο...
+            - generic [ref=e570] [cursor=pointer]:
+              - generic [ref=e571]:
+                - img "ucl ball"
+              - generic [ref=e572]:
+                - text: "010"
+                - heading "ucl ball" [level=3] [ref=e573]
+                - paragraph [ref=e574]: some of my best soccer memories was playing with the prime favela baller
+            - generic [ref=e575] [cursor=pointer]:
+              - generic [ref=e576]:
+                - img "hasty market"
+              - generic [ref=e577]:
+                - text: "011"
+                - heading "hasty market" [level=3] [ref=e578]
+                - paragraph [ref=e579]: the best one's @ davisville station
+            - generic [ref=e580] [cursor=pointer]:
+              - generic [ref=e581]:
+                - img "γιουβαρλάκια"
+              - generic [ref=e582]:
+                - text: "012"
+                - heading "γιουβαρλάκια" [level=3] [ref=e583]
+                - paragraph [ref=e584]: my favourite homecooked meal
+            - generic [ref=e585] [cursor=pointer]:
+              - generic [ref=e586]:
+                - img "Tobias Fünke"
+              - generic [ref=e587]:
+                - text: "013"
+                - heading "Tobias Fünke" [level=3] [ref=e588]
+                - paragraph [ref=e589]: character from arrested development, top 3 david cross performances
+            - generic [ref=e590] [cursor=pointer]:
+              - generic [ref=e591]:
+                - img "λουξ"
+              - generic [ref=e592]:
+                - text: "014"
+                - heading "λουξ" [level=3] [ref=e593]
+                - paragraph [ref=e594]: greek version of fanta
+            - generic [ref=e595] [cursor=pointer]:
+              - generic [ref=e596]:
+                - img "the mandem"
+              - generic [ref=e597]:
+                - text: "015"
+                - heading "the mandem" [level=3] [ref=e598]
+                - paragraph [ref=e599]: or at least two of them
+            - generic [ref=e600] [cursor=pointer]:
+              - generic [ref=e601]:
+                - img "can of dc"
+              - generic [ref=e602]:
+                - text: "016"
+                - heading "can of dc" [level=3] [ref=e603]
+                - paragraph [ref=e604]: best grey loot refreshment
+            - generic [ref=e605] [cursor=pointer]:
+              - generic [ref=e606]:
+                - img "curtis blue vinyl"
+              - generic [ref=e607]:
+                - text: "017"
+                - heading "curtis blue vinyl" [level=3] [ref=e608]
+                - paragraph [ref=e609]: first vinyl i ever bought on my first trip to san francisco
+            - generic [ref=e610] [cursor=pointer]:
+              - generic [ref=e611]:
+                - img "slugterra"
+              - generic [ref=e612]:
+                - text: "018"
+                - heading "slugterra" [level=3] [ref=e613]
+                - paragraph [ref=e614]: my favourite childhood show
+            - generic [ref=e615] [cursor=pointer]:
+              - generic [ref=e616]:
+                - img "pink polo"
+              - generic [ref=e617]:
+                - text: "019"
+                - heading "pink polo" [level=3] [ref=e618]
+                - paragraph [ref=e619]: my favourite colour on my favourite shirt
+            - generic [ref=e620] [cursor=pointer]:
+              - generic [ref=e621]:
+                - img "skis"
+              - generic [ref=e622]:
+                - text: "020"
+                - heading "skis" [level=3] [ref=e623]
+                - paragraph [ref=e624]: been skiing since i was 3 yrs
+        - generic [ref=e625]:
+          - button "Spin backwards" [ref=e626] [cursor=pointer]: ←
+          - generic [ref=e627]: 006 / 020
+          - button "Spin forwards" [ref=e628] [cursor=pointer]: →
+    - region "Banner" [ref=e629]:
+      - generic [ref=e631]:
+        - img [aria-hidden]:
+          - generic: "@YIANNI"
+  - contentinfo [ref=e652]:
+    - generic [ref=e653]:
+      - paragraph [ref=e657]: © 2026 Yianni Karakoulas
+      - paragraph [ref=e658]: Designed and built by Yianni Karakoulas.
+  - button "Open Next.js Dev Tools" [ref=e664] [cursor=pointer]
+  - alert [ref=e668]

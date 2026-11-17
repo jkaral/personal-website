@@ -47,6 +47,9 @@ const site = {
       text: "Τα αγαθά κόποις κτώνται",
       translation: "Good things are acquired through toil.",
       source: "Socrates",
+      // Speaker button beside the quote plays this recording ("" hides the button)
+      audio: "/audio/socrates-quote.m4a",
+      audioNote: "hear it in greek", // handwritten note pointing at the button ("" hides it)
     },
     // Each paragraph is either a plain string, or a list of pieces where a piece
     // can be a link with a logo: { text, url, logo }.
