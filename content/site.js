@@ -297,8 +297,8 @@ const site = {
         items: [
           { name: "Notion", url: "https://www.notion.so", icon: "/images/icons/notion.svg" },
           { name: "Obsidian", url: "https://obsidian.md", icon: "/images/icons/obsidian.svg", color: "#7C3AED" },
-          { name: "Claude", url: "https://claude.ai", icon: "/images/icons/claude.svg", color: "#D97757" },
-          { name: "ChatGPT", url: "https://chatgpt.com", icon: "/images/icons/openai.svg" },
+          { name: "Claude Code", url: "https://claude.com/product/claude-code", icon: "/images/icons/claudecode.svg", color: "#D97757" },
+          { name: "Codex", url: "https://openai.com/codex", icon: "/images/icons/codex.svg" },
           { name: "Google Calendar", url: "https://calendar.google.com", icon: "/images/icons/googlecalendar.svg", color: "#4285F4" },
           { name: "Git", url: "https://git-scm.com", icon: "/images/icons/git.svg", color: "#F05032" },
           { name: "VS Code", url: "https://code.visualstudio.com", icon: "/images/icons/vscode.svg", color: "#007ACC" },
