@@ -1,123 +1,7 @@
 /* ============ Theme tokens (edit colors here) ============ */
-:root {
-  --bg: #faf7f2;
-  --surface: #ffffff;
-  --text: #211f1c;
-  --body: #4a4844;
-  --muted: #6d747b;
-  --border: #e8e3da;
-  --chip: #f1ece3;
-  --ok: #2f9e5b;
-  --warn: #c98a1b;
-  --banner-bg: #111110;
-  --banner-text: #ffffff;
-  --highlight: #fbec8f;
-  --accent: var(--text);      /* buttons, logo, icon circles, link hovers */
-  --on-accent: var(--bg);     /* text/icons sitting on the accent */
-  --dot: #0d99ff;             /* active tab dot */
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #141311;
-    --surface: #1c1b18;
-    --text: #f2efe9;
-    --body: #c9c5bd;
-    --muted: #8f949a;
-    --border: #2d2b27;
-    --chip: #24221e;
-    --banner-bg: #000000;
-    --highlight: rgba(234, 200, 60, .32);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #141311;
-  --surface: #1c1b18;
-  --text: #f2efe9;
-  --body: #c9c5bd;
-  --muted: #8f949a;
-  --border: #2d2b27;
-  --chip: #24221e;
-  --banner-bg: #000000;
-  --highlight: rgba(234, 200, 60, .32);
-  color-scheme: dark;
-}
-
-/* ============ Alternative palettes ============ */
-/* Pick one with `palette` in content/site.js ("cream" = the original look above). */
-
-/* "sky": sky blue #0099FF, cloudy white #FDFDFE, lime #E0F354 */
-:root[data-palette="sky"] {
-  --bg: #fdfdfe;
-  --surface: #ffffff;
-  --text: #0b1f33;
-  --body: #3a4a5c;
-  --muted: #6b7a8c;
-  --border: #e3eaf2;
-  --chip: #eef5fc;
-  --accent: #0099ff;
-  --on-accent: #ffffff;
-  --dot: #0099ff;
-  --highlight: #e0f354;
-  --banner-bg: #0099ff;
-  --banner-text: #fdfdfe;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root[data-palette="sky"]:not([data-theme="light"]) {
-    --bg: #07111c;
-    --surface: #0d1b2a;
-    --text: #fdfdfe;
-    --body: #c3cfdc;
-    --muted: #8597aa;
-    --border: #1c2b3b;
-    --chip: #12233a;
-    --highlight: rgba(224, 243, 84, .38);
-    --banner-bg: #0077cc;
-    color-scheme: dark;
-  }
-}
-:root[data-palette="sky"][data-theme="dark"] {
-  --bg: #07111c;
-  --surface: #0d1b2a;
-  --text: #fdfdfe;
-  --body: #c3cfdc;
-  --muted: #8597aa;
-  --border: #1c2b3b;
-  --chip: #12233a;
-  --highlight: rgba(224, 243, 84, .38);
-  --banner-bg: #0077cc;
-  color-scheme: dark;
-}
-:root[data-palette="sky"] ::selection { background: #e0f354; color: #0b1f33; }
-
-/* "punk": red-orange #F42902 background, snowy white #FDFDFF text, mint #83FD80 accents */
-:root[data-palette="punk"] {
-  --bg: #f42902;
-  --surface: #d62300;                    /* inputs, cards */
-  --text: #fdfdff;
-  --body: rgba(253, 253, 255, .92);
-  --muted: rgba(253, 253, 255, .8);
-  --border: rgba(253, 253, 255, .32);
-  --chip: rgba(253, 253, 255, .14);
-  --accent: #83fd80;
-  --on-accent: #1a0703;                  /* dark ink on the mint */
-  --dot: #83fd80;
-  --req: #83fd80;                        /* required-field asterisks */
-  --highlight: #83fd80;
-  --banner-bg: #170603;
-  --banner-text: #fdfdff;
-  color-scheme: dark;
-}
-/* "punk" stays red-orange in both light and dark mode */
-:root[data-palette="punk"] .prose mark { color: #1a0703; }
-:root[data-palette="punk"] ::selection { background: #83fd80; color: #1a0703; }
-:root[data-palette="punk"] input::placeholder, :root[data-palette="punk"] textarea::placeholder { color: rgba(253, 253, 255, .6); }
-
-/* "jet": pure black & white. Light mode = white page / black text, dark mode = black page / white text.
+/* Pure black & white. Light mode = white page / black text, dark mode = black page / white text.
    The banner is always solid in the text colour, with its @YIANNI letters in the page colour. */
-:root[data-palette="jet"] {
+:root {
   --bg: #ffffff;
   --surface: #f5f5f5;
   --text: #000000;
@@ -125,32 +9,34 @@
   --muted: rgba(0, 0, 0, .6);
   --border: #e5e5e5;
   --chip: #f0f0f0;
-  --accent: #000000;
-  --on-accent: #ffffff;
-  --dot: #000000;
+  --ok: #2f9e5b;
+  --warn: #c98a1b;
+  --accent: #000000;          /* buttons, logo, icon circles, link hovers */
+  --on-accent: #ffffff;       /* text/icons sitting on the accent */
+  --dot: #000000;             /* active tab dot */
   --highlight: rgba(250, 220, 90, .6);
   --banner-bg: #000000;
   --banner-text: #ffffff;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
-  :root[data-palette="jet"]:not([data-theme="light"]) {
+  :root:not([data-theme="light"]) {
     --bg: #000000; --surface: #0d0d0d; --text: #ffffff; --body: #ffffff; --muted: rgba(255, 255, 255, .65);
     --border: #262626; --chip: #161616; --accent: #ffffff; --on-accent: #000000; --dot: #ffffff;
     --highlight: rgba(250, 220, 90, .35); --banner-bg: #ffffff; --banner-text: #000000; color-scheme: dark;
   }
 }
-:root[data-palette="jet"][data-theme="dark"] {
+:root[data-theme="dark"] {
   --bg: #000000; --surface: #0d0d0d; --text: #ffffff; --body: #ffffff; --muted: rgba(255, 255, 255, .65);
   --border: #262626; --chip: #161616; --accent: #ffffff; --on-accent: #000000; --dot: #ffffff;
   --highlight: rgba(250, 220, 90, .35); --banner-bg: #ffffff; --banner-text: #000000; color-scheme: dark;
 }
-:root[data-palette="jet"] ::selection { background: var(--text); color: var(--bg); }
+::selection { background: var(--text); color: var(--bg); }
 
 
 /* ============ Base ============ */
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0; background: var(--bg); color: var(--body);
@@ -172,7 +58,8 @@ p { margin: 0 0 1em; }
 .underline:hover { border-color: var(--accent); }
 
 /* ============ Top bar ============ */
-.topbar { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 45%, transparent); backdrop-filter: blur(12px) saturate(1.4); -webkit-backdrop-filter: blur(12px) saturate(1.4); border-bottom: 1px solid var(--border); }
+/* not floating: the logo, links and icons sit at the top of the page and scroll away with it */
+.topbar { position: relative; z-index: 50; }
 .topbar-inner { max-width: 1120px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; gap: 32px; }
 .topbar nav { display: flex; gap: 24px; flex: 1; overflow-x: auto; scrollbar-width: none; }
 .topbar nav a { text-decoration: none; color: var(--body); font-size: 15px; white-space: nowrap; padding: 2px 0; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
@@ -268,7 +155,7 @@ p { margin: 0 0 1em; }
 .quote figcaption span { font-style: normal; }
 .quote-line { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
 .quote-line blockquote { margin-bottom: 0; }
-/* read-aloud button: uses palette tokens so it follows the site palette + light/dark theme */
+/* read-aloud button: uses the theme tokens so it follows light/dark mode */
 .read-aloud {
   flex: none; display: inline-grid; place-items: center; width: 38px; height: 38px;
   border-radius: 50%; border: 1px solid var(--border); background: var(--chip); color: var(--accent);
@@ -563,7 +450,6 @@ p { margin: 0 0 1em; }
   box-decoration-break: slice; -webkit-box-decoration-break: slice; transition: background-size var(--hl-dur, .6s) cubic-bezier(.6, 0, .3, 1); }
 .hl-scroll mark.lit { background-size: 100% 100%; }
 .page-title.hl-scroll mark { padding: 0 .1em; margin: 0 -.04em; } /* big title: slimmer stroke so lines don't overlap */
-:root[data-palette="punk"] .prose.hl-scroll mark:not([data-lit]) { color: var(--text); } /* dark ink only once the highlight is under it */
 .prose hr { border: 0; border-top: 1px solid var(--border); margin: 3em 0 0; }
 .prose .bibliography p { font-size: 14px; line-height: 1.6; padding-left: 2em; text-indent: -2em; margin-bottom: .9em; color: var(--muted); overflow-wrap: anywhere; }
 .prose .bibliography a { color: var(--muted); }
@@ -993,7 +879,7 @@ body { overflow-x: clip; }                                   /* full-bleed banne
 :is(.underline, .inline, .project-link, .essay-link, .prose a, .form-note a):hover,
 .logo-link:hover > span, .contact-links a:hover > span { text-decoration-color: var(--accent); }
 
-/* ---- Stacking: the top bar always stays above page content (incl. videos on iPhone Safari) ---- */
+/* ---- Stacking: the top bar (and the chat note hanging under it) stays above page content (incl. videos on iPhone Safari) ---- */
 .topbar { z-index: 100; }
 .pile, .shot.video { isolation: isolate; } /* keep their videos' z-index inside the card */
 

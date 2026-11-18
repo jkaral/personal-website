@@ -1,0 +1,242 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - button "Collapse social links" [expanded] [ref=e6] [cursor=pointer]:
+        - img "Social menu"
+      - link "X (Twitter)" [ref=e7] [cursor=pointer]:
+        - /url: https://x.com/byjustinwu
+      - link "GitHub" [ref=e11] [cursor=pointer]:
+        - /url: https://github.com/justinwuzijin
+      - link "LinkedIn" [ref=e15] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/justinzijinwu/
+      - link "YouTube" [ref=e19] [cursor=pointer]:
+        - /url: https://www.youtube.com/@byjustinwu
+      - link "Email" [ref=e23] [cursor=pointer]:
+        - /url: mailto:jz3wu@uwaterloo.ca
+    - button "Enter orange mode" [ref=e28] [cursor=pointer]:
+      - generic [ref=e29]: ⇧
+      - generic [ref=e30]: shift
+      - generic [ref=e31]: +
+      - generic [ref=e32]: o
+    - button "Switch to dark mode" [ref=e33] [cursor=pointer]
+  - generic [ref=e36]:
+    - generic [ref=e37]:
+      - complementary [ref=e38]:
+        - navigation "Main navigation" [ref=e39]:
+          - list [ref=e40]:
+            - listitem [ref=e41]:
+              - button "me" [ref=e42] [cursor=pointer]
+            - listitem [ref=e43]:
+              - button "experience" [ref=e44] [cursor=pointer]
+            - listitem [ref=e45]:
+              - button "drawer of thoughts" [ref=e46] [cursor=pointer]
+            - listitem [ref=e47]:
+              - button "bookshelf" [ref=e48] [cursor=pointer]
+            - listitem [ref=e49]:
+              - button "my mind" [ref=e50] [cursor=pointer]
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - button "Previous track" [ref=e54] [cursor=pointer]
+              - generic [ref=e57] [cursor=pointer]:
+                - img "ALERTARAP cover" [ref=e59]
+                - button "Play" [ref=e61]
+              - button "Next track" [ref=e64] [cursor=pointer]
+            - generic [ref=e67]: ALERTARAP
+      - main [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - button "Home" [ref=e77] [cursor=pointer]:
+              - img "Zijin" [ref=e78]
+            - generic [ref=e80] [cursor=pointer]:
+              - img "Justin Wu"
+              - img "吴子晋" [ref=e81]
+            - generic [ref=e82]:
+              - link "Systems Design Engineering" [ref=e83] [cursor=pointer]:
+                - /url: https://uwaterloo.ca/future-students/programs/systems-design-engineering
+              - text: "@UWaterloo"
+          - generic [ref=e84]:
+            - heading [level=2] [ref=e85]:
+              - text: i build at the
+              - generic [ref=e86]: intersection
+              - text: of
+              - generic [ref=e87]: software
+              - text: ","
+              - generic [ref=e88]: design
+              - text: ", and"
+              - generic [ref=e89]: film
+            - list [ref=e90]:
+              - listitem [ref=e91]:
+                - text: "> shipping"
+                - link "@Tesla" [ref=e92] [cursor=pointer]:
+                  - /url: https://www.tesla.com/robotaxi
+                - text: Design Studio
+              - listitem [ref=e93]:
+                - text: "> launched"
+                - link "Vit" [ref=e94] [cursor=pointer]:
+                  - /url: "#vit"
+                - text: ","
+                - generic [ref=e95]: git for video editors
+                - text: (
+                - generic [ref=e96]: 2M+ views
+                - text: ", vc interest, nyc/sf offers)"
+              - listitem [ref=e97]:
+                - text: "> growing a"
+                - link "Figma" [ref=e98] [cursor=pointer]:
+                  - /url: https://x.com/FigmaAtWaterloo
+                - generic [ref=e99]: campus community
+                - text: "@Waterloo"
+              - listitem [ref=e100]:
+                - text: "> produced videos for"
+                - link "Cursor" [ref=e101] [cursor=pointer]:
+                  - /url: https://x.com/byjustinwu/status/1994919272112394702?s=20
+                - text: ","
+                - link "Figma" [ref=e102] [cursor=pointer]:
+                  - /url: https://www.instagram.com/p/DQIJVimEhUf/
+                - text: ","
+                - link "Polarity" [ref=e103] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/posts/sammytourani_today-polarity-crossed-10-billion-lines-ugcPost-7452949679216160768-R9rg/?utm_source=social_share_send&utm_medium=ios_app&rcm=ACoAACbeX6UBJM6X9dOnYs54MLaMB__AlzEcnq0&utm_campaign=share_via
+                - text: ","
+                - link "Socratica" [ref=e104] [cursor=pointer]:
+                  - /url: https://www.instagram.com/p/DRu8q9ZEq7S/
+              - listitem [ref=e105]:
+                - text: "> built"
+                - link "CamCraft" [ref=e106] [cursor=pointer]:
+                  - /url: "#camcraft"
+                - text: ", a"
+                - generic [ref=e107]: 3D photography simulator
+                - text: to shoot
+                - generic [ref=e108]: sensor-accurate images
+              - listitem [ref=e109]:
+                - text: "> producing"
+                - generic [ref=e110]: short films
+                - text: "on"
+                - link "five24" [ref=e111] [cursor=pointer]:
+                  - /url: https://www.instagram.com/five24.film/
+                - text: "&"
+                - link "@byjustinwu" [ref=e112] [cursor=pointer]:
+                  - /url: https://www.youtube.com/@byjustinwu
+              - listitem [ref=e113]:
+                - text: "> seeking"
+                - generic [ref=e114]: summer 2027
+                - generic [ref=e115]: internship opportunities
+          - generic [ref=e116]:
+            - heading "projects" [level=2] [ref=e117]
+            - generic [ref=e119]:
+              - article [ref=e121]:
+                - link [ref=e122] [cursor=pointer]:
+                  - /url: https://x.com/lucashjin/status/2036805674491875424?s=20
+                  - img "Vit" [ref=e124]
+                - generic [ref=e125]:
+                  - generic [ref=e126]:
+                    - heading "Vit" [level=3] [ref=e127]
+                    - generic [ref=e129]: mar '26
+                  - paragraph [ref=e131]: Vit is a version control system for DaVinci Resolve. It allows video teams collaborate in parallel the same way developers do with code.
+              - article [ref=e133]:
+                - link [ref=e134] [cursor=pointer]:
+                  - /url: https://syde30.com/
+                - generic [ref=e137]:
+                  - generic [ref=e138]:
+                    - heading "Class Webring" [level=3] [ref=e139]
+                    - generic [ref=e141]: mar '26
+                  - paragraph [ref=e143]: A polaroid-style webring for the Systems Design Engineering class of 2030.
+              - article [ref=e145]:
+                - link [ref=e146] [cursor=pointer]:
+                  - /url: https://camcraft.vercel.app/
+                  - img "CamCraft" [ref=e148]
+                - generic [ref=e149]:
+                  - generic [ref=e150]:
+                    - heading "CamCraft" [level=3] [ref=e151]
+                    - generic [ref=e153]: feb '26
+                  - paragraph [ref=e155]: A virtual playground for exploring cameras and locations. Step into a 360-degree panoramic view of anywhere in the world. Navigate a scene using trained hand gestures and take photos rendered with camera-specific settings.
+              - article [ref=e157]:
+                - link [ref=e158] [cursor=pointer]:
+                  - /url: https://useskema.vercel.app/
+                  - img "Skema" [ref=e160]
+                - generic [ref=e161]:
+                  - generic [ref=e162]:
+                    - heading "Skema" [level=3] [ref=e163]
+                    - generic [ref=e165]: jan '26
+                  - paragraph [ref=e167]: An npm package that transforms your localhost into an interactive whiteboard where you can draw new components, edit directly on your live website.
+              - article [ref=e169]:
+                - link [ref=e170] [cursor=pointer]:
+                  - /url: https://www.cisionai.tech/
+                  - img "Cision" [ref=e172]
+                - generic [ref=e173]:
+                  - generic [ref=e174]:
+                    - heading "Cision" [level=3] [ref=e175]
+                    - generic [ref=e177]: jan '26
+                  - paragraph [ref=e179]: Cursor for city planners. Built an interactive 3D heatmap that redesigns dangerous Toronto intersections. Users can find high-risk locations, generate improvements in real-time, and chat with voice agent stakeholders.
+    - contentinfo [ref=e180]:
+      - generic [ref=e181]:
+        - img "@JUSTINWU"
+        - generic [ref=e183]:
+          - img "wilson evolution"
+        - generic [ref=e184]:
+          - img "marty supreme"
+        - generic [ref=e185]:
+          - img "dr. martens"
+        - generic [ref=e186]:
+          - img "stay winning"
+        - generic [ref=e187]:
+          - img "disposable camera"
+        - generic [ref=e188]:
+          - img "youtube channel stills art"
+        - generic [ref=e189]:
+          - img "kafka on the shore"
+        - generic [ref=e190]:
+          - img "polar skate big boys"
+        - generic [ref=e191]:
+          - img "triple b"
+        - generic [ref=e192]:
+          - img "mahjong"
+        - generic [ref=e193]:
+          - img "systems design engineering"
+        - generic [ref=e194]:
+          - img "haruki murakami"
+        - generic [ref=e195]:
+          - img "sony a7iv"
+        - generic [ref=e196]:
+          - img "orange arcteryx beta"
+        - generic [ref=e197]:
+          - img "magic noodle"
+        - generic [ref=e198]:
+          - img "hoka clifton 9s"
+        - generic [ref=e199]:
+          - img "waterbottle"
+        - generic [ref=e200]:
+          - img "oakley carabiner"
+        - generic [ref=e201]:
+          - img "thisisneverthat t-shirt"
+        - generic [ref=e202]:
+          - img "onitsuka tiger mexico 66"
+        - generic [ref=e203]:
+          - img "tyler the creator"
+        - generic [ref=e204]:
+          - img "thisisneverthat beanie"
+        - generic [ref=e205]:
+          - img "yunshang rice noodle"
+        - generic [ref=e206]:
+          - img "taekwondo headgear"
+        - generic [ref=e207]:
+          - img "roasted seaweed"
+        - generic [ref=e208]:
+          - img "marshall major iv"
+        - generic [ref=e209]:
+          - img "salomon xt-6"
+        - generic [ref=e210]:
+          - img "加多寶"
+      - generic [ref=e211]:
+        - generic [ref=e212]:
+          - button "Home" [ref=e214] [cursor=pointer]:
+            - img "Zijin" [ref=e215]
+          - generic [ref=e216]:
+            - paragraph [ref=e217]: "@2026 justinzwu.com"
+            - img "Justin Wu signature"
+          - generic [ref=e219]:
+            - button "Previous member" [ref=e220] [cursor=pointer]: ←
+            - link [ref=e221] [cursor=pointer]:
+              - /url: https://www.uwaterloo.network
+              - img "UWaterloo Webring" [ref=e222]
+            - button "Next member" [ref=e223] [cursor=pointer]: →
+        - paragraph [ref=e225]: Designed on Figma. Built with Next.js. Deployed on Vercel. Sound from Envato. Help from V0 and Cursor.
+  - alert [ref=e226]

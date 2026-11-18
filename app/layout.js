@@ -69,7 +69,7 @@ const themeScript = `try{var t=localStorage.getItem('theme');if(t)document.docum
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-palette={site.palette || "cream"} className={`${sans.variable} ${playfair.variable} ${greek.variable} ${cycleFonts}`} suppressHydrationWarning>
+    <html lang="en" className={`${sans.variable} ${playfair.variable} ${greek.variable} ${cycleFonts}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

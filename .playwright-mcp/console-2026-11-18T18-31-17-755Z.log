@@ -1,0 +1,13 @@
+[    1411ms] [WARNING] Allow attribute will take precedence over 'allowfullscreen'. @ webpack://embed-standalone-prod/./src/iframe-api/src/v1/index.ts?:319
+[   70326ms] [WARNING] com.microsoft.playready.recommendation: Internal testing is highly recommended prior to enabling PlayReady playback on Windows. Failure to do so may cause application instability or playback errors.
+
+Before generating a request, setServerCertificate() must be called with a valid server certificate. Otherwise, generateRequest() could fail. @ https://embed-cdn.spotifycdn.com/_next/static/chunks/5039.a54f1bd47316601a.js:1
+[   70326ms] [WARNING] com.microsoft.playready.recommendation.3000: Internal testing is highly recommended prior to enabling PlayReady playback on Windows. Failure to do so may cause application instability or playback errors.
+
+Before generating a request, setServerCertificate() must be called with a valid server certificate. Otherwise, generateRequest() could fail. @ https://embed-cdn.spotifycdn.com/_next/static/chunks/5039.a54f1bd47316601a.js:1
+[   71726ms] [WARNING] com.microsoft.playready.recommendation: Internal testing is highly recommended prior to enabling PlayReady playback on Windows. Failure to do so may cause application instability or playback errors.
+
+Before generating a request, setServerCertificate() must be called with a valid server certificate. Otherwise, generateRequest() could fail. @ https://embed-cdn.spotifycdn.com/_next/static/chunks/5039.a54f1bd47316601a.js:1
+[   71726ms] [WARNING] com.microsoft.playready.recommendation.3000: Internal testing is highly recommended prior to enabling PlayReady playback on Windows. Failure to do so may cause application instability or playback errors.
+
+Before generating a request, setServerCertificate() must be called with a valid server certificate. Otherwise, generateRequest() could fail. @ https://embed-cdn.spotifycdn.com/_next/static/chunks/5039.a54f1bd47316601a.js:1

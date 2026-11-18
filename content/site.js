@@ -7,10 +7,7 @@
 
 const site = {
   // ---------- Basics ----------
-  // Colour palette: "cream" (original warm look), "sky" (blue / cloudy white / lime)
-  // "punk" (red-orange / snowy white / mint) or "jet" (black #000000 / white #FFFFFF).
-  // Palettes live at the top of app/globals.css.
-  palette: "jet",
+  // Colours: black & white, with a light and a dark mode (tokens at the top of app/globals.css).
   particles: false, // floating-particle animated background (true to turn back on)
   name: "Yianni Karakoulas",
   greekName: "Γιάννη", // shown when you hover over your name
