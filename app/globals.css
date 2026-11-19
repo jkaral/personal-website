@@ -405,7 +405,16 @@ p { margin: 0 0 1em; }
 .collage-reset:hover { background: rgba(255,255,255,.22); }
 
 /* ============ Footer ============ */
-.footer-inner { max-width: 1200px; margin: 0 auto; padding: 28px 24px 40px; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 4px 16px; font-size: 14px; }
+/* footer row: [logo + copyright + credit | signature | empty]. The outer columns are equal (1fr each),
+   so the signature sits exactly in the centre of the window */
+.footer-bar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; padding: 28px clamp(24px, 3vw, 48px) 40px; }
+.footer-bar .footer-sign { grid-column: 2; grid-row: 1; }
+.footer-inner { grid-column: 1; grid-row: 1; justify-self: start; display: grid; grid-template-columns: auto auto; align-items: center; gap: 4px 16px; font-size: 14px; }
+@media (max-width: 700px) { /* phones: signature centred on its own line, credits on the left underneath */
+  .footer-bar { grid-template-columns: 1fr; }
+  .footer-bar .footer-sign { grid-column: 1; grid-row: 1; justify-self: center; }
+  .footer-inner { grid-column: 1; grid-row: 2; justify-self: start; }
+}
 .footer-inner .logo { grid-row: span 2; }
 .footer p { margin: 0; color: var(--text); }
 .footer p.muted { color: var(--muted); font-size: 13px; }
@@ -613,12 +622,15 @@ a.uses-tile { cursor: pointer; }
 /* ============ Left sidebar (wide screens), like justinzwu.com ============ */
 .sidebar { display: none; }
 @media (min-width: 1100px) {
-  body { padding-left: 332px; }               /* sidebar is wide enough for the 2x record player */
+  /* --side = the space the sidebar takes on the left (wide enough for the 2x record player).
+     Page padding, the full-width top bar and the full-width banner all use it, so they stay in sync. */
+  :root { --side: 332px; }
+  body { padding-left: var(--side); }
   .topbar nav { display: none; }              /* section links live in the sidebar instead */
-  .topbar { margin-left: -332px; }            /* top bar stays full width */
+  .topbar { margin-left: calc(-1 * var(--side)); } /* top bar stays full width */
   .top-actions { margin-left: auto; }        /* keep the icons on the right */
   .sidebar { display: flex; flex-direction: column; align-items: flex-end; gap: 56px; position: fixed; z-index: 40;
-    top: 104px; left: 0; width: 322px; padding-right: 22px; }
+    top: 104px; left: 0; width: calc(var(--side) - 10px); padding-right: 22px; }
 }
 .sidebar-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
 .sidebar-link { color: var(--muted); text-decoration: none; font-size: 15px; padding: 2px 0; text-align: right; transition: color .2s ease; display: inline-block; }
@@ -629,33 +641,41 @@ a.uses-tile { cursor: pointer; }
 /* record player at 2x size (icon sizes in VinylPlayer.js are doubled here via the svg rules) */
 .vinyl { display: flex; flex-direction: column; align-items: center; width: 300px; }
 .vinyl-row { display: flex; align-items: center; gap: 16px; }
-.vinyl-btn svg, .vinyl-play svg { width: 24px; height: 24px; }
+.vinyl-btn svg { width: 24px; height: 24px; }
+.vinyl-play svg { width: 12px; height: 12px; }
+/* in the sidebar: line the straight bar of the ⏭ button up with where the menu words end.
+   The 216px button row (40 + 16 + 104px record + 16 + 40) is centred in the 300px player (42px in
+   from its right edge) and the bar ends 14px inside its button (8px padding + 6px of the 24px icon)
+   -> shift the player 56px right */
+.sidebar .vinyl { margin-right: -56px; }
 .vinyl-btn { background: none; border: 0; padding: 8px; color: var(--muted); cursor: pointer; display: grid; place-items: center; transition: color .2s; }
 .vinyl-btn:hover { color: var(--text); }
-.vinyl-disc { position: relative; width: 130px; height: 130px; padding: 0; border: 0; cursor: pointer; display: block; flex: none; border-radius: 50%; overflow: hidden; background: #111; -webkit-tap-highlight-color: transparent;
-  box-shadow: 0 3px 10px rgba(0,0,0,.3), inset 0 0 0 1px rgba(255,255,255,.06); animation: vinyl-spin 3s linear infinite; animation-play-state: paused; }
-.vinyl-disc.spinning { animation-play-state: running; }
+.vinyl-disc { position: relative; width: 104px; height: 104px; padding: 0; border: 0; cursor: pointer; display: block; flex: none; border-radius: 50%; overflow: hidden; background: #111; -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3), inset 0 0 0 1px rgba(255,255,255,.06); }
+/* only the record's surface (cover + grooves) spins; the play/pause badge in the middle stays still */
+.vinyl-disc img, .vinyl-disc::after { animation: vinyl-spin 3s linear infinite; animation-play-state: paused; }
+.vinyl-disc.spinning img, .vinyl-disc.spinning::after { animation-play-state: running; }
 .vinyl-disc:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .vinyl-disc img { display: block; pointer-events: none; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .vinyl-disc::after { content: ""; position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
   background: repeating-radial-gradient(circle, transparent 0 2px, rgba(0,0,0,.14) 2px 3px); -webkit-mask: radial-gradient(circle, transparent 38%, #000 40%); mask: radial-gradient(circle, transparent 38%, #000 40%); }
-.vinyl-hole { position: absolute; top: 50%; left: 50%; width: 28px; height: 28px; margin: -14px 0 0 -14px; border-radius: 50%; background: var(--bg); box-shadow: 0 0 0 4px #111; }
-/* play/pause badge sits in the middle of the record and shows on hover (always while paused) */
-.vinyl-play { position: absolute; top: 50%; left: 50%; width: 60px; height: 60px; margin: -30px 0 0 -30px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; pointer-events: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,.35); animation: none; transition: opacity .2s ease, scale .2s ease; }
-.vinyl-disc.spinning .vinyl-play { opacity: 0; scale: .8; }
-.vinyl-disc.spinning:hover .vinyl-play, .vinyl-disc.spinning:focus-visible .vinyl-play { opacity: 1; scale: 1; }
-.vinyl-disc.spinning .vinyl-play { animation: vinyl-spin 3s linear infinite reverse; } /* keep the button upright while the disc spins */
+.vinyl-hole { position: absolute; top: 50%; left: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: var(--bg); box-shadow: 0 0 0 3px #111; }
+/* play/pause badge: always visible, fixed in the middle of the record (it doesn't spin) */
+.vinyl-play { position: absolute; top: 50%; left: 50%; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.35); }
 @keyframes vinyl-spin { to { transform: rotate(360deg); } }
-.vinyl-title { display: flex; align-items: center; gap: 10px; margin: 20px 0 0; font-size: 22px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text); }
-.vinyl-title svg { width: 20px; height: 20px; flex: none; }
+.vinyl-title { display: flex; align-items: center; gap: 7px; margin: 14px 0 0; font-size: 15px; line-height: 1.3; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text); }
+.vinyl-title svg { width: 13px; height: 13px; flex: none; }
 /* long titles/artists wrap onto a second line: keep every line centered under the record */
 .vinyl-title { max-width: 100%; justify-content: center; text-align: center; }
-.vinyl-artist { margin: 2px 0 0; font-size: 22px; color: var(--muted); max-width: 100%; text-align: center; }
+.vinyl-artist { margin: 3px 0 0; font-size: 14px; line-height: 1.3; color: var(--muted); max-width: 100%; text-align: center; }
 .vinyl-spotify { width: 150px; height: 0; overflow: hidden; margin-top: 0; border-radius: 12px; transition: height .3s ease, margin .3s ease; }
 .vinyl-spotify.show { height: 80px; margin-top: 10px; }
 .vinyl-spotify iframe { display: block; border: 0; }
-@media (prefers-reduced-motion: reduce) { .vinyl-disc, .vinyl-disc.spinning .vinyl-play { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .vinyl-disc img, .vinyl-disc::after { animation: none; } }
+
+/* Uses bubble at the bottom of the Projects section */
+.projects-uses { margin-top: 96px; }
 
 /* ============ Size-up: every section larger (delete this block to go back) ============ */
 .container { max-width: 1440px; padding: 0 clamp(20px, 3vw, 48px); }
@@ -769,13 +789,23 @@ a.uses-tile { cursor: pointer; }
 /* ============ Banner: no visible box — the collage floats on the page, edge to edge ============ */
 body { overflow-x: clip; }                                   /* full-bleed banner without sideways scrolling */
 .banner-wrap { padding: 32px 0 0; width: 100vw; margin-left: calc(50% - 50vw); }
-@media (min-width: 1100px) { .banner-wrap { margin-left: -190px; } } /* reach under the sidebar to the window's left edge */
+@media (min-width: 1100px) {
+  .banner-wrap { margin-left: calc(-1 * var(--side)); } /* reach past the sidebar's space to the window's left edge */
+  .footer { margin-left: calc(-1 * var(--side)); } /* full window width too, so the signature centres on the window */
+}
+/* the banner and footer slide OVER the fixed sidebar as you scroll down, so the sidebar is cut off
+   right where the banner starts and the banner always shows edge to edge */
+.banner-wrap, .footer { position: relative; z-index: 45; background: var(--bg); }
 .banner { background: transparent; border-radius: 0; box-shadow: none; border: 0; overflow: visible; }
-.sidebar { transition: opacity .35s ease, transform .35s ease; }
-.sidebar.is-hidden { opacity: 0; transform: translateX(-12px); pointer-events: none; } /* out of the way of the full-width banner */
+/* barrier: nothing in the banner (collage photos, on first load or after dragging) can show past its
+   left, right or bottom edge. The top keeps a small allowance so @YIANNI can bleed in from the page. */
+.banner { clip-path: inset(-12px 0 0 0); }
 
 /* Banner: solid, always the text colour (white in dark mode, black in light mode) */
 .banner { background: var(--banner-bg); }
+/* @YIANNI: 94% of the banner's width, stretched. BannerCollage.js sets its top/height so the letters
+   start just above the banner's top edge (bleeding in from the page, since --banner-text is the page
+   colour) and end at 70% of the banner's height; any "@" tail below the bottom edge is clipped. */
 .banner-handle-svg { position: absolute; top: 0; left: 50%; height: 100%; transform: translateX(-50%); pointer-events: none; overflow: visible; }
 .banner-handle-svg text { fill: var(--banner-text); }
 
@@ -907,3 +937,30 @@ body { overflow-x: clip; }                                   /* full-bleed banne
   font: 500 12px/1 var(--font-sans), sans-serif; letter-spacing: .02em; color: var(--muted); white-space: nowrap; user-select: none; }
 .theme-hint + .theme-toggle { margin-left: 8px; }
 @media (max-width: 760px), (hover: none) { .theme-hint { display: none; } } /* phones/tablets have no keyboard shortcut */
+
+/* ============ Landing page text sizes (homepage only), on justinzwu.com's scale ============ */
+/* His landing page: one huge name, then everything compact: 18px for the tagline, subtitle and
+   section headings, 14.4px (0.9rem) with 1.6 line-height for body text. The big name stays big. */
+.home .greeting { font-size: 18px; }
+.home .tagline { font-size: 18px; line-height: 1.5; }
+.home .btn { font-size: 14.4px; }
+.home .section-title { font-size: 18px; margin-bottom: 24px; }
+.home .quote blockquote { font-size: 18px; line-height: 1.3; }
+.home .quote figcaption { font-size: 14.4px; }
+.home .lead { font-size: 14.4px; line-height: 1.6; }
+.home .sub { font-size: 18px; margin: 28px 0 12px; }
+.home .bullets li { font-size: 14.4px; line-height: 1.6; }
+.home .recently-label, .home .recently-caption { font-size: 14.4px; }
+.home .row-title { font-size: 18px; margin-bottom: 8px; }
+.home .row-desc, .home .dates { font-size: 14.4px; }
+
+/* ============ Footer signature (centred at the bottom of every page) ============ */
+.footer-sign { display: inline-flex; align-items: center; }
+.footer-sign img { height: 60px; width: auto; display: block; }
+.footer-sign .sign-dark { display: none; }
+:root[data-theme="dark"] .footer-sign .sign-light { display: none; }
+:root[data-theme="dark"] .footer-sign .sign-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .footer-sign .sign-light { display: none; }
+  :root:not([data-theme="light"]) .footer-sign .sign-dark { display: block; }
+}

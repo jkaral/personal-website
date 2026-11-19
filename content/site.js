@@ -179,7 +179,7 @@ const site = {
       // a list so "writing section" can link down to the Writing section
       description: [
         "Built from scratch with Next.js 15 and deployed on Vercel, with web analytics from a Vercel Bot. The server components pull live data (e.g. streaks on Duolingo or GitHub) and the group chat runs on Upstash Redis with one set per like so the count is live. I added features like the string tracer, the \"uses bubble\" and highlighting meaningful parts of my ",
-        { text: "writing", url: "#writing" },
+        { text: "writing", url: "/writing" },
         ".",
       ],
       stack: ["Next.js", "React", "CSS", "Redis", "Vercel"],
@@ -359,14 +359,14 @@ const site = {
         ratio: 1,
         x: 14, y: 30, w: 19, r: -5,
         title: "the blacker the berry the sweeter the juice",
-        caption: "the epitome of counter culture from one of my favourite (and arguably the best) rapper OAT",
+        caption: "best rap album OAT",
       },
       {
         src: "/images/banner/mishima.webp",
         ratio: 1.284,
         x: 62, y: 16, w: 20, r: 3,
         title: "Yukio Mishima",
-        caption: "a closeted gay man that led the nationalists of post-wwii japan; one of the most interesting people i've read about",
+        caption: "the most conflicted person i've read",
       },
       {
         src: "/images/banner/chicken-joe.webp",

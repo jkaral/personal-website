@@ -1,0 +1,110 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - button "Feedback group chat" [ref=e10] [cursor=pointer]
+          - generic [aria-hidden]:
+            - generic: as an engineer i'm always looking for feedback
+        - link "Email" [ref=e13] [cursor=pointer]:
+          - /url: mailto:j.karal2008@gmail.com
+        - link "GitHub" [ref=e16] [cursor=pointer]:
+          - /url: https://github.com/jkaral
+        - link "LinkedIn" [ref=e19] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/john-karakoulas
+        - link "X" [ref=e22] [cursor=pointer]:
+          - /url: https://x.com/yiannibuilds
+        - generic [aria-hidden] [ref=e25]: ⇧shift+y
+        - button "Toggle dark mode" [ref=e26] [cursor=pointer]
+  - complementary "Sections" [ref=e30]:
+    - navigation [ref=e31]:
+      - list [ref=e32]:
+        - listitem [ref=e33]:
+          - link "about" [ref=e34] [cursor=pointer]:
+            - /url: /#about
+        - listitem [ref=e35]:
+          - link "experience" [ref=e36] [cursor=pointer]:
+            - /url: /experience
+        - listitem [ref=e37]:
+          - link "projects" [ref=e38] [cursor=pointer]:
+            - /url: /projects
+        - listitem [ref=e39]:
+          - link "awards" [ref=e40] [cursor=pointer]:
+            - /url: /awards
+        - listitem [ref=e41]:
+          - link "writing" [ref=e42] [cursor=pointer]:
+            - /url: /writing
+        - listitem [ref=e43]:
+          - link "hobbies" [ref=e44] [cursor=pointer]:
+            - /url: /hobbies
+        - listitem [ref=e45]:
+          - link "my mind" [ref=e46] [cursor=pointer]:
+            - /url: /my-mind
+        - listitem [ref=e47]:
+          - link "contact" [ref=e48] [cursor=pointer]:
+            - /url: /contact
+        - listitem [ref=e49]:
+          - link "resume" [ref=e50] [cursor=pointer]:
+            - /url: /resume.pdf
+    - generic [ref=e51]:
+      - generic [ref=e52]:
+        - button "Previous / restart" [ref=e53] [cursor=pointer]
+        - button "Play Shimmer" [ref=e56] [cursor=pointer]
+        - button "Next" [ref=e58] [cursor=pointer]
+      - paragraph [ref=e61]:
+        - generic [ref=e64]: Shimmer
+      - paragraph [ref=e65]: Fuel
+  - main [ref=e66]:
+    - generic [ref=e68]:
+      - heading "Contact" [level=2] [ref=e69]
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - paragraph [ref=e72]: You're more than welcome to reach out if you'd like to discuss opportunities, have a quick chat, or just to say hi! I'm always looking forward to meeting new people.
+          - generic [ref=e73]:
+            - link "j.karal2008@gmail.com" [ref=e74] [cursor=pointer]:
+              - /url: mailto:j.karal2008@gmail.com
+            - link "GitHub" [ref=e78] [cursor=pointer]:
+              - /url: https://github.com/jkaral
+            - link "LinkedIn" [ref=e82] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/john-karakoulas
+            - link "X" [ref=e86] [cursor=pointer]:
+              - /url: https://x.com/yiannibuilds
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - generic [ref=e92]:
+              - generic [ref=e93]: Full Name *
+              - textbox "Full Name" [ref=e94]
+            - generic [ref=e95]:
+              - generic [ref=e96]: Email Address *
+              - textbox "Email Address" [ref=e97]
+          - generic [ref=e98]:
+            - generic [ref=e99]:
+              - text: Company
+              - emphasis [ref=e100]: (optional)
+            - textbox "Company (optional)" [ref=e101]
+          - generic [ref=e102]:
+            - generic [ref=e103]: Message *
+            - textbox "Message" [ref=e104]
+          - generic [ref=e105]:
+            - generic [ref=e106]:
+              - text: GitHub
+              - emphasis [ref=e107]: (optional)
+            - textbox "GitHub (optional)" [ref=e108]:
+              - /placeholder: github.com/username
+          - generic [ref=e110]:
+            - text: Website
+            - textbox [ref=e111]
+          - paragraph [ref=e112]: "* Required"
+          - button "Send message" [ref=e113] [cursor=pointer]
+  - region "Banner" [ref=e114]:
+    - generic [ref=e116]:
+      - img [aria-hidden]:
+        - generic: "@YIANNI"
+  - contentinfo [ref=e137]:
+    - generic [ref=e140]:
+      - paragraph [ref=e144]: © 2026 Yianni Karakoulas
+      - paragraph [ref=e145]: Designed and built by Yianni Karakoulas.

@@ -15,6 +15,7 @@ import ParticleBackground from "../components/ParticleBackground";
 import SwirlLine from "../components/SwirlLine";
 import Sidebar from "../components/Sidebar";
 import FeedbackChat from "../components/FeedbackChat";
+import { Banner } from "../components/sections";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -43,26 +44,26 @@ export const metadata = {
 
 const nav = [
   { href: "/#about", label: "About" },
-  { href: "/#work", label: "Experience" },
-  { href: "/#writing", label: "Writing" },
-  { href: "/#hobbies", label: "Hobbies" },
-  { href: "/#uses", label: "Uses" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/experience", label: "Experience" },
+  { href: "/writing", label: "Writing" },
+  { href: "/hobbies", label: "Hobbies" },
+  { href: "/my-mind", label: "My mind" },
+  { href: "/contact", label: "Contact" },
   { href: "/resume.pdf", label: "Resume", newTab: true }, // smaller screens (the sidebar has it on wide ones)
 ];
 
-// Sidebar sections (wide screens). ids match the sections on the homepage.
+// Sidebar links (wide screens). About and Writing are sections on the homepage ("/#id");
+// every other section has its own page.
 const sideLinks = [
-  { id: "about", label: "about" },
-  { id: "work", label: "experience" },
-  { id: "projects", label: "projects" },
-  { id: "awards", label: "awards" },
-  { id: "writing", label: "writing" },
-  { id: "hobbies", label: "hobbies" },
-  { id: "uses", label: "uses" },
-  { id: "inspirations", label: "inspirations" },
-  { id: "contact", label: "contact" },
-].filter((l) => l.id !== "awards" || site.awards?.length > 0); // no empty awards section to jump to
+  { id: "about", label: "about", href: "/#about" },
+  { id: "work", label: "experience", href: "/experience" },
+  { id: "projects", label: "projects", href: "/projects" },
+  { id: "awards", label: "awards", href: "/awards" },
+  { id: "writing", label: "writing", href: "/writing" },
+  { id: "hobbies", label: "hobbies", href: "/hobbies" },
+  { id: "my-mind", label: "my mind", href: "/my-mind" },
+  { id: "contact", label: "contact", href: "/contact" },
+].filter((l) => l.id !== "awards" || site.awards?.length > 0); // no empty awards page to link to
 
 // Applies the saved light/dark choice before paint (no flash).
 const themeScript = `try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}`;
@@ -105,14 +106,24 @@ export default function RootLayout({ children }) {
         </header>
         <Sidebar links={sideLinks} songs={site.music} />
         <main id="main">{children}</main>
+        {/* the banner sits at the bottom of every page */}
+        <Banner />
+        {/* footer: signature centred across the window; logo + copyright + credit on the right */}
         <footer className="footer">
-          <div className="footer-inner">
-            <span className="logo small" aria-hidden="true">
-              <span className="en"><img className="logo-light" src="/images/logo/hands.webp" alt="" /><img className="logo-dark" src="/images/logo/hands-dark.webp" alt="" /></span>
-              <span className="gr"><img src="/images/logo/greek-flag.svg" alt="" /></span>
+          <div className="footer-bar">
+            {/* handwritten signature: black ink in light mode, white ink in dark mode */}
+            <span className="footer-sign" aria-hidden="true">
+              <img className="sign-light" src="/images/signature/signature-black.png" alt="" />
+              <img className="sign-dark" src="/images/signature/signature-white.png" alt="" />
             </span>
-            <p>© {new Date().getFullYear()} {site.name}</p>
-            <p className="muted">{site.footer}</p>
+            <div className="footer-inner">
+              <span className="logo small" aria-hidden="true">
+                <span className="en"><img className="logo-light" src="/images/logo/hands.webp" alt="" /><img className="logo-dark" src="/images/logo/hands-dark.webp" alt="" /></span>
+                <span className="gr"><img src="/images/logo/greek-flag.svg" alt="" /></span>
+              </span>
+              <p>© {new Date().getFullYear()} {site.name}</p>
+              <p className="muted">{site.footer}</p>
+            </div>
           </div>
         </footer>
         <Reveal />

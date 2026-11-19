@@ -1,25 +1,52 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import VinylPlayer from "./VinylPlayer";
 import { loopPoints, toPath } from "./PencilCircle";
 
-// Left sidebar (wide screens only), like justinzwu.com: right-aligned section links that
-// darken on hover, the section you're reading is highlighted, and a vinyl player below.
+// Left sidebar (wide screens only), like justinzwu.com: right-aligned links that darken on hover.
+// Most sections have their own page (highlighted while you're on it); on the homepage, the
+// homepage section you're reading (about / writing) is highlighted as you scroll. The vinyl
+// player sits below the links.
 export default function Sidebar({ links, songs }) {
-  const [active, setActive] = useState(links[0]?.id);
-  const [hidden, setHidden] = useState(false); // fade out while the full-width banner is on screen
-
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+  const homeLinks = links.filter((l) => l.href.startsWith("/#"));
+  const pageLink = links.find((l) => !l.href.startsWith("/#") && l.href === pathname);
+  const [scrolled, setScrolled] = useState(homeLinks[0]?.id);
+  const active = onHome ? scrolled : pageLink?.id;
+  // Always visible on every page (links + record player). When the full-width banner scrolls up to
+  // the sidebar's bottom edge, it pushes the sidebar up ahead of it (like a sticky header being pushed
+  // by the next section), so the record player and its song title stay readable right above the
+  // banner instead of being covered by it.
+  const asideRef = useRef(null);
   useEffect(() => {
+    const aside = asideRef.current;
     const banner = document.querySelector(".banner-wrap");
-    if (!banner || !("IntersectionObserver" in window)) return;
-    const io = new IntersectionObserver(([e]) => setHidden(e.intersectionRatio > 0.25), { threshold: [0, 0.25, 0.5] });
-    io.observe(banner);
-    return () => io.disconnect();
-  }, []);
+    if (!aside || !banner) return;
+    const GAP = 16; // px kept between the record player and the banner
+    const update = () => {
+      if (getComputedStyle(aside).display === "none") return; // narrow screens: no sidebar
+      const bottom = parseFloat(getComputedStyle(aside).top) + aside.offsetHeight; // un-pushed bottom edge
+      const push = Math.max(0, bottom + GAP - banner.getBoundingClientRect().top);
+      aside.style.transform = push ? `translateY(${-push}px)` : "";
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    const ro = new ResizeObserver(update); // e.g. a longer song title wrapping onto two lines
+    ro.observe(aside);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+      ro.disconnect();
+    };
+  }, [pathname]);
 
   useEffect(() => {
-    const sections = links.map((l) => document.getElementById(l.id)).filter(Boolean);
+    if (!onHome) return;
+    const sections = homeLinks.map((l) => document.getElementById(l.id)).filter(Boolean);
     if (!sections.length) return;
     const onScroll = () => {
       const line = window.innerHeight * 0.35; // the section crossing 35% down the screen is "current"
@@ -33,7 +60,7 @@ export default function Sidebar({ links, songs }) {
           current = s.id;
         }
       }
-      setActive(current);
+      setScrolled(current);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -42,15 +69,16 @@ export default function Sidebar({ links, songs }) {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, [links]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onHome, links]);
 
   return (
-    <aside className={`sidebar ${hidden ? "is-hidden" : ""}`} aria-label="Sections">
+    <aside ref={asideRef} className="sidebar" aria-label="Sections">
       <nav>
         <ul className="sidebar-list">
           {links.map((l) => (
             <li key={l.id}>
-              <a href={`/#${l.id}`} className={`sidebar-link ${active === l.id ? "active" : ""}`} aria-current={active === l.id ? "true" : undefined}>
+              <a href={l.href} className={`sidebar-link ${active === l.id ? "active" : ""}`} aria-current={active === l.id ? "true" : undefined}>
                 {l.label}
                 <MarkerCircle index={links.indexOf(l)} />
               </a>

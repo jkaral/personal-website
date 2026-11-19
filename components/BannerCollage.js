@@ -234,7 +234,7 @@ export default function BannerCollage({ handle, items: source }) {
 // its bottom edge (same width as before). Uses the letters' exact ink bounds, measured with canvas.
 function StretchedHandle({ text }) {
   const textRef = useRef(null);
-  const [box, setBox] = useState(null); // { vb, width }
+  const [box, setBox] = useState(null); // { vb, style }
 
   useLayoutEffect(() => {
     const measure = () => {
@@ -247,10 +247,26 @@ function StretchedHandle({ text }) {
       if ("letterSpacing" in ctx) ctx.letterSpacing = `${SIZE * -0.04}px`;
       const m = ctx.measureText(text);
       const left = m.actualBoundingBoxLeft, right = m.actualBoundingBoxRight;
-      const up = m.actualBoundingBoxAscent, down = m.actualBoundingBoxDescent;
-      // display width: same as the old CSS size clamp(80px, 17vw, 240px)
-      const fontPx = Math.min(240, Math.max(80, window.innerWidth * 0.17));
-      setBox({ vb: `${-left} ${-up} ${left + right} ${up + down}`, width: ((left + right) / SIZE) * fontPx });
+      const down = m.actualBoundingBoxDescent; // the "@"'s tail below the baseline
+      // the letters' cap height (not the "@", which can sit higher), so the letters themselves touch the top
+      const cap = ctx.measureText(text.replace(/[^A-Za-z]/g, "") || text).actualBoundingBoxAscent;
+
+      // Placement in the banner (H = banner height):
+      //  - top: the letters start BLEED px above the banner's top edge, in the strip of page background
+      //    above it. They're the page's colour, so they look like they bleed in from the page.
+      //  - bottom: the letters end (baseline) at BASELINE x H; the "@" tail hangs below and is cut off
+      //    at the banner's bottom edge if it reaches it.
+      const BLEED = 6; // px
+      const BASELINE = 0.7; // 1 = letters end at the bottom edge; smaller = moved up (bigger gap below)
+      const H = el.ownerSVGElement?.parentElement?.clientHeight || 0;
+      if (!H) return;
+      const capShare = cap / (cap + down); // share of the drawing above the baseline
+      const height = (BASELINE * H + BLEED) / capShare; // the whole drawing, cap top to tail bottom
+      const overBottom = Math.max(0, height - BLEED - H); // tail below the banner: cut off
+      setBox({
+        vb: `${-left} ${-cap} ${left + right} ${cap + down}`,
+        style: { top: -BLEED, height, clipPath: `inset(0 0 ${overBottom}px 0)` },
+      });
     };
     measure();
     document.fonts?.ready.then(measure);
@@ -263,7 +279,7 @@ function StretchedHandle({ text }) {
       className="banner-handle-svg"
       viewBox={box?.vb || "0 -150 1000 200"}
       preserveAspectRatio="none"
-      style={{ width: box ? `${box.width}px` : "75%" }}
+      style={{ width: "94%", ...(box?.style || {}) }} // stretched across almost (not quite) the whole banner
       aria-hidden="true"
     >
       <text ref={textRef} x="0" y="0" fontSize="200" style={{ fontFamily: "var(--font-sans), sans-serif", fontWeight: 900, letterSpacing: "-0.04em" }}>
