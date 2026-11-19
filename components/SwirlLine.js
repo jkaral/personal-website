@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 // One orange line that wanders down the page behind everything. On its way it loops around
 // each section title (like the sidebar's marker circles) and curls into the odd coil in between.
@@ -187,6 +188,7 @@ function toPath(pts) {
 }
 
 export default function SwirlLine() {
+  const pathname = usePathname();
   const svgRef = useRef(null);
   const pathRef = useRef(null);
 
@@ -279,6 +281,10 @@ export default function SwirlLine() {
       cancelAnimationFrame(raf);
     };
   }, []);
+
+  // not on the homepage: there the "now" list has its own hand-drawn circles and underlines instead
+  // (the effect above finds no <svg> and does nothing)
+  if (pathname === "/") return null;
 
   return (
     <svg ref={svgRef} className="swirl-line" aria-hidden="true" width="0" height="0">

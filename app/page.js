@@ -2,22 +2,27 @@ import site from "../content/site";
 import RecentlyStack from "../components/RecentlyStack";
 import NameCycle from "../components/NameCycle";
 import ContributionGraph from "../components/ContributionGraph";
-import ReadAloud from "../components/ReadAloud";
+import HandMark from "../components/HandMark";
+import CursorTrail from "../components/CursorTrail";
 import { Section } from "../components/sections";
 import { getGitHubContributions } from "../lib/live";
 
-// The landing page: hero and About (through the "Recently" photos).
+// The landing page: hero (intro, then GitHub activity beside the "now" list) and About (the "Recently" photos).
 // Every other section has its own page (app/experience, app/projects, app/writing, app/contact, ...).
 
 export const revalidate = 21600; // rebuild the page with fresh live data every 6 hours
 
 export default async function Home() {
   const contrib = await getGitHubContributions(site.live?.githubUsername);
-  const { about, hobbies } = site;
+  const { about } = site;
+  // order of the marked phrases down the list, so their marks draw in one after another
+  const markOrder = new Map(about.now.flat().filter((p) => p?.mark).map((p, k) => [p, k]));
 
   return (
     // .home: landing-page text sizes (see the "Landing page text sizes" block in globals.css)
     <div className="home">
+      {/* paintings that pop up under the mouse as it moves */}
+      <CursorTrail items={site.trail || []} />
       {/* Hero */}
       <section className="hero" id="top">
         <div className="hero-inner">
@@ -42,36 +47,21 @@ export default async function Home() {
             <a className="btn primary" href="/projects">View My Work</a>
             <a className="btn" href="/contact">Let&apos;s Talk</a>
           </div>
-          <ContributionGraph data={contrib} username={site.live?.githubUsername} showFrom={site.live?.githubShowFrom} trimUntil={site.live?.githubTrimUntil} />
-        </div>
-      </section>
-
-      {/* About */}
-      <Section id="about" title="About">
-        <div className={`about-grid ${about.recently.length ? "" : "single"}`}>
-          <div>
-            {about.quote && (
-              <figure className="quote">
-                <div className="quote-line">
-                  <blockquote lang="el">{about.quote.text}</blockquote>
-                  {about.quote.audio && (
-                    <ReadAloud audio={about.quote.audio} note={about.quote.audioNote} label="Hear the quote read aloud" />
-                  )}
-                </div>
-                <figcaption>
-                  “{about.quote.translation}”
-                  {about.quote.source && <span> — {about.quote.source}</span>}
-                </figcaption>
-              </figure>
-            )}
-            {about.bio.map((p, i) => {
-              const pieces = Array.isArray(p) ? p : [p];
-              const isLast = i === about.bio.length - 1;
-              return (
-                <p key={i} className="lead">
-                  {pieces.map((piece, j) =>
+          {/* right below the intro: GitHub activity on the left, what I'm doing now on the right */}
+          <div className="hero-now">
+            <ContributionGraph data={contrib} username={site.live?.githubUsername} showFrom={site.live?.githubShowFrom} trimUntil={site.live?.githubTrimUntil} />
+            {/* what I'm doing now: a list with ">" as the bullets */}
+            <ul className="now-list">
+              {about.now.map((line, i) => (
+                <li key={i}>
+                  {line.map((piece, j) =>
                     typeof piece === "string" ? (
                       <span key={j}>{piece}</span>
+                    ) : piece.mark ? (
+                      // hand-drawn circle / underline; they draw in one after another down the list
+                      <HandMark key={j} kind={piece.mark} seed={i * 13 + j * 7 + 3} delay={0.5 + (markOrder.get(piece) || 0) * 0.35}>
+                        {piece.text}
+                      </HandMark>
                     ) : (
                       <a key={j} className="logo-link" href={piece.url} target="_blank" rel="noreferrer">
                         {piece.logo && <img src={piece.logo} alt="" />}
@@ -79,29 +69,21 @@ export default async function Home() {
                       </a>
                     )
                   )}
-                  {isLast && hobbies.length > 0 && (
-                    <>
-                      {" "}
-                      <a className="underline" href="/hobbies">See my hobbies ↘</a>
-                    </>
-                  )}
-                </p>
-              );
-            })}
-            {about.exploring.length > 0 && (
-              <>
-                <h3 className="sub">What I&apos;m exploring</h3>
-                <ul className="bullets">
-                  {about.exploring.map((e) => (
-                    <li key={e}>{e}</li>
-                  ))}
-                </ul>
-              </>
-            )}
+                </li>
+              ))}
+            </ul>
           </div>
-          {about.recently.length > 0 && <RecentlyStack photos={about.recently} />}
         </div>
-      </Section>
+      </section>
+
+      {/* About: the "Recently" photos */}
+      {about.recently.length > 0 && (
+        <Section id="about" title="About">
+          <div className="about-recently">
+            <RecentlyStack photos={about.recently} />
+          </div>
+        </Section>
+      )}
     </div>
   );
 }

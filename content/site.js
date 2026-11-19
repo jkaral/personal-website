@@ -20,6 +20,27 @@ const site = {
   siteTitle: "Yianni Karakoulas",
   siteDescription: "Yianni Karakoulas — creating human-first software projects and exploring agentic AI.",
 
+  // ---------- Mouse trail (homepage): paintings pop up under the mouse as it moves ----------
+  // Public-domain paintings from Van Gogh's era to ~1930 (from Wikimedia Commons), in /public/images/trail.
+  // motion: "drift" (slow zoom across the canvas), "sway" (rocks side to side), "shimmer" (colours
+  // glow and shift); leave it out for a still painting.
+  trail: [
+    { src: "/images/trail/starry-night.jpg", title: "The Starry Night, Van Gogh (1889)", motion: "drift" },
+    { src: "/images/trail/sunflowers.jpg", title: "Sunflowers, Van Gogh (1888)" },
+    { src: "/images/trail/cafe-terrace.jpg", title: "Café Terrace at Night, Van Gogh (1888)" },
+    { src: "/images/trail/van-gogh-self-portrait.jpg", title: "Self-Portrait, Van Gogh (1887)", motion: "sway" },
+    { src: "/images/trail/water-lilies.jpg", title: "Water Lilies, Monet (1906)", motion: "drift" },
+    { src: "/images/trail/grande-jatte.jpg", title: "A Sunday on La Grande Jatte, Seurat (1884)" },
+    { src: "/images/trail/moulin-rouge.jpg", title: "At the Moulin Rouge, Toulouse-Lautrec (1892)" },
+    { src: "/images/trail/the-scream.jpg", title: "The Scream, Munch (1893)", motion: "sway" },
+    { src: "/images/trail/the-kiss.jpg", title: "The Kiss, Klimt (1908)", motion: "shimmer" },
+    { src: "/images/trail/la-danse.jpg", title: "Dance (I), Matisse (1909)", motion: "sway" },
+    { src: "/images/trail/composition-7.jpg", title: "Composition VII, Kandinsky (1913)", motion: "shimmer" },
+    { src: "/images/trail/black-square.jpg", title: "Black Square, Malevich (1915)" },
+    { src: "/images/trail/mondrian.jpg", title: "Composition II in Red, Blue and Yellow, Mondrian (1930)" },
+    { src: "/images/trail/american-gothic.jpg", title: "American Gothic, Grant Wood (1930)" },
+  ],
+
   // ---------- Live status (shown in the top bar and hero) ----------
   status: {
     available: true, // true = green dot, false = amber dot
@@ -48,25 +69,44 @@ const site = {
       audio: "/audio/socrates-quote.m4a",
       audioNote: "hear it in greek", // handwritten note pointing at the button ("" hides it)
     },
-    // Each paragraph is either a plain string, or a list of pieces where a piece
-    // can be a link with a logo: { text, url, logo }.
-    bio: [
-      "My grandma instilled this principle in me, and I have always strived to embody it. I apply it to everything, from building my own products and projects to athletic pursuits and building meaningful relationships. I always strive to do what I can, while I can.",
+    // "my why" (shown with the quote on the "my mind" page)
+    why: "My grandma's favourite quote to remind me of whenever she sees me working. It's my mantra, and I apply it whenever I build projects, lift weights or spar, or when I plan for what I want to do next.",
+    // What I'm doing now: a list with ">" as the bullets (homepage About section).
+    // Each line is a list of pieces; a piece is plain text, a link with a logo: { text, url, logo },
+    // or a phrase with a hand-drawn orange mark: { text, mark: "circle" | "underline" }.
+    now: [
       [
-        "I study Computer Science at the University of Toronto and work as a Quantitative Researcher at ",
+        { text: "nhl player market value modelling", mark: "underline" },
+        " @ ",
         {
           text: "The Quantitative Finance Club",
           url: "https://www.linkedin.com/company/the-quantitative-finance-club-university-of-toronto/posts/?feedView=all",
           logo: "/images/logos/qfc.png",
         },
-        ", and at ",
+      ],
+      [
+        "auditing brain2qwerty alongside meta labs scientists @ ",
         { text: "UTMIST", url: "https://www.utmist.ca/", logo: "/images/logos/utmist.png" },
         " and ",
         { text: "UTBIOME", url: "https://utbiome.skule.ca/", logo: "/images/logos/utbiome.png" },
-        " as a Machine Learning Engineer. Outside of school and work I enjoy mma, rugby, lifting, reading and learning languages.",
       ],
+      [
+        "working on ",
+        { text: "KAPSO", url: "https://github.com/Leeroo-AI/kapso" },
+        ", ",
+        { text: "a recursive research engine", mark: "circle" },
+        " @ ",
+        { text: "Leeroo-AI", url: "https://www.ycombinator.com/companies/leeroo", logo: "/images/logos/leeroo.png" },
+        " (YC P25)", // non-breaking space keeps "(YC P25)" on one line
+      ],
+      [
+        "currently ",
+        { text: "1 of 20 internationally", mark: "circle" },
+        " building with Claude Wildcard Scholarship, ",
+        { text: "project coming dec 2nd", mark: "underline" },
+      ],
+      [{ text: "seeking summer 2027 internships", mark: "underline" }],
     ],
-    exploring: ["Agent swarms", "ML for markets & healthcare", "Building human-focused products"],
     // "Recently" photo gallery
     recently: [
       // A video item: autoplays muted on top of the pile, with a sound toggle
@@ -351,7 +391,7 @@ const site = {
   banner: {
     handle: "@YIANNI", // giant text behind the collage
     // The same items also fill the carousel + gallery section above the banner
-    collectionTitle: "Inspirations",
+    collectionTitle: "my mind", // heading of the carousel + gallery on the "my mind" page
     collectionIntro: "The people, art and things that shape how I think.",
     items: [
       {

@@ -8,6 +8,7 @@ import Collection from "./Collection";
 import PencilCircle from "./PencilCircle";
 import YouTubeLoop from "./YouTubeLoop";
 import UsesBubble from "./UsesBubble";
+import ReadAloud from "./ReadAloud";
 import BannerCollage from "./BannerCollage";
 import { getEssays, formatDate } from "../lib/writing";
 
@@ -343,6 +344,30 @@ export function ContactSection() {
         </div>
         <ContactForm email={site.email} />
       </div>
+    </Section>
+  );
+}
+
+// "my why": the Socrates quote (with its read-aloud recording) and what it means to me.
+// Shown on the "my mind" page, above the carousel.
+export function WhySection() {
+  const { quote, why } = site.about;
+  if (!quote && !why) return null;
+  return (
+    <Section id="my-why" title="my why">
+      {quote && (
+        <figure className="quote">
+          <div className="quote-line">
+            <blockquote lang="el">{quote.text}</blockquote>
+            {quote.audio && <ReadAloud audio={quote.audio} note={quote.audioNote} label="Hear the quote read aloud" />}
+          </div>
+          <figcaption>
+            “{quote.translation}”
+            {quote.source && <span> — {quote.source}</span>}
+          </figcaption>
+        </figure>
+      )}
+      {why && <p className="lead">{why}</p>}
     </Section>
   );
 }

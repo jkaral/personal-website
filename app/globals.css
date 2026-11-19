@@ -36,7 +36,7 @@
 
 /* ============ Base ============ */
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; overflow-x: clip; } /* the full-width banner (100vw) is a scrollbar wider than the page: never let it scroll sideways */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0; background: var(--bg); color: var(--body);
@@ -964,3 +964,44 @@ body { overflow-x: clip; }                                   /* full-bleed banne
   :root:not([data-theme="light"]) .footer-sign .sign-light { display: none; }
   :root:not([data-theme="light"]) .footer-sign .sign-dark { display: block; }
 }
+
+/* ============ "Now" list on the homepage About section: ">" as the bullets (like justinzwu.com) ============ */
+.now-list { list-style: none; margin: 0 0 20px; padding: 0; }
+.now-list li { position: relative; padding-left: 1.4em; margin-bottom: 10px; font-size: 17px; line-height: 1.6; color: var(--body); }
+.now-list li::before { content: ">"; position: absolute; left: 0; top: 0; color: var(--muted); }
+.home .now-list li { font-size: 14.4px; }
+
+/* ---- Hand-drawn circles / underlines on phrases in the homepage "now" list (components/HandMark.js) ---- */
+.hand-marked { position: relative; white-space: nowrap; }
+.hand-mark { position: absolute; pointer-events: none; overflow: visible; }
+.hand-mark.circle { left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-1.5deg); }
+.hand-mark.underline { left: 0; bottom: -8px; }
+.hand-mark path { fill: none; stroke: #ff6a1a; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; opacity: .9;
+  stroke-dasharray: 1; stroke-dashoffset: 1; animation: pencil-draw .8s cubic-bezier(.5,.1,.35,1) forwards; animation-delay: var(--delay, .5s); }
+@media (prefers-reduced-motion: reduce) { .hand-mark path { stroke-dashoffset: 0; animation: none; } }
+/* a little more space between list lines so circles and underlines don't touch the next line */
+.now-list li { margin-bottom: 14px; }
+
+/* ============ Homepage intro row: GitHub activity on the left, the "now" list on the right ============ */
+/* max-width leaves room for the sidebar (--side, wide screens only), so on narrower windows the list
+   wraps under the graph instead of pushing the page sideways */
+.hero-now { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 56px; margin-top: 36px; width: max-content; max-width: calc(100vw - var(--side, 0px) - 64px); text-align: left; }
+.hero-now .contrib { margin-top: 0; flex: none; }
+.hero-now .now-list { margin: 0; max-width: 560px; }
+.home .about-recently { display: flex; justify-content: center; }
+
+/* ============ Mouse trail of paintings (components/CursorTrail.js), like justinzwu.com's popups ============ */
+.trail-layer { position: fixed; inset: 0; z-index: 15; pointer-events: none; overflow: visible; } /* under the sidebar (40) and top bar */
+/* flat and instant: no tilt, shadow or rounded corners; size + proportions are set per painting in JS */
+.trail-pop { position: fixed; translate: -50% -50%; overflow: hidden; pointer-events: none; animation: trail-pop .5s ease-in-out forwards; }
+.trail-pop img { display: block; width: 100%; height: 100%; object-fit: fill; } /* fill = stretched / squashed to the random shape */
+/* appears at 80% opacity (no fade-in), solid by 20%, fades out over the last 20% */
+@keyframes trail-pop { 0% { opacity: .8; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; } }
+/* the moving paintings (sped up to fit the half-second) */
+.trail-drift { animation: trail-drift .5s ease-out forwards; transform-origin: 30% 40%; }
+@keyframes trail-drift { from { transform: scale(1); } to { transform: scale(1.4) translate(-8%, -6%); } }
+.trail-sway { animation: trail-sway .25s ease-in-out infinite alternate; transform-origin: 50% 100%; }
+@keyframes trail-sway { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
+.trail-shimmer { animation: trail-shimmer .5s linear forwards; }
+@keyframes trail-shimmer { 0% { filter: hue-rotate(0deg) saturate(1); } 50% { filter: hue-rotate(60deg) saturate(1.7) brightness(1.15); } 100% { filter: hue-rotate(0deg) saturate(1); } }
+@media (max-width: 768px) { .trail-layer { display: none; } }
