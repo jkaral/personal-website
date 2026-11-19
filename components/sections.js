@@ -7,7 +7,6 @@ import ContactForm from "./ContactForm";
 import Collection from "./Collection";
 import PencilCircle from "./PencilCircle";
 import YouTubeLoop from "./YouTubeLoop";
-import UsesBubble from "./UsesBubble";
 import ReadAloud from "./ReadAloud";
 import BannerCollage from "./BannerCollage";
 import { getEssays, formatDate } from "../lib/writing";
@@ -208,10 +207,6 @@ export function ProjectsSection() {
           </article>
         ))}
       </div>
-      {/* Uses: floating bubble that opens into a grid of everything I use */}
-      <div className="projects-uses">
-        <UsesBubble intro={site.uses.intro} groups={site.uses.groups} />
-      </div>
     </Section>
   );
 }
@@ -348,13 +343,13 @@ export function ContactSection() {
   );
 }
 
-// "my why": the Socrates quote (with its read-aloud recording) and what it means to me.
-// Shown on the "my mind" page, above the carousel.
-export function WhySection() {
+// "my why": the Socrates quote (with its read-aloud recording) and what it means to me, without a
+// heading. Shown at the top of the work ethic page, beside the GitHub graph.
+export function WhyContent() {
   const { quote, why } = site.about;
   if (!quote && !why) return null;
   return (
-    <Section id="my-why" title="my why">
+    <div className="why">
       {quote && (
         <figure className="quote">
           <div className="quote-line">
@@ -368,7 +363,7 @@ export function WhySection() {
         </figure>
       )}
       {why && <p className="lead">{why}</p>}
-    </Section>
+    </div>
   );
 }
 

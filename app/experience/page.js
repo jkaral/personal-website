@@ -1,7 +1,6 @@
-import { WorkSection } from "../../components/sections";
+import { redirect } from "next/navigation";
 
-export const metadata = { title: "Experience" };
-
-export default function ExperiencePage() {
-  return <WorkSection />;
+// this section now lives on a combined page
+export default function Moved() {
+  redirect("/work-ethic#work");
 }

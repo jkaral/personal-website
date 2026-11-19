@@ -2,13 +2,13 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import VinylPlayer from "./VinylPlayer";
+import RecordShelf from "./RecordShelf";
 import { loopPoints, toPath } from "./PencilCircle";
 
 // Left sidebar (wide screens only), like justinzwu.com: right-aligned links that darken on hover.
 // Most sections have their own page (highlighted while you're on it); on the homepage, the
-// homepage section you're reading (about / writing) is highlighted as you scroll. The vinyl
-// player sits below the links.
+// homepage section you're reading (about) is highlighted as you scroll. The record player sits
+// below the links. Sizes and spacing follow justinzwu.com's side panel.
 export default function Sidebar({ links, songs }) {
   const pathname = usePathname();
   const onHome = pathname === "/";
@@ -28,8 +28,10 @@ export default function Sidebar({ links, songs }) {
     const GAP = 16; // px kept between the record player and the banner
     const update = () => {
       if (getComputedStyle(aside).display === "none") return; // narrow screens: no sidebar
-      const bottom = parseFloat(getComputedStyle(aside).top) + aside.offsetHeight; // un-pushed bottom edge
-      const push = Math.max(0, bottom + GAP - banner.getBoundingClientRect().top);
+      // the page is zoomed (html { zoom }): sizes below are in page px, the banner's position in screen px
+      const zoom = parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
+      const bottom = parseFloat(getComputedStyle(aside).top) + aside.offsetHeight; // un-pushed bottom edge (page px)
+      const push = Math.max(0, bottom + GAP - banner.getBoundingClientRect().top / zoom);
       aside.style.transform = push ? `translateY(${-push}px)` : "";
     };
     update();
@@ -93,7 +95,7 @@ export default function Sidebar({ links, songs }) {
           </li>
         </ul>
       </nav>
-      {songs?.length > 0 && <VinylPlayer songs={songs} />}
+      {songs?.length > 0 && <RecordShelf songs={songs} />}
     </aside>
   );
 }

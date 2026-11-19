@@ -1,7 +1,6 @@
-import { ProjectsSection } from "../../components/sections";
+import { redirect } from "next/navigation";
 
-export const metadata = { title: "Projects" };
-
-export default function ProjectsPage() {
-  return <ProjectsSection />;
+// this section now lives on a combined page
+export default function Moved() {
+  redirect("/work-ethic#projects");
 }

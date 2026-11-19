@@ -33,5 +33,49 @@ export default function Reveal() {
       b.disconnect();
     };
   }, []);
+
+  // Opened with a section anchor (e.g. "/#about" from another page): the browser jumps there before
+  // images and fonts above it have loaded, then the page keeps growing and the section ends up lower.
+  // So for the first few seconds, whenever the page changes size, scroll back to the section
+  // (stops as soon as the visitor scrolls themselves).
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id || !document.getElementById(id)) return;
+    let stopped = false;
+    const stop = () => (stopped = true);
+    window.addEventListener("wheel", stop, { passive: true, once: true });
+    window.addEventListener("touchmove", stop, { passive: true, once: true });
+    window.addEventListener("keydown", stop, { once: true });
+    window.addEventListener("pointerdown", stop, { once: true });
+    const go = () => {
+      const el = document.getElementById(id);
+      if (el && !stopped) el.scrollIntoView({ behavior: "instant", block: "start" });
+    };
+    let raf = 0;
+    const soon = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(go);
+    };
+    const ro = new ResizeObserver(soon); // the page grew or shrank (images, fonts, videos loading)
+    ro.observe(document.body);
+    window.addEventListener("load", soon, { once: true });
+    document.fonts?.ready.then(soon);
+    soon();
+    const done = setTimeout(() => {
+      stopped = true;
+      ro.disconnect();
+    }, 4000);
+    return () => {
+      stopped = true;
+      clearTimeout(done);
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+      window.removeEventListener("wheel", stop);
+      window.removeEventListener("touchmove", stop);
+      window.removeEventListener("keydown", stop);
+      window.removeEventListener("pointerdown", stop);
+      window.removeEventListener("load", soon);
+    };
+  }, []);
   return null;
 }

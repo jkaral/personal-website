@@ -26,7 +26,8 @@ function smooth(pts) {
   return d + ` L${lx.toFixed(1)} ${ly.toFixed(1)}`;
 }
 
-function strokeSVG(len, h, color, ink, seed) {
+// plain = just the marker band: no ink outline, shadow or shine (marks inside a `.hl-plain` element)
+function strokeSVG(len, h, color, ink, seed, plain = false) {
   const r = rng(seed);
   const amp = h * 0.06;
   const steps = Math.max(3, Math.round(len / 48));
@@ -53,8 +54,11 @@ function strokeSVG(len, h, color, ink, seed) {
   const gy = h * 0.2;
   const glint = `M${(h * 0.45).toFixed(1)} ${(gy + h * 0.06).toFixed(1)} Q${(h * 0.9).toFixed(1)} ${gy.toFixed(1)} ${(h * 1.9).toFixed(1)} ${gy.toFixed(1)}`;
   // layers: offset ink shadow (comic "sticker" pop), the marker band with an ink outline, a shine streak
-  const svg =
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 ${(len + pad).toFixed(0)} ${(h + pad).toFixed(0)}" preserveAspectRatio="none">` +
+  const svg = plain
+    ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 ${(len + pad).toFixed(0)} ${(h + pad).toFixed(0)}" preserveAspectRatio="none">` +
+      `<path d="${band}" fill="${color}"/>` +
+      `</svg>`
+    : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 ${(len + pad).toFixed(0)} ${(h + pad).toFixed(0)}" preserveAspectRatio="none">` +
     `<path d="${band}" transform="translate(2.5 2.5)" fill="${ink}" opacity=".16"/>` +
     `<path d="${band}" fill="${color}" stroke="${ink}" stroke-opacity=".55" stroke-width="1.4" stroke-linejoin="round"/>` +
     `<path d="${glint}" fill="none" stroke="#fff" stroke-width="${(h * 0.07).toFixed(1)}" stroke-linecap="round" opacity=".75"/>` +
@@ -77,7 +81,7 @@ export default function ScrollHighlight() {
         const rects = [...m.getClientRects()];
         if (!rects.length) return;
         const len = rects.reduce((s, q) => s + q.width, 0);
-        m.style.setProperty("--hl-img", strokeSVG(len, rects[0].height, color, ink, 7919 * (i + 1)));
+        m.style.setProperty("--hl-img", strokeSVG(len, rects[0].height, color, ink, 7919 * (i + 1), !!m.closest(".hl-plain")));
         m.style.setProperty("--hl-dur", `${Math.min(1.5, 0.35 + rects.length * 0.35).toFixed(2)}s`);
       });
     };

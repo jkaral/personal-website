@@ -1,14 +1,6 @@
-import { WhySection, InspirationsSection } from "../../components/sections";
+import { redirect } from "next/navigation";
 
-export const metadata = { title: "my mind" };
-
-// "my mind": "my why" (the quote + what it means to me), then the carousel (and gallery)
-// of the people, art and things that shape how I think
-export default function MyMindPage() {
-  return (
-    <>
-      <WhySection />
-      <InspirationsSection />
-    </>
-  );
+// this section now lives on a combined page
+export default function Moved() {
+  redirect("/identity#inspirations");
 }

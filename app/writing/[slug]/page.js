@@ -26,7 +26,7 @@ export default async function Essay({ params }) {
 
   return (
     <article className="container narrow essay">
-      <a className="inline back" href="/writing">← All writing</a>
+      <a className="inline back" href="/identity#writing">← All writing</a>
       <h1 className="page-title hl-scroll">{markTitle(essay.title, essay.titleHighlights)}</h1>
       {essay.date && <p className="dates">{formatDate(essay.date)}</p>}
       <div className="prose hl-scroll" dangerouslySetInnerHTML={{ __html: essay.html }} />

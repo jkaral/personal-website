@@ -1,7 +1,6 @@
-import { WritingSection } from "../../components/sections";
+import { redirect } from "next/navigation";
 
-export const metadata = { title: "Writing" };
-
-export default function WritingPage() {
-  return <WritingSection />;
+// this section now lives on a combined page
+export default function Moved() {
+  redirect("/identity#writing");
 }

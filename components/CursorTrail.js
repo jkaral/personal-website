@@ -8,8 +8,7 @@ import { useEffect, useRef } from "react";
 //  - small, with a random size AND random proportions, so each one is stretched or squashed
 //  - appears instantly (no fade-in), stays solid, fades out at the very end: 0.5s in all
 //  - flat: no tilt, shadow or rounded corners
-// An item is { src, motion? }: motion = "drift" (zooms across the canvas), "sway" (rocks side to
-// side) or "shimmer" (colours shift); without one the painting stays still.
+// An item is { src }: a still image.
 // Only over empty page: none while the cursor is on text (titles, paragraphs, list items...) or
 // anything interactive (links, buttons, text boxes, the graph, photos, record player...).
 // Mouse only: off on touch screens, narrow windows (<= 768px) and for people who prefer reduced motion.
@@ -24,7 +23,7 @@ const rand = (a, b) => a + Math.random() * (b - a);
 const INTERACTIVE = [
   "a", "button", "input", "textarea", "select", "label", "summary", "option", "video", "audio", "iframe",
   "[role='button']", "[role='link']", "[role='tab']", "[contenteditable='true']", "[tabindex]:not([tabindex='-1'])",
-  ".contrib", ".pile", ".vinyl", ".uses-stage", ".collage", ".chat-wrap", ".chat-panel", ".sidebar", ".topbar",
+  ".contrib", ".pile", ".vinyl", ".record-deck", ".carried-record", ".uses-stage", ".collage", ".chat-wrap", ".chat-panel", ".sidebar", ".topbar",
 ].join(",");
 
 // true if (x, y) is on one of the lines of words that belong directly to `el`
@@ -92,15 +91,16 @@ export default function CursorTrail({ items = [] }) {
 
       const pop = document.createElement("div");
       pop.className = "trail-pop";
-      pop.style.left = `${e.clientX}px`;
-      pop.style.top = `${e.clientY}px`;
+      // the page is zoomed (html { zoom }): screen px / zoom = page px, so it lands right under the cursor
+      const zoom = parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
+      pop.style.left = `${e.clientX / zoom}px`;
+      pop.style.top = `${e.clientY / zoom}px`;
       pop.style.zIndex = String(z++);
       pop.style.width = `${w.toFixed(1)}px`;
       pop.style.height = `${h.toFixed(1)}px`;
       const img = document.createElement("img");
       img.src = it.src;
       img.alt = "";
-      if (it.motion) img.className = `trail-${it.motion}`;
       pop.appendChild(img);
       pop.addEventListener("animationend", (ev) => ev.target === pop && pop.remove());
       el.appendChild(pop);

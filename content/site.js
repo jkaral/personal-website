@@ -14,7 +14,7 @@ const site = {
   initials: "YK", // header logo
   greekInitials: "ΓΚ", // header logo on hover
   greeting: "Hi, I'm",
-  tagline: "Creating human-first software projects, exploring agentic AI, and giving everything one hundred percent.",
+  tagline: "Computer Science @ UofT", // the line under your name on the front page
   photo: "", // headshot hidden (file kept at /images/portrait.jpg — set it back to show it)
   email: "j.karal2008@gmail.com",
   siteTitle: "Yianni Karakoulas",
@@ -22,20 +22,19 @@ const site = {
 
   // ---------- Mouse trail (homepage): paintings pop up under the mouse as it moves ----------
   // Public-domain paintings from Van Gogh's era to ~1930 (from Wikimedia Commons), in /public/images/trail.
-  // motion: "drift" (slow zoom across the canvas), "sway" (rocks side to side), "shimmer" (colours
-  // glow and shift); leave it out for a still painting.
+  // All still images (no added zoom / sway / colour effects).
   trail: [
-    { src: "/images/trail/starry-night.jpg", title: "The Starry Night, Van Gogh (1889)", motion: "drift" },
+    { src: "/images/trail/starry-night.jpg", title: "The Starry Night, Van Gogh (1889)" },
     { src: "/images/trail/sunflowers.jpg", title: "Sunflowers, Van Gogh (1888)" },
     { src: "/images/trail/cafe-terrace.jpg", title: "Café Terrace at Night, Van Gogh (1888)" },
-    { src: "/images/trail/van-gogh-self-portrait.jpg", title: "Self-Portrait, Van Gogh (1887)", motion: "sway" },
-    { src: "/images/trail/water-lilies.jpg", title: "Water Lilies, Monet (1906)", motion: "drift" },
+    { src: "/images/trail/van-gogh-self-portrait.jpg", title: "Self-Portrait, Van Gogh (1887)" },
+    { src: "/images/trail/water-lilies.jpg", title: "Water Lilies, Monet (1906)" },
     { src: "/images/trail/grande-jatte.jpg", title: "A Sunday on La Grande Jatte, Seurat (1884)" },
     { src: "/images/trail/moulin-rouge.jpg", title: "At the Moulin Rouge, Toulouse-Lautrec (1892)" },
-    { src: "/images/trail/the-scream.jpg", title: "The Scream, Munch (1893)", motion: "sway" },
-    { src: "/images/trail/the-kiss.jpg", title: "The Kiss, Klimt (1908)", motion: "shimmer" },
-    { src: "/images/trail/la-danse.jpg", title: "Dance (I), Matisse (1909)", motion: "sway" },
-    { src: "/images/trail/composition-7.jpg", title: "Composition VII, Kandinsky (1913)", motion: "shimmer" },
+    { src: "/images/trail/the-scream.jpg", title: "The Scream, Munch (1893)" },
+    { src: "/images/trail/the-kiss.jpg", title: "The Kiss, Klimt (1908)" },
+    { src: "/images/trail/la-danse.jpg", title: "Dance (I), Matisse (1909)" },
+    { src: "/images/trail/composition-7.jpg", title: "Composition VII, Kandinsky (1913)" },
     { src: "/images/trail/black-square.jpg", title: "Black Square, Malevich (1915)" },
     { src: "/images/trail/mondrian.jpg", title: "Composition II in Red, Blue and Yellow, Mondrian (1930)" },
     { src: "/images/trail/american-gothic.jpg", title: "American Gothic, Grant Wood (1930)" },
@@ -73,7 +72,8 @@ const site = {
     why: "My grandma's favourite quote to remind me of whenever she sees me working. It's my mantra, and I apply it whenever I build projects, lift weights or spar, or when I plan for what I want to do next.",
     // What I'm doing now: a list with ">" as the bullets (homepage About section).
     // Each line is a list of pieces; a piece is plain text, a link with a logo: { text, url, logo },
-    // or a phrase with a hand-drawn orange mark: { text, mark: "circle" | "underline" }.
+    // or a phrase with a hand-drawn orange mark: { text, mark: "circle" | "underline" },
+    // or the writing pages' marker highlight: { text, mark: "highlight" }.
     now: [
       [
         { text: "nhl player market value modelling", mark: "underline" },
@@ -85,7 +85,8 @@ const site = {
         },
       ],
       [
-        "auditing brain2qwerty alongside meta labs scientists @ ",
+        { text: "auditing brain2qwerty", mark: "highlight" },
+        " alongside meta labs scientists @ ",
         { text: "UTMIST", url: "https://www.utmist.ca/", logo: "/images/logos/utmist.png" },
         " and ",
         { text: "UTBIOME", url: "https://utbiome.skule.ca/", logo: "/images/logos/utbiome.png" },
@@ -94,14 +95,14 @@ const site = {
         "working on ",
         { text: "KAPSO", url: "https://github.com/Leeroo-AI/kapso" },
         ", ",
-        { text: "a recursive research engine", mark: "circle" },
+        { text: "a recursive research engine", mark: "highlight" },
         " @ ",
         { text: "Leeroo-AI", url: "https://www.ycombinator.com/companies/leeroo", logo: "/images/logos/leeroo.png" },
         " (YC P25)", // non-breaking space keeps "(YC P25)" on one line
       ],
       [
         "currently ",
-        { text: "1 of 20 internationally", mark: "circle" },
+        { text: "1 of 20 internationally", mark: "highlight" },
         " building with Claude Wildcard Scholarship, ",
         { text: "project coming dec 2nd", mark: "underline" },
       ],
@@ -219,7 +220,7 @@ const site = {
       // a list so "writing section" can link down to the Writing section
       description: [
         "Built from scratch with Next.js 15 and deployed on Vercel, with web analytics from a Vercel Bot. The server components pull live data (e.g. streaks on Duolingo or GitHub) and the group chat runs on Upstash Redis with one set per like so the count is live. I added features like the string tracer, the \"uses bubble\" and highlighting meaningful parts of my ",
-        { text: "writing", url: "/writing" },
+        { text: "writing", url: "/identity#writing" },
         ".",
       ],
       stack: ["Next.js", "React", "CSS", "Redis", "Vercel"],
@@ -249,22 +250,22 @@ const site = {
   hobbies: [
     // link: { label: "Profile", url: "https://..." } (optional)
     {
-      title: "Rugby",
-      description:
-        "During my short career on the Varsity Rugby team I played as a right winger, and, on occasion, blindside flanker (scrum in the photo). As my first contact sport, it taught me resilience and endurance.",
-      image: "/images/hobby-rugby.jpg",
-      // hand-drawn circle around me (percent of the photo frame; see components/PencilCircle.js)
-      circle: { x: 34, y: 57.5, w: 47, h: 45, r: -48, aspect: 0.5625 }, // whole body, along the diagonal (widened on the right)
-      link: null,
-    },
-    {
       title: "Kickboxing + BJJ",
       // Shown after the title as "@ The Academy", linked
       titleLink: { text: "The Academy", url: "https://www.google.com/maps/place/The+Academy+Toronto/data=!4m2!3m1!1s0x0:0x2d3e94d392d94ea1?sa=X&ved=1t:2428&ictx=111" },
       description:
         "I started both kickboxing and BJJ in June 2026 after years of being a dedicated UFC fan (Volk is my GOAT). It's been an important part of my discipline and athletic growth.",
       image: "/images/hobby-combat.jpg",
+      // hand-drawn circle around me (percent of the photo frame; see components/PencilCircle.js)
       circle: { x: 56, y: 71, w: 16, h: 49, r: -5, aspect: 0.547 },
+      link: null,
+    },
+    {
+      title: "Rugby",
+      description:
+        "During my short career on the Varsity Rugby team I played as a right winger, and, on occasion, blindside flanker (scrum in the photo). As my first contact sport, it taught me resilience and endurance.",
+      image: "/images/hobby-rugby.jpg",
+      circle: { x: 34, y: 57.5, w: 47, h: 45, r: -48, aspect: 0.5625 }, // whole body, along the diagonal (widened on the right)
       link: null,
     },
     // Live rows: "fable" shows your Currently Reading shelf, "duolingo" your streak.
@@ -397,7 +398,7 @@ const site = {
       {
         src: "/images/banner/kendrick.webp",
         ratio: 1,
-        x: 14, y: 30, w: 19, r: -5,
+        x: 14, y: 30, w: 15.2, r: -5,
         title: "the blacker the berry the sweeter the juice",
         caption: "best rap album OAT",
       },
@@ -418,21 +419,21 @@ const site = {
       {
         src: "/images/banner/cloud-runners.webp",
         ratio: 0.46,
-        x: 78, y: 70, w: 20, r: -8,
+        x: 78, y: 70, w: 18, r: -8,
         title: "cloud runners",
         caption: "hands down the most comfortable sneakers ive ever worn (not sponsored)",
       },
       {
         src: "/images/banner/mma-gloves.webp",
         ratio: 0.939,
-        x: 34, y: 3, w: 14, r: 10,
+        x: 34, y: 3, w: 11.2, r: 10,
         title: "mma gloves",
         caption: "my #1 instrument of stress-relief and discipline building",
       },
       {
         src: "/images/banner/backgammon.webp",
         ratio: 0.908,
-        x: 1, y: 50, w: 15, r: 7,
+        x: 1, y: 50, w: 13.5, r: 7,
         title: "backgammon board",
         caption: "a game I played as a kid with my grandpa (παππού)",
       },
@@ -474,7 +475,7 @@ const site = {
       {
         src: "/images/banner/giouvarlakia.webp",
         ratio: 0.8,
-        x: 33, y: 70, w: 14, r: -3,
+        x: 33, y: 70, w: 12.6, r: -3,
         title: "γιουβαρλάκια",
         caption: "my favourite homecooked meal",
       },

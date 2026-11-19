@@ -37,6 +37,10 @@
 /* ============ Base ============ */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 24px; overflow-x: clip; } /* the full-width banner (100vw) is a scrollbar wider than the page: never let it scroll sideways */
+/* whole site slightly zoomed out (like the browser at 90%). Anything sized with 100vw divides by
+   --zoom to still reach the real window edge; scripts divide mouse positions by it too. */
+:root { --zoom: 0.9; }
+html { zoom: var(--zoom); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0; background: var(--bg); color: var(--body);
@@ -60,6 +64,10 @@ p { margin: 0 0 1em; }
 /* ============ Top bar ============ */
 /* not floating: the logo, links and icons sit at the top of the page and scroll away with it */
 .topbar { position: relative; z-index: 50; }
+/* the bar's empty space lets clicks through (to the sidebar's "about" link, which sits level with the
+   logo on wide screens); only the things in it are clickable */
+.topbar, .topbar-inner { pointer-events: none; }
+.topbar-inner > * { pointer-events: auto; }
 .topbar-inner { max-width: 1120px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; gap: 32px; }
 .topbar nav { display: flex; gap: 24px; flex: 1; overflow-x: auto; scrollbar-width: none; }
 .topbar nav a { text-decoration: none; color: var(--body); font-size: 15px; white-space: nowrap; padding: 2px 0; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
@@ -622,15 +630,18 @@ a.uses-tile { cursor: pointer; }
 /* ============ Left sidebar (wide screens), like justinzwu.com ============ */
 .sidebar { display: none; }
 @media (min-width: 1100px) {
-  /* --side = the space the sidebar takes on the left (wide enough for the 2x record player).
-     Page padding, the full-width top bar and the full-width banner all use it, so they stay in sync. */
-  :root { --side: 332px; }
+  /* --side = the space the sidebar takes on the left: as slim as the links allow (the record player
+     floats on its own now). Page padding, the full-width top bar and the full-width banner all use it. */
+  :root { --side: 140px; }
   body { padding-left: var(--side); }
   .topbar nav { display: none; }              /* section links live in the sidebar instead */
   .topbar { margin-left: calc(-1 * var(--side)); } /* top bar stays full width */
   .top-actions { margin-left: auto; }        /* keep the icons on the right */
-  .sidebar { display: flex; flex-direction: column; align-items: flex-end; gap: 56px; position: fixed; z-index: 40;
-    top: 104px; left: 0; width: calc(var(--side) - 10px); padding-right: 22px; }
+  /* links hug the left edge of the window */
+  .sidebar { display: flex; flex-direction: column; align-items: flex-start; gap: 56px; position: fixed; z-index: 40;
+    top: 104px; left: 0; width: var(--side); padding-left: 22px; }
+  .sidebar .sidebar-list { align-items: flex-start; }
+  .sidebar .sidebar-link { text-align: left; }
 }
 .sidebar-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
 .sidebar-link { color: var(--muted); text-decoration: none; font-size: 15px; padding: 2px 0; text-align: right; transition: color .2s ease; display: inline-block; }
@@ -643,11 +654,6 @@ a.uses-tile { cursor: pointer; }
 .vinyl-row { display: flex; align-items: center; gap: 16px; }
 .vinyl-btn svg { width: 24px; height: 24px; }
 .vinyl-play svg { width: 12px; height: 12px; }
-/* in the sidebar: line the straight bar of the ⏭ button up with where the menu words end.
-   The 216px button row (40 + 16 + 104px record + 16 + 40) is centred in the 300px player (42px in
-   from its right edge) and the bar ends 14px inside its button (8px padding + 6px of the 24px icon)
-   -> shift the player 56px right */
-.sidebar .vinyl { margin-right: -56px; }
 .vinyl-btn { background: none; border: 0; padding: 8px; color: var(--muted); cursor: pointer; display: grid; place-items: center; transition: color .2s; }
 .vinyl-btn:hover { color: var(--text); }
 .vinyl-disc { position: relative; width: 104px; height: 104px; padding: 0; border: 0; cursor: pointer; display: block; flex: none; border-radius: 50%; overflow: hidden; background: #111; -webkit-tap-highlight-color: transparent;
@@ -788,7 +794,7 @@ a.uses-tile { cursor: pointer; }
 
 /* ============ Banner: no visible box — the collage floats on the page, edge to edge ============ */
 body { overflow-x: clip; }                                   /* full-bleed banner without sideways scrolling */
-.banner-wrap { padding: 32px 0 0; width: 100vw; margin-left: calc(50% - 50vw); }
+.banner-wrap { padding: 32px 0 0; width: calc(100vw / var(--zoom, 1)); margin-left: calc(50% - 50vw / var(--zoom, 1)); }
 @media (min-width: 1100px) {
   .banner-wrap { margin-left: calc(-1 * var(--side)); } /* reach past the sidebar's space to the window's left edge */
   .footer { margin-left: calc(-1 * var(--side)); } /* full window width too, so the signature centres on the window */
@@ -985,7 +991,7 @@ body { overflow-x: clip; }                                   /* full-bleed banne
 /* ============ Homepage intro row: GitHub activity on the left, the "now" list on the right ============ */
 /* max-width leaves room for the sidebar (--side, wide screens only), so on narrower windows the list
    wraps under the graph instead of pushing the page sideways */
-.hero-now { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 56px; margin-top: 36px; width: max-content; max-width: calc(100vw - var(--side, 0px) - 64px); text-align: left; }
+.hero-now { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 56px; margin-top: 36px; width: max-content; max-width: calc(100vw / var(--zoom, 1) - var(--side, 0px) - 64px); text-align: left; }
 .hero-now .contrib { margin-top: 0; flex: none; }
 .hero-now .now-list { margin: 0; max-width: 560px; }
 .home .about-recently { display: flex; justify-content: center; }
@@ -997,11 +1003,178 @@ body { overflow-x: clip; }                                   /* full-bleed banne
 .trail-pop img { display: block; width: 100%; height: 100%; object-fit: fill; } /* fill = stretched / squashed to the random shape */
 /* appears at 80% opacity (no fade-in), solid by 20%, fades out over the last 20% */
 @keyframes trail-pop { 0% { opacity: .8; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; } }
-/* the moving paintings (sped up to fit the half-second) */
-.trail-drift { animation: trail-drift .5s ease-out forwards; transform-origin: 30% 40%; }
-@keyframes trail-drift { from { transform: scale(1); } to { transform: scale(1.4) translate(-8%, -6%); } }
-.trail-sway { animation: trail-sway .25s ease-in-out infinite alternate; transform-origin: 50% 100%; }
-@keyframes trail-sway { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
-.trail-shimmer { animation: trail-shimmer .5s linear forwards; }
-@keyframes trail-shimmer { 0% { filter: hue-rotate(0deg) saturate(1); } 50% { filter: hue-rotate(60deg) saturate(1.7) brightness(1.15); } 100% { filter: hue-rotate(0deg) saturate(1); } }
 @media (max-width: 768px) { .trail-layer { display: none; } }
+
+/* ============ Side panel in justinzwu.com's format (overrides the sidebar + record player rules above) ============ */
+/* Measured from his site: a 160px column starting 32px in, links right-aligned and ending on one line,
+   14.4px grey links (current page dark + a bit bolder), 4px padding + 16px between links, 56px down to
+   the record player: a 60px record between 22px ⏮ ⏭ buttons (14px icons), an 18px play badge, and a
+   small caps title centred underneath. */
+@media (min-width: 1100px) {
+  :root { --side: 216px; } /* 32px margin + 160px column + 24px to the page */
+  .sidebar { left: 32px; width: 160px; padding: 0; align-items: flex-end; gap: 56px; }
+  .sidebar .sidebar-list { align-items: flex-end; gap: 16px; }
+  .sidebar .sidebar-link { text-align: right; font-size: 14.4px; line-height: 1.6; padding: 4px 0; color: #888; }
+  .sidebar .sidebar-link:hover, .sidebar .sidebar-link:focus-visible { color: var(--text); }
+  .sidebar .sidebar-link.active { color: var(--text); font-weight: 500; }
+}
+/* level with the logo, like his, where the top bar leaves room (narrower windows keep it below the top bar) */
+@media (min-width: 1400px) { .sidebar { top: 16px; } } /* = the top bar's padding, so "about" lines up with the logo */
+
+/* record player, his sizes */
+.sidebar .vinyl { width: 120px; }
+.sidebar .vinyl-row { gap: 8px; }
+.sidebar .vinyl-btn { padding: 4px; }
+.sidebar .vinyl-btn svg { width: 14px; height: 14px; }
+.sidebar .vinyl-disc { width: 60px; height: 60px; }
+.sidebar .vinyl-hole { width: 12px; height: 12px; margin: -6px 0 0 -6px; box-shadow: 0 0 0 2px #111; }
+.sidebar .vinyl-play { width: 18px; height: 18px; margin: -9px 0 0 -9px; }
+.sidebar .vinyl-play svg { width: 8px; height: 8px; }
+.sidebar .vinyl-title { margin-top: 12px; gap: 5px; font-size: 11px; letter-spacing: .06em; }
+.sidebar .vinyl-title svg { width: 10px; height: 10px; }
+.sidebar .vinyl-artist { font-size: 11px; margin-top: 2px; }
+/* the ⏭ button's straight bar lines up with where the menu words end: the bar ends 7.5px inside its
+   22px button (4px padding + 3.5px of the 14px icon), so nudge the player 7.5px right */
+.sidebar .vinyl { margin-right: -7.5px; }
+
+/* homepage "now" list highlight ("auditing brain2qwerty"): the same marker swipe as the essay titles,
+   at their slower ~1.1s, starting a moment after the page appears so it visibly draws in */
+.now-list.hl-scroll mark { transition: background-size 1.1s cubic-bezier(.6, 0, .3, 1) .9s; }
+/* front page: the buttons sit below the list + GitHub graph, with the same gap as above that row */
+.home .hero .cta { margin-top: 36px; }
+
+/* ============ Top bar: the logo button that collapses / expands the other buttons (TopBarCollapse.js) ============ */
+.topbar-collapse { width: 36px; height: 36px; flex: none; padding: 0; border: 0; border-radius: 50%; overflow: hidden; cursor: pointer;
+  background: var(--chip); display: grid; place-items: center; position: relative; z-index: 2; transition: transform .2s cubic-bezier(.2,.7,.2,1); }
+.topbar-collapse:hover, .topbar-collapse:focus-visible { transform: translateY(-2px) scale(1.06); }
+.topbar-collapse:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.topbar-collapse img { grid-area: 1 / 1; width: 100%; height: 100%; object-fit: cover; display: block; }
+/* light / dark versions of the logo */
+.topbar-collapse .logo-dark { display: none; }
+:root[data-theme="dark"] .topbar-collapse .logo-light { display: none; }
+:root[data-theme="dark"] .topbar-collapse .logo-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .topbar-collapse .logo-light { display: none; }
+  :root:not([data-theme="light"]) .topbar-collapse .logo-dark { display: block; }
+}
+/* every icon before the logo (chat, email, GitHub, LinkedIn, X; marked .collapsible in JS) collapses into
+   it: each one shrinks into the logo while its slot closes up (the bar is right-aligned, so they glide
+   right into it). One at a time, 110ms apart: collapsing goes closest first (--i: X ... chat); expanding
+   goes farthest first (--j: chat ... X). --w (open width), --i and --j are set in TopBarCollapse.js.
+   The day/night shortcut hint and toggle come after the logo and aren't touched. */
+.top-actions > .collapsible { flex: none; width: var(--w); transform-origin: right center;
+  transition-property: width, margin, scale, opacity, visibility; transition-duration: .32s, .32s, .32s, .25s, 0s;
+  transition-timing-function: cubic-bezier(.2,.7,.2,1);
+  transition-delay: calc(var(--j, 0) * 110ms), calc(var(--j, 0) * 110ms), calc(var(--j, 0) * 110ms), calc(var(--j, 0) * 110ms), calc(var(--j, 0) * 110ms); }
+.top-actions > .app-icon.collapsible { overflow: hidden; } /* (not the chat: its note hangs outside it) */
+.top-actions.icons-collapsed > .collapsible { width: 0; margin-right: -8px; scale: .2; opacity: 0; visibility: hidden; pointer-events: none;
+  transition-timing-function: cubic-bezier(.5,0,.75,0);
+  transition-delay: calc(var(--i, 0) * 110ms), calc(var(--i, 0) * 110ms), calc(var(--i, 0) * 110ms), calc(var(--i, 0) * 110ms), calc(var(--i, 0) * 110ms + 320ms); }
+@media (prefers-reduced-motion: reduce) { .top-actions > .collapsible { transition: none !important; } }
+
+/* front page: the tagline ("Computer Science @ UofT") 3pt bigger than the 18px it was */
+.home .tagline { font-size: calc(18px + 3pt); }
+/* every section heading in lowercase (work, projects, awards, hobbies, writing, contact, ...) */
+.section-title { text-transform: lowercase; }
+/* front page: GitHub activity in its own section (where the Recently photos used to be), centred */
+.home-github { display: flex; justify-content: center; }
+.home-github .contrib { margin-top: 0; }
+
+/* front page: GitHub graph at 1.2x its normal size (evenly, so its shape is kept) with the Uses bubble
+   on its right. The bubble's box is 382px: its orbit of app icons (2 x (168px radius + 23px icon), the
+   desktop sizes set in the "Size-up" block). */
+.home-github { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 32px 72px; }
+.home-github-graph { flex: none; zoom: 1.2; }
+.home-uses { flex: none; width: 382px; }
+.home-uses .uses-stage { min-height: 382px; }
+/* opened into the grid of everything I use: give it the whole row under the graph */
+.home-uses:has(.uses-stage.is-open) { width: 100%; }
+/* front page: no room to the bubble's right (it's at the edge of the row), so its "Click Me" note sits
+   underneath with the arrow pointing up at it, the same way it does on phones */
+.home-uses .uses-note { left: 50%; top: calc(100% + 64px); flex-direction: column; align-items: center; transform: translateX(-50%); }
+.home-uses .uses-arrow { width: 72px; height: 48px; transform: rotate(62deg); margin-bottom: 4px; }
+.home-uses .uses-note-text { margin: 0; font-size: 28px; transform: rotate(-3deg); transform-origin: center; }
+/* front page: half the space between the tagline and the list + photos row (58px -> 29px: the tagline's
+   22px + 7px above the row), with the list and the photos both starting at the top of the row so their
+   tops line up */
+.home .hero-now { margin-top: 7px; align-items: flex-start; }
+
+/* ============ Sidebar record deck: turntable + shelf of records (components/RecordShelf.js) ============ */
+.record-deck { width: 160px; display: flex; flex-direction: column; align-items: center; gap: 10px; user-select: none; -webkit-user-select: none; }
+.record-deck img { -webkit-user-drag: none; }
+/* turntable (public/images/player/turntable.svg, 160x120); the record lies on its platter, centred at
+   (62, 55) with a 47px radius in the drawing's units */
+.turntable { position: relative; width: 150px; border-radius: 10px; transition: box-shadow .2s ease, transform .2s ease; }
+.turntable-img { display: block; width: 100%; height: auto; }
+.turntable.drop-ready { box-shadow: 0 0 0 3px #ff6a1a, 0 10px 26px -8px rgba(255, 106, 26, .55); transform: scale(1.03); }
+.platter-record { position: absolute; left: 38.75%; top: 45.83%; width: 58.75%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%;
+  background: repeating-radial-gradient(circle, #151515 0 1.6px, #232323 1.6px 2.6px); box-shadow: 0 2px 6px rgba(0,0,0,.45);
+  display: grid; place-items: center; animation: record-spin 1.8s linear infinite; animation-play-state: paused; }
+.platter-record.spinning { animation-play-state: running; }
+.platter-record img { width: 42%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 2px #111; }
+.platter-record::after { content: ""; position: absolute; width: 5%; aspect-ratio: 1; border-radius: 50%; background: #ddd; } /* spindle */
+@keyframes record-spin { to { rotate: 360deg; } }
+
+/* play / pause + what's on */
+.deck-controls { display: flex; align-items: center; gap: 8px; width: 150px; }
+.deck-play { flex: none; width: 26px; height: 26px; border-radius: 50%; border: 0; display: grid; place-items: center; cursor: pointer;
+  background: var(--accent); color: var(--on-accent); transition: transform .15s ease, opacity .2s ease; }
+.deck-play:hover:not(:disabled) { transform: scale(1.08); }
+.deck-play:disabled { opacity: .35; cursor: not-allowed; }
+.deck-now { margin: 0; min-width: 0; display: flex; flex-direction: column; line-height: 1.25; text-align: left; }
+.deck-title { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.deck-artist { font-size: 11px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.deck-hint { font-size: 11px; color: var(--muted); font-style: italic; }
+
+/* the shelf (your image, public/images/player/shelf.png) with the records standing on its top surface,
+   leaning a little and overlapping like a row of vinyl */
+.record-shelf { width: 160px; position: relative; }
+.shelf-records { position: relative; height: 52px; z-index: 1; }
+.shelf-plank { display: block; width: 100%; height: auto; margin-top: -9px; position: relative; z-index: 0; }
+.shelf-record { position: absolute; bottom: 0; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 2px; background: #111; cursor: grab;
+  left: calc(4px + var(--k) * (152px - 44px - 4px) / (var(--n) - 1)); z-index: calc(10 + var(--k));
+  transform-origin: 50% 100%; rotate: calc((var(--k) - (var(--n) - 1) / 2) * 3deg);
+  box-shadow: -2px 2px 5px rgba(0,0,0,.35); transition: translate .18s ease, opacity .2s ease, rotate .18s ease; touch-action: none; }
+.shelf-record img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 2px; pointer-events: none; }
+.shelf-record:hover, .shelf-record:focus-visible { translate: 0 -6px; rotate: 0deg; z-index: 40; }
+.shelf-record:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.shelf-record.gone { opacity: 0; pointer-events: none; }
+
+/* the record being carried: follows the pointer (on <body>, page-px coordinates) */
+.carried-record { position: fixed; z-index: 200; width: 48px; height: 48px; translate: -50% -50%; rotate: -8deg; pointer-events: none;
+  box-shadow: 0 12px 24px -6px rgba(0,0,0,.5); border-radius: 2px; transition: scale .15s ease, rotate .15s ease; }
+.carried-record img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
+.carried-record.over { scale: .85; rotate: 0deg; }
+.record-deck.is-dragging, .record-deck.is-dragging * { cursor: grabbing; }
+@media (prefers-reduced-motion: reduce) { .platter-record { animation: none; } }
+
+/* ============ Centre the page on the whole window (not just the space beside the sidebar) ============ */
+/* The sidebar's space (--side) is reserved on BOTH sides, so content centres on the window instead of
+   being pushed right by the sidebar; the full-width top bar and footer reach both edges. */
+@media (min-width: 1100px) {
+  body { padding-right: var(--side); }
+  .topbar { margin-right: calc(-1 * var(--side)); }
+  .footer { margin-right: calc(-1 * var(--side)); }
+  .hero-now { max-width: calc(100vw / var(--zoom, 1) - 2 * var(--side) - 64px); }
+}
+
+/* front page: no "Recently" label; the top of the photo stack lines up with the top of the list */
+.home .hero-now .recently-head { display: none; }
+.home .hero-now .recently { margin-top: 0; }
+.home .hero-now .pile { margin-top: 0; }
+
+/* ============ Work ethic page, top: "my why" on the left, GitHub graph (1.2x) on the right, Uses below ============ */
+.ethic-top { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 32px 64px; }
+.ethic-top .why { flex: 1 1 360px; max-width: 560px; }
+.ethic-top .why .quote { margin-bottom: 20px; }
+.ethic-top .why .lead { margin: 0; }
+.ethic-github { flex: none; zoom: 1.2; } /* 1.2x its normal size, evenly (keeps its shape) */
+.ethic-github .contrib { margin-top: 0; }
+.ethic-uses { display: flex; justify-content: center; margin-top: 56px; }
+.ethic-uses:has(.uses-stage.is-open) { display: block; } /* opened into the grid: full width */
+/* work ethic: the quote fits on one line beside its speaker button, and the "hear it in greek" note sits
+   under the button (arrow pointing up at it) so it can't run into the GitHub graph on the right */
+.ethic-top .quote blockquote { font-size: 34px; }
+.ethic-top .quote-note { left: 50%; top: calc(100% + 2px); transform: translateX(-28px); flex-direction: column; align-items: flex-start; }
+.ethic-top .quote-arrow { rotate: 90deg; margin: 0 0 -4px 10px; width: 46px; height: 26px; }
+.ethic-top .quote-note-text { margin: 0; }

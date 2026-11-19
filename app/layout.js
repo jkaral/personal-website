@@ -10,6 +10,7 @@ import localFont from "next/font/local";
 import site from "../content/site";
 import Icon from "../components/Icon";
 import ThemeToggle from "../components/ThemeToggle";
+import TopBarCollapse from "../components/TopBarCollapse";
 import Reveal from "../components/Reveal";
 import ParticleBackground from "../components/ParticleBackground";
 import SwirlLine from "../components/SwirlLine";
@@ -43,27 +44,22 @@ export const metadata = {
 };
 
 const nav = [
-  { href: "/#about", label: "About" },
-  { href: "/experience", label: "Experience" },
-  { href: "/writing", label: "Writing" },
-  { href: "/hobbies", label: "Hobbies" },
-  { href: "/my-mind", label: "My mind" },
-  { href: "/contact", label: "Contact" },
-  { href: "/resume.pdf", label: "Resume", newTab: true }, // smaller screens (the sidebar has it on wide ones)
+  { href: "/#top", label: "me" },
+  { href: "/work-ethic", label: "work ethic" },
+  { href: "/identity", label: "identity" },
+  { href: "/contact", label: "contact" },
+  { href: "/resume.pdf", label: "resume", newTab: true }, // smaller screens (the sidebar has it on wide ones)
 ];
 
-// Sidebar links (wide screens). About and Writing are sections on the homepage ("/#id");
-// every other section has its own page.
+// Sidebar links (wide screens). "me" is the front page (its top, "/#top"); the rest are pages:
+// work ethic = experience + projects + awards, identity = hobbies + writing + my mind.
+// (resume is added by Sidebar.js, after these)
 const sideLinks = [
-  { id: "about", label: "about", href: "/#about" },
-  { id: "work", label: "experience", href: "/experience" },
-  { id: "projects", label: "projects", href: "/projects" },
-  { id: "awards", label: "awards", href: "/awards" },
-  { id: "writing", label: "writing", href: "/writing" },
-  { id: "hobbies", label: "hobbies", href: "/hobbies" },
-  { id: "my-mind", label: "my mind", href: "/my-mind" },
+  { id: "top", label: "me", href: "/#top" },
+  { id: "work-ethic", label: "work ethic", href: "/work-ethic" },
+  { id: "identity", label: "identity", href: "/identity" },
   { id: "contact", label: "contact", href: "/contact" },
-].filter((l) => l.id !== "awards" || site.awards?.length > 0); // no empty awards page to link to
+];
 
 // Applies the saved light/dark choice before paint (no flash).
 const themeScript = `try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}`;
@@ -96,10 +92,12 @@ export default function RootLayout({ children }) {
                 <Icon name="email" size={16} />
               </a>
               {site.social.map((s) => (
-                <a className="app-icon" key={s.url} href={s.url} target="_blank" rel="noreferrer" aria-label={s.label} title={s.label}>
+                <a className="app-icon social-icon" key={s.url} href={s.url} target="_blank" rel="noreferrer" aria-label={s.label} title={s.label}>
                   <Icon name={s.icon} size={16} />
                 </a>
               ))}
+              {/* the logo, after X: collapses the social media icons into itself / expands them again */}
+              <TopBarCollapse />
               <ThemeToggle />
             </div>
           </div>

@@ -1,7 +1,6 @@
-import { AwardsSection } from "../../components/sections";
+import { redirect } from "next/navigation";
 
-export const metadata = { title: "Awards" };
-
-export default function AwardsPage() {
-  return <AwardsSection />;
+// this section now lives on a combined page
+export default function Moved() {
+  redirect("/work-ethic#awards");
 }
