@@ -2,100 +2,59 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// A small vinyl record that controls Spotify's official embedded player (Spotify iFrame API).
-// The music itself streams from Spotify (full track for logged-in listeners, a preview
-// otherwise); the record spins while it's playing. Songs come from `music` in content/site.js.
-
-let apiPromise;
-function loadSpotifyAPI() {
-  if (typeof window === "undefined") return Promise.reject();
-  if (window.__spotifyIFrameAPI) return Promise.resolve(window.__spotifyIFrameAPI);
-  if (!apiPromise) {
-    apiPromise = new Promise((resolve) => {
-      window.onSpotifyIframeApiReady = (api) => {
-        window.__spotifyIFrameAPI = api;
-        resolve(api);
-      };
-      const s = document.createElement("script");
-      s.src = "https://open.spotify.com/embed/iframe-api/v1";
-      s.async = true;
-      document.body.appendChild(s);
-    });
-  }
-  return apiPromise;
-}
+// A small vinyl record that plays a playlist of audio files hosted on this site
+// (put them in /public/music). Tap the record to play / pause, ⏮ ⏭ to move between songs;
+// when a song ends the next one starts. The record spins while it's playing.
+// Songs come from `music` in content/site.js.
 
 export default function VinylPlayer({ songs = [] }) {
+  const list = songs.filter((s) => s.src);
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
-  const [started, setStarted] = useState(false); // show the Spotify strip once music has been started
-  const mount = useRef(null);
-  const controller = useRef(null);
-  const wantPlay = useRef(false); // tapped before Spotify finished loading: start once it is ready
-  const hasPlayed = useRef(false);
-  const song = songs[index];
+  const audio = useRef(null);
+  const autoPlay = useRef(false); // start the next song as soon as its source is swapped in
+  const song = list[index];
 
+  // a new song was loaded: keep playing if we were
   useEffect(() => {
-    if (!song) return;
-    let cancelled = false;
-    loadSpotifyAPI().then((api) => {
-      if (cancelled || !mount.current || controller.current) return;
-      api.createController(
-        mount.current,
-        { uri: `spotify:track:${song.spotifyId}`, width: "100%", height: 80, theme: "dark" },
-        (c) => {
-          controller.current = c;
-          c.addListener("playback_update", (e) => setPlaying(!e.data.isPaused));
-          c.addListener("ready", () => {
-            if (wantPlay.current) {
-              wantPlay.current = false;
-              hasPlayed.current = true;
-              c.play();
-            }
-          });
-        }
-      );
-    });
-    return () => {
-      cancelled = true;
-    };
-    // the controller is created once; song changes go through loadUri below
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const a = audio.current;
+    if (!a || !autoPlay.current) return;
+    autoPlay.current = false;
+    a.play().catch(() => setPlaying(false));
+  }, [index]);
 
   if (!song) return null;
 
-  // tap the record: first tap starts the song, after that it pauses / resumes
+  // tap the record: play / pause
   const play = () => {
-    setStarted(true);
-    const c = controller.current;
-    if (!c) {
-      wantPlay.current = !wantPlay.current;
-      return;
-    }
-    if (!hasPlayed.current) {
-      hasPlayed.current = true;
-      c.play();
-    } else c.togglePlay(); // pause / resume
+    const a = audio.current;
+    if (!a) return;
+    if (a.paused) a.play().catch(() => setPlaying(false));
+    else a.pause();
   };
   const go = (d) => {
-    const next = (index + d + songs.length) % songs.length;
-    const c = controller.current;
-    if (!c) return;
-    if (next === index) {
-      c.seek(0); // only one song: restart it
-      c.resume();
-    } else {
-      setIndex(next);
-      c.loadUri(`spotify:track:${songs[next].spotifyId}`);
-      c.play();
+    const a = audio.current;
+    if (!a) return;
+    // ⏮ more than 3s into a song (or a one-song list) restarts it
+    if (list.length === 1 || (d < 0 && a.currentTime > 3)) {
+      a.currentTime = 0;
+      a.play().catch(() => setPlaying(false));
+      return;
     }
-    hasPlayed.current = true;
-    setStarted(true);
+    autoPlay.current = true;
+    setIndex((index + d + list.length) % list.length);
   };
 
   return (
     <div className="vinyl">
+      <audio
+        ref={audio}
+        src={song.src}
+        preload="metadata"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onEnded={() => go(1)}
+      />
       <div className="vinyl-row">
         <button className="vinyl-btn" onClick={() => go(-1)} aria-label="Previous / restart">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" /></svg>
@@ -120,10 +79,6 @@ export default function VinylPlayer({ songs = [] }) {
         <span>{song.title}</span>
       </p>
       <p className="vinyl-artist">{song.artist}</p>
-      {/* Spotify's own player (required for playback); revealed once music starts */}
-      <div className={`vinyl-spotify ${started ? "show" : ""}`}>
-        <div ref={mount} />
-      </div>
     </div>
   );
 }

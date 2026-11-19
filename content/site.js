@@ -247,14 +247,45 @@ const site = {
   ],
 
   // ---------- Music (vinyl player in the sidebar) ----------
-  // Plays through Spotify's official player. spotifyId = the ID in the song's Spotify link
-  // (open.spotify.com/track/<ID>). Add more songs and the ⏮ ⏭ buttons move between them.
+  // Plays audio files hosted on the site, like a playlist (no Spotify, nothing opens in a new tab).
+  // src = an audio file in /public/music (e.g. "/music/shimmer.mp3"). ⏮ ⏭ move between songs and
+  // the next one starts when a song ends. Songs without a src are skipped; the player hides if none have one.
   music: [
     {
       title: "Shimmer",
       artist: "Fuel",
-      spotifyId: "7vVYqVFAdEFbiAMh8aPFaJ",
-      cover: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e026319840ce04b2aeff345324e",
+      src: "/music/shimmer.mp3",
+      cover: "https://is1-ssl.mzstatic.com/image/thumb/Music/32/b6/d1/mzi.dhwulrbz.jpg/300x300bb.jpg", // Sunburn (1998)
+    },
+    {
+      title: "Wonderful Tonight",
+      artist: "Babyface",
+      src: "/music/wonderful-tonight.mp3", // starts at 1:25 of the original recording
+      cover: "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/10/c0/85/10c085e8-59e4-47a8-c989-8ccf28b4db4b/00602517410428.rgb.jpg/300x300bb.jpg", // Playlist (2007)
+    },
+    {
+      title: "Heaven",
+      artist: "Warrant",
+      src: "/music/heaven.mp3",
+      cover: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/88/62/81/88628157-c962-5c5b-4dfe-c27b60dd9940/074644438321.jpg/300x300bb.jpg", // Dirty Rotten Filthy Stinking Rich (1989)
+    },
+    {
+      title: "#skeptacore pt. 3",
+      artist: "Skepta, Ryder",
+      src: "/music/skeptacore-pt3.mp3", // starts at 0:14 of the original recording
+      cover: "https://cdn-images.dzcdn.net/images/cover/f68f5135b981cf65aa35e4329d0407ba/500x500-000000-80-0-0.jpg", // #skeptacore pt.3 single
+    },
+    {
+      title: "The Heat",
+      artist: "Alok & Jazzy",
+      src: "/music/the-heat.mp3",
+      cover: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/95/ab/e7/95abe7d8-2689-734b-7f6c-f2069f69bdcd/196872376388.jpg/300x300bb.jpg", // The Heat single (2024)
+    },
+    {
+      title: "Max B",
+      artist: "A$AP Rocky",
+      src: "/music/max-b.mp3", // starts at 0:27 of the original recording
+      cover: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9f/9b/4c/9f9b4cbc-5910-51fb-8486-adf3b89bc973/886444594837.jpg/300x300bb.jpg", // AT.LONG.LAST.A$AP (2015)
     },
   ],
 
