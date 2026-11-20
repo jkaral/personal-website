@@ -9,12 +9,43 @@ import PencilCircle from "./PencilCircle";
 import YouTubeLoop from "./YouTubeLoop";
 import ReadAloud from "./ReadAloud";
 import BannerCollage from "./BannerCollage";
+import GeoNerd from "./GeoNerd";
 import { getEssays, formatDate } from "../lib/writing";
 
 function sinceLabel(iso) {
   if (!iso) return "";
   const d = new Date(iso + "T00:00:00");
   return isNaN(d) ? "" : d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
+// Small flags for the Duolingo streak card, keyed by Duolingo language code (simplified, no emblems).
+const FLAGS = {
+  es: { label: "Spain", body: <><rect width="3" height="2" fill="#c60b1e" /><rect y=".5" width="3" height="1" fill="#ffc400" /></> },
+  fr: { label: "France", body: <><rect width="3" height="2" fill="#ed2939" /><rect width="2" height="2" fill="#fff" /><rect width="1" height="2" fill="#002395" /></> },
+  it: { label: "Italy", body: <><rect width="3" height="2" fill="#ce2b37" /><rect width="2" height="2" fill="#f4f5f0" /><rect width="1" height="2" fill="#009246" /></> },
+  de: { label: "Germany", body: <><rect width="3" height="2" fill="#ffce00" /><rect width="3" height="1.333" fill="#dd0000" /><rect width="3" height=".667" fill="#202020" /></> },
+  el: {
+    label: "Greece",
+    body: (
+      <>
+        <rect width="3" height="2" fill="#0d5eaf" />
+        {[1, 3, 5, 7].map((i) => <rect key={i} y={(i * 2) / 9} width="3" height={2 / 9} fill="#fff" />)}
+        <rect width={10 / 9} height={10 / 9} fill="#0d5eaf" />
+        <rect x={4 / 9} width={2 / 9} height={10 / 9} fill="#fff" />
+        <rect y={4 / 9} width={10 / 9} height={2 / 9} fill="#fff" />
+      </>
+    ),
+  },
+};
+
+function Flag({ code }) {
+  const f = FLAGS[code];
+  if (!f) return null;
+  return (
+    <svg className="streak-flag" viewBox="0 0 3 2" preserveAspectRatio="none" role="img" aria-label={`Flag of ${f.label}`}>
+      {f.body}
+    </svg>
+  );
 }
 
 // Media + extra text for hobby rows backed by live data.
@@ -53,37 +84,23 @@ function liveParts(kind, { fable, duo }) {
     if (!duo) {
       return { media: null, extra: url && <a className="underline small" href={url} target="_blank" rel="noreferrer">My Duolingo profile ↗</a> };
     }
-    const hidden = site.live?.hideLanguages || [];
-    const courses = duo.courses.filter((c) => !hidden.includes(c.code));
-    const greetings = site.live?.greetings || {};
-    const bubbles = courses.filter((c) => greetings[c.code]).slice(0, 4);
+    // compact streak tracker (label, flag of the current course + day count, avatar) under the Speaking
+    // chips, in place of the old per-course XP list. Transparent, so it sits on the page's own light / dark
+    // background. It links to the Duolingo profile.
     return {
-      media: (
-        <a className="streak-card" href={url} target="_blank" rel="noreferrer" aria-label={`${duo.streak}-day Duolingo streak`}>
-          {bubbles.map((c, i) => (
-            <span key={c.code} className={`greet greet-${i}`} lang={c.code} aria-hidden="true">
-              <span className="greet-code">{c.code.toUpperCase()}</span>
-              {greetings[c.code]}
-            </span>
-          ))}
-          <span className="streak-core">
-            <span className="flame" aria-hidden="true">🔥</span>
-            <span className="streak-num">{duo.streak.toLocaleString()}</span>
-            <span className="streak-label">day streak</span>
-            {duo.since && <span className="streak-since">since {sinceLabel(duo.since)}</span>}
-          </span>
-        </a>
-      ),
+      media: null,
       extra: (
-        <>
-          <p className="live-label">On Duolingo</p>
-          <ul className="lang-chips">
-            {courses.map((c) => (
-              <li key={c.code}>{c.title} <span>{c.xp.toLocaleString()} XP</span></li>
-            ))}
-          </ul>
-          <p className="small"><a className="underline" href={url} target="_blank" rel="noreferrer">My Duolingo profile ↗</a></p>
-        </>
+        <a className="streak-card" href={url} target="_blank" rel="noreferrer" aria-label={`${duo.streak}-day Duolingo streak`}
+          title={duo.since ? `since ${sinceLabel(duo.since)}` : undefined}>
+          <span className="streak-copy">
+            <span className="streak-label">Current Streak</span>
+            <span className="streak-figure">
+              <Flag code={duo.learning} />
+              <span className="streak-count"><span className="streak-days">{duo.streak.toLocaleString()}</span> {duo.streak === 1 ? "day" : "days"}</span>
+            </span>
+          </span>
+          {duo.avatar && <img className="streak-avatar" src={duo.avatar} alt="My Duolingo avatar" width="96" height="96" loading="lazy" decoding="async" />}
+        </a>
       ),
     };
   }
@@ -269,15 +286,63 @@ export function WritingSection() {
   );
 }
 
+// The text side of a hobby row: title, description, speaking levels, live extras, the geography
+// showcase and a link.
+function HobbyText({ h, live }) {
+  return (
+    <div className="hobby-text">
+      <h3>
+        {h.title}
+        {h.titleLink && (
+          <>
+            {" "}<span className="at-sign">@</span>{" "}
+            <a className="project-link" href={h.titleLink.url} target="_blank" rel="noreferrer">{h.titleLink.text}</a>
+          </>
+        )}
+      </h3>
+      {h.description && <p>{h.description}</p>}
+      {h.speaking?.length > 0 && (
+        <>
+          <p className="live-label">Speaking</p>
+          <ul className="lang-chips">
+            {h.speaking.map((l) => (
+              <li key={l.lang}>{l.lang} <span>{l.level}</span></li>
+            ))}
+          </ul>
+        </>
+      )}
+      {live?.extra}
+      {h.geo && <GeoNerd seconds={h.geo.europeSeconds} />}
+      {h.link && (
+        <a className="underline small" href={h.link.url} target="_blank" rel="noreferrer">{h.link.label} ↗</a>
+      )}
+    </div>
+  );
+}
+
 // duo / fable: live data from lib/live.js (fetched by the page)
 export function HobbiesSection({ duo, fable }) {
   const { hobbies } = site;
   if (!hobbies.length) return null;
+  const parts = hobbies.map((h) => (h.live ? liveParts(h.live, { fable, duo }) : null));
+  // a hobby marked `beside` shares the row of the one before it (side by side, text only), as long as
+  // neither has a photo or live picture; otherwise it gets a row of its own
+  const textOnly = (j) => !parts[j]?.media && !hobbies[j].image;
+  const pairs = (j) => hobbies[j + 1]?.beside && textOnly(j) && textOnly(j + 1);
   return (
     <Section id="hobbies" title="Hobbies">
       <div className="hobby-list">
         {hobbies.map((h, i) => {
-          const live = h.live ? liveParts(h.live, { fable, duo }) : null;
+          if (i > 0 && pairs(i - 1)) return null; // already shown beside the previous hobby
+          const live = parts[i];
+          if (pairs(i)) {
+            return (
+              <article key={h.title} className="hobby-row pair">
+                <HobbyText h={h} live={live} />
+                <HobbyText h={hobbies[i + 1]} live={parts[i + 1]} />
+              </article>
+            );
+          }
           const media =
             live?.media ||
             (h.image && (
@@ -289,32 +354,7 @@ export function HobbiesSection({ duo, fable }) {
           return (
             <article key={h.title} className={`hobby-row ${i % 2 ? "flip" : ""} ${media ? "" : "no-img"} ${!live?.media && h.image ? "photo" : ""}`}>
               {media && <div className={`hobby-media ${live?.media ? "live" : ""} ${h.circle && !live?.media ? "draw-on" : ""}`}>{media}</div>}
-              <div className="hobby-text">
-                <h3>
-                  {h.title}
-                  {h.titleLink && (
-                    <>
-                      {" "}<span className="at-sign">@</span>{" "}
-                      <a className="project-link" href={h.titleLink.url} target="_blank" rel="noreferrer">{h.titleLink.text}</a>
-                    </>
-                  )}
-                </h3>
-                {h.description && <p>{h.description}</p>}
-                {h.speaking?.length > 0 && (
-                  <>
-                    <p className="live-label">Speaking</p>
-                    <ul className="lang-chips">
-                      {h.speaking.map((l) => (
-                        <li key={l.lang}>{l.lang} <span>{l.level}</span></li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-                {live?.extra}
-                {h.link && (
-                  <a className="underline small" href={h.link.url} target="_blank" rel="noreferrer">{h.link.label} ↗</a>
-                )}
-              </div>
+              <HobbyText h={h} live={live} />
             </article>
           );
         })}

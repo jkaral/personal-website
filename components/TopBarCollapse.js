@@ -28,7 +28,6 @@ export default function TopBarCollapse() {
     for (let el = me.previousElementSibling; el; el = el.previousElementSibling) icons.push(el);
     icons.forEach((el, i) => {
       el.classList.add("collapsible");
-      if (!el.style.getPropertyValue("--w")) el.style.setProperty("--w", `${el.offsetWidth}px`); // its open width
       el.style.setProperty("--i", i); // collapse order: closest first
       el.style.setProperty("--j", icons.length - 1 - i); // expand order: farthest first
     });

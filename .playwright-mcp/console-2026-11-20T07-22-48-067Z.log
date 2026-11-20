@@ -1,0 +1,6 @@
+[   23341ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3123/_vercel/insights/script.js:1
+[   23342ms] [LOG] [Vercel Web Analytics] Failed to load script from /_vercel/insights/script.js. Be sure to enable Web Analytics for your project and deploy again. See https://vercel.com/docs/analytics/quickstart for more information. @ http://localhost:3123/_next/static/chunks/app/layout-584531ac8f017f1e.js:1
+[  133939ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3123/_vercel/insights/script.js:1
+[  133944ms] [LOG] [Vercel Web Analytics] Failed to load script from /_vercel/insights/script.js. Be sure to enable Web Analytics for your project and deploy again. See https://vercel.com/docs/analytics/quickstart for more information. @ http://localhost:3123/_next/static/chunks/app/layout-584531ac8f017f1e.js:1
+[  137449ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3123/_vercel/insights/script.js:1
+[  137449ms] [LOG] [Vercel Web Analytics] Failed to load script from /_vercel/insights/script.js. Be sure to enable Web Analytics for your project and deploy again. See https://vercel.com/docs/analytics/quickstart for more information. @ http://localhost:3123/_next/static/chunks/app/layout-584531ac8f017f1e.js:1

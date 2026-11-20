@@ -1,0 +1,4 @@
+[     318ms] [ERROR] Permissions policy violation: unload is not allowed in this document. @ https://d35aaqx5ub95lt.cloudfront.net/js/app-0a9c0865.js:2
+[     388ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://zombie.duolingo.com/0/web.json?user=0&ts=1795159460&tzoffset=-5:1
+[     393ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.duolingo.com/users/undefined/streak-goal-current?_=1795159460584:1
+[     402ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.duolingo.com/users/undefined/streak-goal-next-options?_=1795159460584:1

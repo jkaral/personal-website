@@ -5,8 +5,8 @@ import { createPortal } from "react-dom";
 
 // Sidebar record player: a turntable, and below it a wooden shelf with the records (songs from `music`
 // in content/site.js) standing on it, leaning on each other. Pick a record up, drag it and drop it on the
-// turntable to load it (or click it). Loading never starts the music: press play. Loading another record
-// puts the previous one back on the shelf. The record on the turntable spins while it plays.
+// turntable to load it (or click it). It starts playing straight away; the button pauses / resumes.
+// Loading another record puts the previous one back on the shelf. The record spins while it plays.
 
 const DRAG_PX = 4; // movement before a press counts as a drag instead of a click
 // the page is zoomed (html { zoom }): screen px / zoom = page px
@@ -23,7 +23,7 @@ export default function RecordShelf({ songs = [] }) {
 
   const song = loaded == null ? null : list[loaded];
 
-  // put a record on the turntable (stops whatever was playing; doesn't start the new one)
+  // put a record on the turntable: stops whatever was playing and plays the new one straight away
   const load = (i) => {
     const a = audio.current;
     if (a) a.pause();
@@ -31,13 +31,14 @@ export default function RecordShelf({ songs = [] }) {
     setLoaded(i);
   };
 
-  // the new record's audio file
+  // the new record's audio file, started as soon as it's on the turntable
   useEffect(() => {
     const a = audio.current;
     if (!a) return;
     if (song) {
       a.src = song.src;
       a.load();
+      a.play().catch(() => setPlaying(false));
     } else a.removeAttribute("src");
   }, [loaded]); // eslint-disable-line react-hooks/exhaustive-deps
 

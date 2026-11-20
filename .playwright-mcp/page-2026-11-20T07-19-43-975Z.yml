@@ -1,0 +1,288 @@
+- generic [active] [ref=f3e1]:
+  - link "Skip to content" [ref=f3e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner:
+    - generic:
+      - link "Home" [ref=f3e3] [cursor=pointer]:
+        - /url: /
+      - navigation "Main" [ref=f3e6]:
+        - link "me" [ref=f3e7] [cursor=pointer]:
+          - /url: /#top
+        - link "work ethic" [ref=f3e8] [cursor=pointer]:
+          - /url: /work-ethic
+        - link "identity" [ref=f3e9] [cursor=pointer]:
+          - /url: /identity
+        - link "contact" [ref=f3e10] [cursor=pointer]:
+          - /url: /contact
+        - link "resume" [ref=f3e11] [cursor=pointer]:
+          - /url: /resume.pdf
+      - generic [ref=f3e12]:
+        - generic [ref=f3e13]:
+          - button "Feedback group chat" [ref=f3e14] [cursor=pointer]
+          - generic [aria-hidden]:
+            - generic: as an engineer i'm always looking for feedback
+        - link "Email" [ref=f3e17] [cursor=pointer]:
+          - /url: mailto:j.karal2008@gmail.com
+        - link "GitHub" [ref=f3e20] [cursor=pointer]:
+          - /url: https://github.com/jkaral
+        - link "LinkedIn" [ref=f3e23] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/john-karakoulas
+        - link "X" [ref=f3e26] [cursor=pointer]:
+          - /url: https://x.com/yiannibuilds
+        - button "Hide the icons" [expanded] [ref=f3e29] [cursor=pointer]
+        - generic [aria-hidden] [ref=f3e30]: ⇧shift+y
+        - button "Toggle dark mode" [ref=f3e31] [cursor=pointer]
+  - main [ref=f3e35]:
+    - generic [ref=f3e37]:
+      - heading "Hobbies" [level=2] [ref=f3e38]
+      - generic [ref=f3e39]:
+        - article [ref=f3e40]:
+          - img "Kickboxing + BJJ" [ref=f3e42]
+          - generic [ref=f3e43]:
+            - heading [level=3] [ref=f3e44]:
+              - text: Kickboxing + BJJ @
+              - link "The Academy ↗" [ref=f3e45] [cursor=pointer]:
+                - /url: https://www.google.com/maps/place/The+Academy+Toronto/data=!4m2!3m1!1s0x0:0x2d3e94d392d94ea1?sa=X&ved=1t:2428&ictx=111
+            - paragraph [ref=f3e46]: I started both kickboxing and BJJ in June 2026 after years of being a dedicated UFC fan (Volk is my GOAT). It's been an important part of my discipline and athletic growth.
+        - article [ref=f3e47]:
+          - img "Rugby" [ref=f3e49]
+          - generic [ref=f3e50]:
+            - heading "Rugby" [level=3] [ref=f3e51]
+            - paragraph [ref=f3e52]: During my short career on the Varsity Rugby team I played as a right winger, and, on occasion, blindside flanker (scrum in the photo). As my first contact sport, it taught me resilience and endurance.
+        - article [ref=f3e53]:
+          - link "My Currently Reading shelf on Fable" [ref=f3e55] [cursor=pointer]:
+            - /url: https://fable.co/fabler/yianni-256745595137
+            - img "The Picture of Dorian Gray cover" [ref=f3e56]
+            - img "The Will to Power cover" [ref=f3e57]
+            - img "Another Country cover" [ref=f3e58]
+            - img "The Rebel cover" [ref=f3e59]
+          - generic [ref=f3e60]:
+            - heading "Reading" [level=3] [ref=f3e61]
+            - paragraph [ref=f3e62]: Currently reading
+            - list [ref=f3e63]:
+              - listitem [ref=f3e64]:
+                - emphasis [ref=f3e65]: The Picture of Dorian Gray
+                - generic [ref=f3e66]: — Oscar Wilde
+              - listitem [ref=f3e67]:
+                - emphasis [ref=f3e68]: The Will to Power
+                - generic [ref=f3e69]: — Friedrich Nietzsche
+              - listitem [ref=f3e70]:
+                - emphasis [ref=f3e71]: Another Country
+                - generic [ref=f3e72]: — James Baldwin
+              - listitem [ref=f3e73]:
+                - emphasis [ref=f3e74]: The Rebel
+                - generic [ref=f3e75]: — Albert Camus
+            - paragraph [ref=f3e76]:
+              - text: 12 books finished ·
+              - link "My shelf on Fable ↗" [ref=f3e77] [cursor=pointer]:
+                - /url: https://fable.co/fabler/yianni-256745595137
+        - article [ref=f3e78]:
+          - link "247-day Duolingo streak" [ref=f3e80] [cursor=pointer]:
+            - /url: https://www.duolingo.com/profile/Yianni868569
+            - generic:
+              - generic [ref=f3e81]: Current Streak
+              - generic [ref=f3e82]:
+                - img "Flag of Spain" [ref=f3e83]
+                - generic [ref=f3e86]: 247 days
+            - img "My Duolingo avatar" [ref=f3e87]
+          - generic [ref=f3e88]:
+            - heading "Learning Languages" [level=3] [ref=f3e89]
+            - paragraph [ref=f3e90]: Speaking
+            - list [ref=f3e91]:
+              - listitem [ref=f3e92]: Spanish A2
+              - listitem [ref=f3e93]: French B2
+              - listitem [ref=f3e94]: Greek Native
+            - paragraph [ref=f3e95]: On Duolingo
+            - list [ref=f3e96]:
+              - listitem [ref=f3e97]:
+                - text: Spanish
+                - generic [ref=f3e98]: 10,854 XP
+              - listitem [ref=f3e99]:
+                - text: Italian
+                - generic [ref=f3e100]: 1,093 XP
+              - listitem [ref=f3e101]:
+                - text: French
+                - generic [ref=f3e102]: 484 XP
+            - paragraph [ref=f3e103]:
+              - link "My Duolingo profile ↗" [ref=f3e104] [cursor=pointer]:
+                - /url: https://www.duolingo.com/profile/Yianni868569
+    - generic [ref=f3e106]:
+      - heading "Writing" [level=2] [ref=f3e107]
+      - list [ref=f3e108]:
+        - listitem [ref=f3e109]:
+          - generic [ref=f3e110]:
+            - heading [level=3] [ref=f3e111]:
+              - link "What Yann LeCun Taught Me About the Limits of Language" [ref=f3e112] [cursor=pointer]:
+                - /url: /writing/yann-lecun-limits-of-language
+            - paragraph [ref=f3e113]: The data wall, model collapse, and why a four-year-old has seen more than an LLM
+          - generic [ref=f3e114]: Nov 11, 2026
+        - listitem [ref=f3e115]:
+          - generic [ref=f3e116]:
+            - heading [level=3] [ref=f3e117]:
+              - link "Critiquing Transactional Altruism and the Erosion of Genuine Community Service among Youth" [ref=f3e118] [cursor=pointer]:
+                - /url: /writing/transactional-altruism
+            - paragraph [ref=f3e119]: Thoughts on Uni Apps and their Effects on the pursuit of Altruism
+          - generic [ref=f3e120]: March 2026
+    - generic [ref=f3e123]:
+      - generic [ref=f3e124]:
+        - heading "my mind" [level=2] [ref=f3e125]
+        - paragraph [ref=f3e126]: The people, art and things that shape how I think.
+        - tablist "View" [ref=f3e127]:
+          - tab "carousel" [selected] [ref=f3e128] [cursor=pointer]
+          - tab "gallery" [ref=f3e130] [cursor=pointer]
+      - generic [ref=f3e132]:
+        - 'region "my mind: the blacker the berry the sweeter the juice" [ref=f3e133]':
+          - generic:
+            - generic [ref=f3e134] [cursor=pointer]:
+              - generic [ref=f3e135]:
+                - img "the blacker the berry the sweeter the juice"
+              - generic [ref=f3e136]:
+                - text: "001"
+                - heading "the blacker the berry the sweeter the juice" [level=3] [ref=f3e137]
+                - paragraph [ref=f3e138]: best rap album OAT
+            - generic [ref=f3e139] [cursor=pointer]:
+              - generic [ref=f3e140]:
+                - img "Yukio Mishima"
+              - generic [ref=f3e141]:
+                - text: "002"
+                - heading "Yukio Mishima" [level=3] [ref=f3e142]
+                - paragraph [ref=f3e143]: the most conflicted person i've read
+            - generic [ref=f3e144] [cursor=pointer]:
+              - generic [ref=f3e145]:
+                - img "chicken joe"
+              - generic [ref=f3e146]:
+                - text: "003"
+                - heading "chicken joe" [level=3] [ref=f3e147]
+                - paragraph [ref=f3e148]: the epitome of "chill"; my reminder to, sometimes, take things slow
+            - generic [ref=f3e149] [cursor=pointer]:
+              - generic [ref=f3e150]:
+                - img "cloud runners"
+              - generic [ref=f3e151]:
+                - text: "004"
+                - heading "cloud runners" [level=3] [ref=f3e152]
+                - paragraph [ref=f3e153]: hands down the most comfortable sneakers ive ever worn (not sponsored)
+            - generic [ref=f3e154] [cursor=pointer]:
+              - generic [ref=f3e155]:
+                - img "mma gloves"
+              - generic [ref=f3e156]:
+                - text: "005"
+                - heading "mma gloves" [level=3] [ref=f3e157]
+                - paragraph [ref=f3e158]: "my #1 instrument of stress-relief and discipline building"
+            - generic [ref=f3e159] [cursor=pointer]:
+              - generic [ref=f3e160]:
+                - img "backgammon board"
+              - generic [ref=f3e161]:
+                - text: "006"
+                - heading "backgammon board" [level=3] [ref=f3e162]
+                - paragraph [ref=f3e163]: a game I played as a kid with my grandpa (παππού)
+            - generic [ref=f3e164] [cursor=pointer]:
+              - generic [ref=f3e165]:
+                - img "uniqlo blank hoodie"
+              - generic [ref=f3e166]:
+                - text: "007"
+                - heading "uniqlo blank hoodie" [level=3] [ref=f3e167]
+                - paragraph [ref=f3e168]: my go-to sweatshirt
+            - generic [ref=f3e169] [cursor=pointer]:
+              - generic [ref=f3e170]:
+                - img "man united"
+              - generic [ref=f3e171]:
+                - text: "008"
+                - heading "man united" [level=3] [ref=f3e172]
+                - paragraph [ref=f3e173]: "this club is an emotional rollercoaster #glazersout"
+            - generic [ref=f3e174] [cursor=pointer]:
+              - generic [ref=f3e175]:
+                - img "olympiacos"
+              - generic [ref=f3e176]:
+                - text: "009"
+                - heading "olympiacos" [level=3] [ref=f3e177]
+                - paragraph [ref=f3e178]: είσαι στο μυαλοοοοοοοοο κάτι μαγικοοοοοοοοο...
+            - generic [ref=f3e179] [cursor=pointer]:
+              - generic [ref=f3e180]:
+                - img "ucl ball"
+              - generic [ref=f3e181]:
+                - text: "010"
+                - heading "ucl ball" [level=3] [ref=f3e182]
+                - paragraph [ref=f3e183]: some of my best soccer memories was playing with the prime favela baller
+            - generic [ref=f3e184] [cursor=pointer]:
+              - generic [ref=f3e185]:
+                - img "hasty market"
+              - generic [ref=f3e186]:
+                - text: "011"
+                - heading "hasty market" [level=3] [ref=f3e187]
+                - paragraph [ref=f3e188]: the best one's @ davisville station
+            - generic [ref=f3e189] [cursor=pointer]:
+              - generic [ref=f3e190]:
+                - img "γιουβαρλάκια"
+              - generic [ref=f3e191]:
+                - text: "012"
+                - heading "γιουβαρλάκια" [level=3] [ref=f3e192]
+                - paragraph [ref=f3e193]: my favourite homecooked meal
+            - generic [ref=f3e194] [cursor=pointer]:
+              - generic [ref=f3e195]:
+                - img "Tobias Fünke"
+              - generic [ref=f3e196]:
+                - text: "013"
+                - heading "Tobias Fünke" [level=3] [ref=f3e197]
+                - paragraph [ref=f3e198]: character from arrested development, top 3 david cross performances
+            - generic [ref=f3e199] [cursor=pointer]:
+              - generic [ref=f3e200]:
+                - img "λουξ"
+              - generic [ref=f3e201]:
+                - text: "014"
+                - heading "λουξ" [level=3] [ref=f3e202]
+                - paragraph [ref=f3e203]: greek version of fanta
+            - generic [ref=f3e204] [cursor=pointer]:
+              - generic [ref=f3e205]:
+                - img "the mandem"
+              - generic [ref=f3e206]:
+                - text: "015"
+                - heading "the mandem" [level=3] [ref=f3e207]
+                - paragraph [ref=f3e208]: or at least two of them
+            - generic [ref=f3e209] [cursor=pointer]:
+              - generic [ref=f3e210]:
+                - img "can of dc"
+              - generic [ref=f3e211]:
+                - text: "016"
+                - heading "can of dc" [level=3] [ref=f3e212]
+                - paragraph [ref=f3e213]: best grey loot refreshment
+            - generic [ref=f3e214] [cursor=pointer]:
+              - generic [ref=f3e215]:
+                - img "curtis blue vinyl"
+              - generic [ref=f3e216]:
+                - text: "017"
+                - heading "curtis blue vinyl" [level=3] [ref=f3e217]
+                - paragraph [ref=f3e218]: first vinyl i ever bought on my first trip to san francisco
+            - generic [ref=f3e219] [cursor=pointer]:
+              - generic [ref=f3e220]:
+                - img "slugterra"
+              - generic [ref=f3e221]:
+                - text: "018"
+                - heading "slugterra" [level=3] [ref=f3e222]
+                - paragraph [ref=f3e223]: my favourite childhood show
+            - generic [ref=f3e224] [cursor=pointer]:
+              - generic [ref=f3e225]:
+                - img "pink polo"
+              - generic [ref=f3e226]:
+                - text: "019"
+                - heading "pink polo" [level=3] [ref=f3e227]
+                - paragraph [ref=f3e228]: my favourite colour on my favourite shirt
+            - generic [ref=f3e229] [cursor=pointer]:
+              - generic [ref=f3e230]:
+                - img "skis"
+              - generic [ref=f3e231]:
+                - text: "020"
+                - heading "skis" [level=3] [ref=f3e232]
+                - paragraph [ref=f3e233]: been skiing since i was 3 yrs
+        - generic [ref=f3e234]:
+          - button "Spin backwards" [ref=f3e235] [cursor=pointer]: ←
+          - generic [ref=f3e236]: 001 / 020
+          - button "Spin forwards" [ref=f3e237] [cursor=pointer]: →
+  - region "Banner" [ref=f3e238]:
+    - generic [ref=f3e240]:
+      - img [aria-hidden]:
+        - generic: "@YIANNI"
+  - contentinfo [ref=f3e261]:
+    - generic [ref=f3e264]:
+      - paragraph [ref=f3e268]: © 2026 Yianni Karakoulas
+      - paragraph [ref=f3e269]: Designed and built by Yianni Karakoulas.
+  - alert [ref=f3e270]

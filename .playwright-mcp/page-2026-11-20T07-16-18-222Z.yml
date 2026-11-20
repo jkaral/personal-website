@@ -1,0 +1,551 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - complementary "New writing" [ref=e3]:
+      - link "Check out my complete breakdown of Physical Intelligence’s π0.7!" [ref=e4] [cursor=pointer]:
+        - /url: /pi/
+        - text: 🥧 Check out my complete breakdown of Physical Intelligence’s π0.7! 🥧
+    - navigation "Writings" [ref=e5]:
+      - 'link "writings: tnt" [ref=e6] [cursor=pointer]':
+        - /url: /writings
+      - link "projects" [ref=e8] [cursor=pointer]:
+        - /url: /projects
+    - region "Kuan Yi Wang" [ref=e9]:
+      - generic [ref=e10]:
+        - heading "Kuan Yi Wang" [level=1] [ref=e11]
+        - generic [ref=e12]:
+          - paragraph [ref=e13]:
+            - text: I’m a computer science student at the
+            - link [ref=e14] [cursor=pointer]:
+              - /url: https://uwaterloo.ca/
+              - generic [ref=e15]: University
+              - text: of Waterloo
+            - text: ", now working on computer vision inference at"
+            - link "Reflex" [ref=e17] [cursor=pointer]:
+              - /url: https://reflex.inc/
+            - text: and representation learning at
+            - link [ref=e20] [cursor=pointer]:
+              - /url: https://rbcborealis.com/
+              - generic [ref=e21]: RBC
+              - text: Borealis
+            - text: . Previously, I worked on agentic systems at
+            - link [ref=e23] [cursor=pointer]:
+              - /url: https://www.morganstanley.com/
+              - generic [ref=e24]: Morgan
+              - text: Stanley
+            - text: and medical imaging at
+            - link "NeuroPoly" [ref=e26] [cursor=pointer]:
+              - /url: https://neuro.polymtl.ca/
+            - text: (Mila).
+          - paragraph [ref=e29]:
+            - text: I also co-founded
+            - link "Piñata Pitch" [ref=e30] [cursor=pointer]:
+              - /url: https://www.pinatapitch.tech
+            - text: ", turning 2000+ student ideas into startups."
+          - paragraph [ref=e32]: "Outside of that: a little German every day + the gym + reading."
+          - generic [ref=e33]:
+            - generic [ref=e34]:
+              - paragraph [ref=e35]: Current Streak
+              - generic [ref=e36]:
+                - img "Flag of Germany" [ref=e37]
+                - paragraph [ref=e41]: 1,273 days
+            - img "Coini2's Duolingo avatar" [ref=e42]
+          - navigation "Find me" [ref=e43]:
+            - link "résumé" [ref=e44] [cursor=pointer]:
+              - /url: /resume/kuan-yi-wang-resume.pdf
+            - link "linkedin" [ref=e48] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/kuan-yi-wang-443871319/
+            - link "twitter" [ref=e52] [cursor=pointer]:
+              - /url: https://x.com/kuan_yiii
+            - link "email" [ref=e55] [cursor=pointer]:
+              - /url: mailto:ky7wang@uwaterloo.ca
+            - link "join me for a workout. or a coffee." [ref=e59] [cursor=pointer]:
+              - /url: https://cal.com/kywaterloo
+      - generic [ref=e62]:
+        - complementary "GitHub" [ref=e63]:
+          - generic [ref=e64]:
+            - heading [level=2] [ref=e65]:
+              - link "GitHub" [ref=e66] [cursor=pointer]:
+                - /url: https://github.com/AcastaPaloma
+            - generic [ref=e69]: past year
+          - link "View my contribution graph on GitHub" [ref=e70] [cursor=pointer]:
+            - /url: https://github.com/AcastaPaloma
+            - img "2,046 contributions over the past year" [ref=e71]:
+              - generic "0 contributions on November 16, 2025" [ref=e72]
+              - generic "0 contributions on November 17, 2025" [ref=e73]
+              - generic "4 contributions on November 18, 2025" [ref=e74]
+              - generic "0 contributions on November 19, 2025" [ref=e75]
+              - generic "0 contributions on November 20, 2025" [ref=e76]
+              - generic "0 contributions on November 21, 2025" [ref=e77]
+              - generic "0 contributions on November 22, 2025" [ref=e78]
+              - generic "0 contributions on November 23, 2025" [ref=e79]
+              - generic "0 contributions on November 24, 2025" [ref=e80]
+              - generic "0 contributions on November 25, 2025" [ref=e81]
+              - generic "0 contributions on November 26, 2025" [ref=e82]
+              - generic "0 contributions on November 27, 2025" [ref=e83]
+              - generic "0 contributions on November 28, 2025" [ref=e84]
+              - generic "0 contributions on November 29, 2025" [ref=e85]
+              - generic "0 contributions on November 30, 2025" [ref=e86]
+              - generic "0 contributions on December 1, 2025" [ref=e87]
+              - generic "0 contributions on December 2, 2025" [ref=e88]
+              - generic "0 contributions on December 3, 2025" [ref=e89]
+              - generic "0 contributions on December 4, 2025" [ref=e90]
+              - generic "0 contributions on December 5, 2025" [ref=e91]
+              - generic "0 contributions on December 6, 2025" [ref=e92]
+              - generic "0 contributions on December 7, 2025" [ref=e93]
+              - generic "0 contributions on December 8, 2025" [ref=e94]
+              - generic "0 contributions on December 9, 2025" [ref=e95]
+              - generic "0 contributions on December 10, 2025" [ref=e96]
+              - generic "0 contributions on December 11, 2025" [ref=e97]
+              - generic "0 contributions on December 12, 2025" [ref=e98]
+              - generic "0 contributions on December 13, 2025" [ref=e99]
+              - generic "0 contributions on December 14, 2025" [ref=e100]
+              - generic "0 contributions on December 15, 2025" [ref=e101]
+              - generic "0 contributions on December 16, 2025" [ref=e102]
+              - generic "0 contributions on December 17, 2025" [ref=e103]
+              - generic "0 contributions on December 18, 2025" [ref=e104]
+              - generic "1 contribution on December 19, 2025" [ref=e105]
+              - generic "2 contributions on December 20, 2025" [ref=e106]
+              - generic "3 contributions on December 21, 2025" [ref=e107]
+              - generic "4 contributions on December 22, 2025" [ref=e108]
+              - generic "7 contributions on December 23, 2025" [ref=e109]
+              - generic "1 contribution on December 24, 2025" [ref=e110]
+              - generic "4 contributions on December 25, 2025" [ref=e111]
+              - generic "10 contributions on December 26, 2025" [ref=e112]
+              - generic "2 contributions on December 27, 2025" [ref=e113]
+              - generic "0 contributions on December 28, 2025" [ref=e114]
+              - generic "1 contribution on December 29, 2025" [ref=e115]
+              - generic "0 contributions on December 30, 2025" [ref=e116]
+              - generic "0 contributions on December 31, 2025" [ref=e117]
+              - generic "0 contributions on January 1, 2026" [ref=e118]
+              - generic "1 contribution on January 2, 2026" [ref=e119]
+              - generic "0 contributions on January 3, 2026" [ref=e120]
+              - generic "0 contributions on January 4, 2026" [ref=e121]
+              - generic "0 contributions on January 5, 2026" [ref=e122]
+              - generic "0 contributions on January 6, 2026" [ref=e123]
+              - generic "0 contributions on January 7, 2026" [ref=e124]
+              - generic "0 contributions on January 8, 2026" [ref=e125]
+              - generic "0 contributions on January 9, 2026" [ref=e126]
+              - generic "0 contributions on January 10, 2026" [ref=e127]
+              - generic "3 contributions on January 11, 2026" [ref=e128]
+              - generic "3 contributions on January 12, 2026" [ref=e129]
+              - generic "16 contributions on January 13, 2026" [ref=e130]
+              - generic "8 contributions on January 14, 2026" [ref=e131]
+              - generic "1 contribution on January 15, 2026" [ref=e132]
+              - generic "8 contributions on January 16, 2026" [ref=e133]
+              - generic "28 contributions on January 17, 2026" [ref=e134]
+              - generic "25 contributions on January 18, 2026" [ref=e135]
+              - generic "0 contributions on January 19, 2026" [ref=e136]
+              - generic "0 contributions on January 20, 2026" [ref=e137]
+              - generic "1 contribution on January 21, 2026" [ref=e138]
+              - generic "0 contributions on January 22, 2026" [ref=e139]
+              - generic "0 contributions on January 23, 2026" [ref=e140]
+              - generic "0 contributions on January 24, 2026" [ref=e141]
+              - generic "25 contributions on January 25, 2026" [ref=e142]
+              - generic "10 contributions on January 26, 2026" [ref=e143]
+              - generic "4 contributions on January 27, 2026" [ref=e144]
+              - generic "1 contribution on January 28, 2026" [ref=e145]
+              - generic "0 contributions on January 29, 2026" [ref=e146]
+              - generic "1 contribution on January 30, 2026" [ref=e147]
+              - generic "6 contributions on January 31, 2026" [ref=e148]
+              - generic "0 contributions on February 1, 2026" [ref=e149]
+              - generic "0 contributions on February 2, 2026" [ref=e150]
+              - generic "0 contributions on February 3, 2026" [ref=e151]
+              - generic "2 contributions on February 4, 2026" [ref=e152]
+              - generic "0 contributions on February 5, 2026" [ref=e153]
+              - generic "4 contributions on February 6, 2026" [ref=e154]
+              - generic "0 contributions on February 7, 2026" [ref=e155]
+              - generic "0 contributions on February 8, 2026" [ref=e156]
+              - generic "1 contribution on February 9, 2026" [ref=e157]
+              - generic "8 contributions on February 10, 2026" [ref=e158]
+              - generic "30 contributions on February 11, 2026" [ref=e159]
+              - generic "8 contributions on February 12, 2026" [ref=e160]
+              - generic "10 contributions on February 13, 2026" [ref=e161]
+              - generic "6 contributions on February 14, 2026" [ref=e162]
+              - generic "5 contributions on February 15, 2026" [ref=e163]
+              - generic "7 contributions on February 16, 2026" [ref=e164]
+              - generic "0 contributions on February 17, 2026" [ref=e165]
+              - generic "9 contributions on February 18, 2026" [ref=e166]
+              - generic "3 contributions on February 19, 2026" [ref=e167]
+              - generic "2 contributions on February 20, 2026" [ref=e168]
+              - generic "40 contributions on February 21, 2026" [ref=e169]
+              - generic "7 contributions on February 22, 2026" [ref=e170]
+              - generic "0 contributions on February 23, 2026" [ref=e171]
+              - generic "3 contributions on February 24, 2026" [ref=e172]
+              - generic "0 contributions on February 25, 2026" [ref=e173]
+              - generic "0 contributions on February 26, 2026" [ref=e174]
+              - generic "0 contributions on February 27, 2026" [ref=e175]
+              - generic "2 contributions on February 28, 2026" [ref=e176]
+              - generic "18 contributions on March 1, 2026" [ref=e177]
+              - generic "7 contributions on March 2, 2026" [ref=e178]
+              - generic "0 contributions on March 3, 2026" [ref=e179]
+              - generic "0 contributions on March 4, 2026" [ref=e180]
+              - generic "1 contribution on March 5, 2026" [ref=e181]
+              - generic "10 contributions on March 6, 2026" [ref=e182]
+              - generic "6 contributions on March 7, 2026" [ref=e183]
+              - generic "6 contributions on March 8, 2026" [ref=e184]
+              - generic "0 contributions on March 9, 2026" [ref=e185]
+              - generic "4 contributions on March 10, 2026" [ref=e186]
+              - generic "2 contributions on March 11, 2026" [ref=e187]
+              - generic "0 contributions on March 12, 2026" [ref=e188]
+              - generic "2 contributions on March 13, 2026" [ref=e189]
+              - generic "7 contributions on March 14, 2026" [ref=e190]
+              - generic "7 contributions on March 15, 2026" [ref=e191]
+              - generic "0 contributions on March 16, 2026" [ref=e192]
+              - generic "4 contributions on March 17, 2026" [ref=e193]
+              - generic "1 contribution on March 18, 2026" [ref=e194]
+              - generic "0 contributions on March 19, 2026" [ref=e195]
+              - generic "0 contributions on March 20, 2026" [ref=e196]
+              - generic "4 contributions on March 21, 2026" [ref=e197]
+              - generic "11 contributions on March 22, 2026" [ref=e198]
+              - generic "0 contributions on March 23, 2026" [ref=e199]
+              - generic "0 contributions on March 24, 2026" [ref=e200]
+              - generic "0 contributions on March 25, 2026" [ref=e201]
+              - generic "0 contributions on March 26, 2026" [ref=e202]
+              - generic "0 contributions on March 27, 2026" [ref=e203]
+              - generic "0 contributions on March 28, 2026" [ref=e204]
+              - generic "0 contributions on March 29, 2026" [ref=e205]
+              - generic "0 contributions on March 30, 2026" [ref=e206]
+              - generic "0 contributions on March 31, 2026" [ref=e207]
+              - generic "0 contributions on April 1, 2026" [ref=e208]
+              - generic "0 contributions on April 2, 2026" [ref=e209]
+              - generic "6 contributions on April 3, 2026" [ref=e210]
+              - generic "1 contribution on April 4, 2026" [ref=e211]
+              - generic "0 contributions on April 5, 2026" [ref=e212]
+              - generic "3 contributions on April 6, 2026" [ref=e213]
+              - generic "0 contributions on April 7, 2026" [ref=e214]
+              - generic "1 contribution on April 8, 2026" [ref=e215]
+              - generic "1 contribution on April 9, 2026" [ref=e216]
+              - generic "0 contributions on April 10, 2026" [ref=e217]
+              - generic "1 contribution on April 11, 2026" [ref=e218]
+              - generic "0 contributions on April 12, 2026" [ref=e219]
+              - generic "0 contributions on April 13, 2026" [ref=e220]
+              - generic "0 contributions on April 14, 2026" [ref=e221]
+              - generic "0 contributions on April 15, 2026" [ref=e222]
+              - generic "0 contributions on April 16, 2026" [ref=e223]
+              - generic "0 contributions on April 17, 2026" [ref=e224]
+              - generic "0 contributions on April 18, 2026" [ref=e225]
+              - generic "0 contributions on April 19, 2026" [ref=e226]
+              - generic "0 contributions on April 20, 2026" [ref=e227]
+              - generic "3 contributions on April 21, 2026" [ref=e228]
+              - generic "0 contributions on April 22, 2026" [ref=e229]
+              - generic "0 contributions on April 23, 2026" [ref=e230]
+              - generic "0 contributions on April 24, 2026" [ref=e231]
+              - generic "0 contributions on April 25, 2026" [ref=e232]
+              - generic "0 contributions on April 26, 2026" [ref=e233]
+              - generic "0 contributions on April 27, 2026" [ref=e234]
+              - generic "5 contributions on April 28, 2026" [ref=e235]
+              - generic "0 contributions on April 29, 2026" [ref=e236]
+              - generic "0 contributions on April 30, 2026" [ref=e237]
+              - generic "0 contributions on May 1, 2026" [ref=e238]
+              - generic "0 contributions on May 2, 2026" [ref=e239]
+              - generic "0 contributions on May 3, 2026" [ref=e240]
+              - generic "0 contributions on May 4, 2026" [ref=e241]
+              - generic "0 contributions on May 5, 2026" [ref=e242]
+              - generic "2 contributions on May 6, 2026" [ref=e243]
+              - generic "0 contributions on May 7, 2026" [ref=e244]
+              - generic "0 contributions on May 8, 2026" [ref=e245]
+              - generic "2 contributions on May 9, 2026" [ref=e246]
+              - generic "0 contributions on May 10, 2026" [ref=e247]
+              - generic "2 contributions on May 11, 2026" [ref=e248]
+              - generic "1 contribution on May 12, 2026" [ref=e249]
+              - generic "0 contributions on May 13, 2026" [ref=e250]
+              - generic "0 contributions on May 14, 2026" [ref=e251]
+              - generic "0 contributions on May 15, 2026" [ref=e252]
+              - generic "0 contributions on May 16, 2026" [ref=e253]
+              - generic "0 contributions on May 17, 2026" [ref=e254]
+              - generic "0 contributions on May 18, 2026" [ref=e255]
+              - generic "0 contributions on May 19, 2026" [ref=e256]
+              - generic "0 contributions on May 20, 2026" [ref=e257]
+              - generic "1 contribution on May 21, 2026" [ref=e258]
+              - generic "0 contributions on May 22, 2026" [ref=e259]
+              - generic "5 contributions on May 23, 2026" [ref=e260]
+              - generic "2 contributions on May 24, 2026" [ref=e261]
+              - generic "0 contributions on May 25, 2026" [ref=e262]
+              - generic "0 contributions on May 26, 2026" [ref=e263]
+              - generic "0 contributions on May 27, 2026" [ref=e264]
+              - generic "2 contributions on May 28, 2026" [ref=e265]
+              - generic "1 contribution on May 29, 2026" [ref=e266]
+              - generic "2 contributions on May 30, 2026" [ref=e267]
+              - generic "1 contribution on May 31, 2026" [ref=e268]
+              - generic "3 contributions on June 1, 2026" [ref=e269]
+              - generic "1 contribution on June 2, 2026" [ref=e270]
+              - generic "4 contributions on June 3, 2026" [ref=e271]
+              - generic "1 contribution on June 4, 2026" [ref=e272]
+              - generic "1 contribution on June 5, 2026" [ref=e273]
+              - generic "3 contributions on June 6, 2026" [ref=e274]
+              - generic "1 contribution on June 7, 2026" [ref=e275]
+              - generic "3 contributions on June 8, 2026" [ref=e276]
+              - generic "4 contributions on June 9, 2026" [ref=e277]
+              - generic "4 contributions on June 10, 2026" [ref=e278]
+              - generic "3 contributions on June 11, 2026" [ref=e279]
+              - generic "1 contribution on June 12, 2026" [ref=e280]
+              - generic "0 contributions on June 13, 2026" [ref=e281]
+              - generic "3 contributions on June 14, 2026" [ref=e282]
+              - generic "0 contributions on June 15, 2026" [ref=e283]
+              - generic "0 contributions on June 16, 2026" [ref=e284]
+              - generic "0 contributions on June 17, 2026" [ref=e285]
+              - generic "0 contributions on June 18, 2026" [ref=e286]
+              - generic "0 contributions on June 19, 2026" [ref=e287]
+              - generic "10 contributions on June 20, 2026" [ref=e288]
+              - generic "4 contributions on June 21, 2026" [ref=e289]
+              - generic "4 contributions on June 22, 2026" [ref=e290]
+              - generic "0 contributions on June 23, 2026" [ref=e291]
+              - generic "1 contribution on June 24, 2026" [ref=e292]
+              - generic "0 contributions on June 25, 2026" [ref=e293]
+              - generic "0 contributions on June 26, 2026" [ref=e294]
+              - generic "1 contribution on June 27, 2026" [ref=e295]
+              - generic "4 contributions on June 28, 2026" [ref=e296]
+              - generic "0 contributions on June 29, 2026" [ref=e297]
+              - generic "0 contributions on June 30, 2026" [ref=e298]
+              - generic "1 contribution on July 1, 2026" [ref=e299]
+              - generic "0 contributions on July 2, 2026" [ref=e300]
+              - generic "0 contributions on July 3, 2026" [ref=e301]
+              - generic "5 contributions on July 4, 2026" [ref=e302]
+              - generic "1 contribution on July 5, 2026" [ref=e303]
+              - generic "7 contributions on July 6, 2026" [ref=e304]
+              - generic "1 contribution on July 7, 2026" [ref=e305]
+              - generic "0 contributions on July 8, 2026" [ref=e306]
+              - generic "0 contributions on July 9, 2026" [ref=e307]
+              - generic "0 contributions on July 10, 2026" [ref=e308]
+              - generic "0 contributions on July 11, 2026" [ref=e309]
+              - generic "0 contributions on July 12, 2026" [ref=e310]
+              - generic "2 contributions on July 13, 2026" [ref=e311]
+              - generic "0 contributions on July 14, 2026" [ref=e312]
+              - generic "0 contributions on July 15, 2026" [ref=e313]
+              - generic "0 contributions on July 16, 2026" [ref=e314]
+              - generic "2 contributions on July 17, 2026" [ref=e315]
+              - generic "63 contributions on July 18, 2026" [ref=e316]
+              - generic "8 contributions on July 19, 2026" [ref=e317]
+              - generic "1 contribution on July 20, 2026" [ref=e318]
+              - generic "14 contributions on July 21, 2026" [ref=e319]
+              - generic "1 contribution on July 22, 2026" [ref=e320]
+              - generic "7 contributions on July 23, 2026" [ref=e321]
+              - generic "3 contributions on July 24, 2026" [ref=e322]
+              - generic "17 contributions on July 25, 2026" [ref=e323]
+              - generic "0 contributions on July 26, 2026" [ref=e324]
+              - generic "0 contributions on July 27, 2026" [ref=e325]
+              - generic "0 contributions on July 28, 2026" [ref=e326]
+              - generic "0 contributions on July 29, 2026" [ref=e327]
+              - generic "14 contributions on July 30, 2026" [ref=e328]
+              - generic "46 contributions on July 31, 2026" [ref=e329]
+              - generic "19 contributions on August 1, 2026" [ref=e330]
+              - generic "7 contributions on August 2, 2026" [ref=e331]
+              - generic "0 contributions on August 3, 2026" [ref=e332]
+              - generic "0 contributions on August 4, 2026" [ref=e333]
+              - generic "0 contributions on August 5, 2026" [ref=e334]
+              - generic "0 contributions on August 6, 2026" [ref=e335]
+              - generic "1 contribution on August 7, 2026" [ref=e336]
+              - generic "1 contribution on August 8, 2026" [ref=e337]
+              - generic "0 contributions on August 9, 2026" [ref=e338]
+              - generic "0 contributions on August 10, 2026" [ref=e339]
+              - generic "0 contributions on August 11, 2026" [ref=e340]
+              - generic "0 contributions on August 12, 2026" [ref=e341]
+              - generic "0 contributions on August 13, 2026" [ref=e342]
+              - generic "0 contributions on August 14, 2026" [ref=e343]
+              - generic "0 contributions on August 15, 2026" [ref=e344]
+              - generic "2 contributions on August 16, 2026" [ref=e345]
+              - generic "6 contributions on August 17, 2026" [ref=e346]
+              - generic "1 contribution on August 18, 2026" [ref=e347]
+              - generic "0 contributions on August 19, 2026" [ref=e348]
+              - generic "0 contributions on August 20, 2026" [ref=e349]
+              - generic "0 contributions on August 21, 2026" [ref=e350]
+              - generic "15 contributions on August 22, 2026" [ref=e351]
+              - generic "0 contributions on August 23, 2026" [ref=e352]
+              - generic "0 contributions on August 24, 2026" [ref=e353]
+              - generic "0 contributions on August 25, 2026" [ref=e354]
+              - generic "0 contributions on August 26, 2026" [ref=e355]
+              - generic "0 contributions on August 27, 2026" [ref=e356]
+              - generic "0 contributions on August 28, 2026" [ref=e357]
+              - generic "0 contributions on August 29, 2026" [ref=e358]
+              - generic "0 contributions on August 30, 2026" [ref=e359]
+              - generic "0 contributions on August 31, 2026" [ref=e360]
+              - generic "2 contributions on September 1, 2026" [ref=e361]
+              - generic "0 contributions on September 2, 2026" [ref=e362]
+              - generic "0 contributions on September 3, 2026" [ref=e363]
+              - generic "0 contributions on September 4, 2026" [ref=e364]
+              - generic "3 contributions on September 5, 2026" [ref=e365]
+              - generic "3 contributions on September 6, 2026" [ref=e366]
+              - generic "3 contributions on September 7, 2026" [ref=e367]
+              - generic "0 contributions on September 8, 2026" [ref=e368]
+              - generic "4 contributions on September 9, 2026" [ref=e369]
+              - generic "0 contributions on September 10, 2026" [ref=e370]
+              - generic "5 contributions on September 11, 2026" [ref=e371]
+              - generic "7 contributions on September 12, 2026" [ref=e372]
+              - generic "10 contributions on September 13, 2026" [ref=e373]
+              - generic "1 contribution on September 14, 2026" [ref=e374]
+              - generic "6 contributions on September 15, 2026" [ref=e375]
+              - generic "5 contributions on September 16, 2026" [ref=e376]
+              - generic "0 contributions on September 17, 2026" [ref=e377]
+              - generic "0 contributions on September 18, 2026" [ref=e378]
+              - generic "14 contributions on September 19, 2026" [ref=e379]
+              - generic "2 contributions on September 20, 2026" [ref=e380]
+              - generic "7 contributions on September 21, 2026" [ref=e381]
+              - generic "1 contribution on September 22, 2026" [ref=e382]
+              - generic "2 contributions on September 23, 2026" [ref=e383]
+              - generic "8 contributions on September 24, 2026" [ref=e384]
+              - generic "0 contributions on September 25, 2026" [ref=e385]
+              - generic "0 contributions on September 26, 2026" [ref=e386]
+              - generic "0 contributions on September 27, 2026" [ref=e387]
+              - generic "0 contributions on September 28, 2026" [ref=e388]
+              - generic "0 contributions on September 29, 2026" [ref=e389]
+              - generic "0 contributions on September 30, 2026" [ref=e390]
+              - generic "11 contributions on October 1, 2026" [ref=e391]
+              - generic "15 contributions on October 2, 2026" [ref=e392]
+              - generic "0 contributions on October 3, 2026" [ref=e393]
+              - generic "0 contributions on October 4, 2026" [ref=e394]
+              - generic "1 contribution on October 5, 2026" [ref=e395]
+              - generic "7 contributions on October 6, 2026" [ref=e396]
+              - generic "2 contributions on October 7, 2026" [ref=e397]
+              - generic "0 contributions on October 8, 2026" [ref=e398]
+              - generic "2 contributions on October 9, 2026" [ref=e399]
+              - generic "3 contributions on October 10, 2026" [ref=e400]
+              - generic "0 contributions on October 11, 2026" [ref=e401]
+              - generic "1 contribution on October 12, 2026" [ref=e402]
+              - generic "0 contributions on October 13, 2026" [ref=e403]
+              - generic "19 contributions on October 14, 2026" [ref=e404]
+              - generic "21 contributions on October 15, 2026" [ref=e405]
+              - generic "96 contributions on October 16, 2026" [ref=e406]
+              - generic "70 contributions on October 17, 2026" [ref=e407]
+              - generic "128 contributions on October 18, 2026" [ref=e408]
+              - generic "6 contributions on October 19, 2026" [ref=e409]
+              - generic "1 contribution on October 20, 2026" [ref=e410]
+              - generic "1 contribution on October 21, 2026" [ref=e411]
+              - generic "2 contributions on October 22, 2026" [ref=e412]
+              - generic "2 contributions on October 23, 2026" [ref=e413]
+              - generic "210 contributions on October 24, 2026" [ref=e414]
+              - generic "31 contributions on October 25, 2026" [ref=e415]
+              - generic "53 contributions on October 26, 2026" [ref=e416]
+              - generic "39 contributions on October 27, 2026" [ref=e417]
+              - generic "32 contributions on October 28, 2026" [ref=e418]
+              - generic "0 contributions on October 29, 2026" [ref=e419]
+              - generic "0 contributions on October 30, 2026" [ref=e420]
+              - generic "2 contributions on October 31, 2026" [ref=e421]
+              - generic "0 contributions on November 1, 2026" [ref=e422]
+              - generic "0 contributions on November 2, 2026" [ref=e423]
+              - generic "2 contributions on November 3, 2026" [ref=e424]
+              - generic "0 contributions on November 4, 2026" [ref=e425]
+              - generic "2 contributions on November 5, 2026" [ref=e426]
+              - generic "4 contributions on November 6, 2026" [ref=e427]
+              - generic "4 contributions on November 7, 2026" [ref=e428]
+              - generic "26 contributions on November 8, 2026" [ref=e429]
+              - generic "1 contribution on November 9, 2026" [ref=e430]
+              - generic "0 contributions on November 10, 2026" [ref=e431]
+              - generic "1 contribution on November 11, 2026" [ref=e432]
+              - generic "1 contribution on November 12, 2026" [ref=e433]
+              - generic "3 contributions on November 13, 2026" [ref=e434]
+              - generic "6 contributions on November 14, 2026" [ref=e435]
+              - generic "2 contributions on November 15, 2026" [ref=e436]
+              - generic "8 contributions on November 16, 2026" [ref=e437]
+              - generic "220 contributions on November 17, 2026" [ref=e438]
+              - generic "127 contributions on November 18, 2026" [ref=e439]
+              - generic "41 contributions on November 19, 2026" [ref=e440]
+              - generic "0 contributions on November 20, 2026" [ref=e441]
+        - generic [ref=e442]:
+          - img "minifigure spin"
+    - region "People." [ref=e443]:
+      - heading "People." [level=2] [ref=e444]
+      - region "Piñata Pitch" [ref=e445]:
+        - heading "Piñata Pitch" [level=3] [ref=e447]
+        - generic [ref=e449]:
+          - figure [ref=e450]:
+            - link [ref=e451] [cursor=pointer]:
+              - /url: /people/pinata-1552.webp
+              - img "An event directory screen at Open House Montreal" [ref=e453]
+          - figure [ref=e454]:
+            - link [ref=e455] [cursor=pointer]:
+              - /url: /people/pinata-1225.webp
+              - img "Three friends smiling together with a Google sign" [ref=e457]
+          - figure [ref=e458]:
+            - link [ref=e459] [cursor=pointer]:
+              - /url: /people/pinata-0839.webp
+              - img "The audience gathered at a Piñata Pitch event" [ref=e461]
+          - figure [ref=e462]:
+            - link [ref=e463] [cursor=pointer]:
+              - /url: /people/pinata-3876.webp
+              - img "A colorful donkey piñata at a Build Day event" [ref=e465]
+      - generic [ref=e466]:
+        - region "Morgan Stanley" [ref=e467]:
+          - heading "Morgan Stanley" [level=3] [ref=e468]
+          - generic [ref=e470]:
+            - img "Morgan Stanley photo globe"
+        - region "Around the dot" [ref=e471]:
+          - generic [ref=e472]:
+            - heading "Around the dot" [level=3] [ref=e473]
+            - generic [ref=e474]:
+              - img "handwritten around the dot"
+          - generic [ref=e475]:
+            - figure [ref=e476]:
+              - link [ref=e477] [cursor=pointer]:
+                - /url: /people/around-0752.webp
+                - img "A childhood photo, asleep under a red blanket" [ref=e479]
+            - figure [ref=e480]:
+              - link [ref=e481] [cursor=pointer]:
+                - /url: /people/around-2721.webp
+                - img "A person peeking out of an inflatable dinosaur costume" [ref=e483]
+    - region "Elsewhere." [ref=e484]:
+      - heading "Elsewhere." [level=2] [ref=e485]
+      - generic [ref=e486]:
+        - figure "Èze, France" [ref=e487]:
+          - link [ref=e488] [cursor=pointer]:
+            - /url: /people/eze.webp
+            - img "A French flag above tiled rooftops overlooking the Mediterranean coastline" [ref=e490]
+        - figure "Villefranche-sur-Mer, France" [ref=e492]:
+          - link [ref=e493] [cursor=pointer]:
+            - /url: /people/villefranche.webp
+            - img "A narrow stone stairway between colorful buildings at dusk" [ref=e495]
+        - figure "Monte Carlo, Monaco" [ref=e497]:
+          - link [ref=e498] [cursor=pointer]:
+            - /url: /people/monte-carlo.webp
+            - img "A Spider-Man sculpture above a car beside a coral-colored building" [ref=e500]
+        - figure "Saint-Paul-de-Vence, France" [ref=e502]:
+          - link [ref=e503] [cursor=pointer]:
+            - /url: /people/saint-paul-de-vence.webp
+            - img "A figure suspended between sunlit stone buildings above a courtyard" [ref=e505]
+        - figure "Paris, France" [ref=e507]:
+          - link [ref=e508] [cursor=pointer]:
+            - /url: /people/paris.webp
+            - img "The Arc de Triomphe beneath a cloud-streaked sky" [ref=e510]
+        - figure "The British Museum, London" [ref=e512]:
+          - link [ref=e513] [cursor=pointer]:
+            - /url: /people/british-museum.webp
+            - img "A carved stone pig displayed in a museum case" [ref=e515]
+        - figure "Chinatown, London" [ref=e517]:
+          - link [ref=e518] [cursor=pointer]:
+            - /url: /people/chinatown.webp
+            - img "A bubble waffle held beneath rows of red lanterns" [ref=e520]
+        - figure "Platja de la Riera, Spain" [ref=e522]:
+          - link [ref=e523] [cursor=pointer]:
+            - /url: /people/platja-de-la-riera.webp
+            - img "An orange sunset over the sea and a quiet beach" [ref=e525]
+        - figure "???" [ref=e527]:
+          - link [ref=e528] [cursor=pointer]:
+            - /url: /people/after-rain.webp
+            - img "A rainy city street at dusk" [ref=e530]
+        - figure "Menton, France" [ref=e532]:
+          - link [ref=e533] [cursor=pointer]:
+            - /url: /people/window.webp
+            - img "A window framing a turquoise waterfront between yellow walls" [ref=e535]
+        - figure "???" [ref=e537]:
+          - link [ref=e538] [cursor=pointer]:
+            - /url: /people/circa-2026.webp
+            - img "Four LEGO figures lined up on a boardwalk at the beach" [ref=e540]
+        - figure "???" [ref=e542]:
+          - link [ref=e543] [cursor=pointer]:
+            - /url: /people/aurora.webp
+            - img "Colorful auroras and stars above a lake and silhouetted trees" [ref=e545]
+        - figure "Luray Caverns, USA" [ref=e547]:
+          - link [ref=e548] [cursor=pointer]:
+            - /url: /people/luray-caverns.webp
+            - img "Illuminated stalactites and tall rock formations inside a cavern" [ref=e550]
+        - figure "Cathedral Cove, New Zealand" [ref=e552]:
+          - link [ref=e553] [cursor=pointer]:
+            - /url: /people/new-zealand.webp
+            - img "A coastal rock formation and beachgoers seen beneath a rock arch" [ref=e555]
+    - navigation "University of Waterloo Computer Science webring" [ref=e558]:
+      - link "Previous site in the Waterloo CS webring" [ref=e559] [cursor=pointer]:
+        - /url: https://cs.uwatering.com/#https://www.kuant.space?nav=prev
+      - link "Open the Waterloo CS webring" [ref=e562] [cursor=pointer]:
+        - /url: https://cs.uwatering.com/#https://www.kuant.space
+      - link "Next site in the Waterloo CS webring" [ref=e563] [cursor=pointer]:
+        - /url: https://cs.uwatering.com/#https://www.kuant.space?nav=next
+  - alert [ref=e566]

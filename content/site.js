@@ -285,6 +285,14 @@ const site = {
       ],
       live: "duolingo",
     },
+    {
+      title: "Geography Nerding",
+      description: "",
+      // beside: shares the row with the hobby above (side by side)
+      beside: true,
+      // Europe speedrun replay + the world's countries (components/GeoNerd.js)
+      geo: { europeSeconds: 57 },
+    },
   ],
 
   // ---------- Music (vinyl player in the sidebar) ----------
@@ -512,7 +520,7 @@ const site = {
         ratio: 0.703,
         x: 63, y: 64, w: 13, r: 4,
         title: "curtis blue vinyl",
-        caption: "first vinyl i ever bought on my first trip to san francisco",
+        caption: "my first record bought on my first sf trip",
       },
       {
         src: "/images/banner/slugterra.webp",
