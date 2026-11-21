@@ -1,0 +1,1543 @@
+- generic [active] [ref=f17e1]:
+  - link "Skip to content" [ref=f17e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner:
+    - generic:
+      - link "Home" [ref=f17e3] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f17e6]:
+        - generic [ref=f17e7]:
+          - button "Feedback group chat" [ref=f17e8] [cursor=pointer]
+          - generic [aria-hidden]:
+            - generic: as an engineer i'm always looking for feedback
+        - link "Email" [ref=f17e11] [cursor=pointer]:
+          - /url: mailto:j.karal2008@gmail.com
+        - link "GitHub" [ref=f17e14] [cursor=pointer]:
+          - /url: https://github.com/jkaral
+        - link "LinkedIn" [ref=f17e17] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/john-karakoulas
+        - link "X" [ref=f17e20] [cursor=pointer]:
+          - /url: https://x.com/yiannibuilds
+        - button "Hide the icons" [expanded] [ref=f17e23] [cursor=pointer]
+        - generic [aria-hidden] [ref=f17e24]: ⇧shift+y
+        - button "Toggle dark mode" [ref=f17e25] [cursor=pointer]
+  - complementary "Sections" [ref=f17e29]:
+    - navigation [ref=f17e30]:
+      - list [ref=f17e31]:
+        - listitem [ref=f17e32]:
+          - link "me" [ref=f17e33] [cursor=pointer]:
+            - /url: /#top
+        - listitem [ref=f17e34]:
+          - link "work ethic" [ref=f17e35] [cursor=pointer]:
+            - /url: /work-ethic
+        - listitem [ref=f17e36]:
+          - link "identity" [ref=f17e37] [cursor=pointer]:
+            - /url: /identity
+        - listitem [ref=f17e38]:
+          - link "contact" [ref=f17e39] [cursor=pointer]:
+            - /url: /contact
+        - listitem [ref=f17e40]:
+          - link "resume" [ref=f17e41] [cursor=pointer]:
+            - /url: /resume.pdf
+    - generic [ref=f17e42]:
+      - generic "Turntable (empty)" [ref=f17e43]
+      - generic [ref=f17e44]:
+        - button "Play" [disabled] [ref=f17e45]
+        - paragraph [ref=f17e48]:
+          - generic [ref=f17e49]: drag a record onto the player
+      - generic [ref=f17e51]:
+        - 'button "Shimmer by Fuel: put it on the turntable" [ref=f17e52]'
+        - 'button "Wonderful Tonight by Babyface: put it on the turntable" [ref=f17e53]'
+        - 'button "Heaven by Warrant: put it on the turntable" [ref=f17e54]'
+        - 'button "#skeptacore pt. 3 by Skepta, Ryder: put it on the turntable" [ref=f17e55]'
+        - 'button "The Heat by Alok & Jazzy: put it on the turntable" [ref=f17e56]'
+        - 'button "Max B by A$AP Rocky: put it on the turntable" [ref=f17e57]'
+  - main [ref=f17e58]:
+    - generic [ref=f17e60]:
+      - heading "Hobbies" [level=2] [ref=f17e61]
+      - generic [ref=f17e62]:
+        - article [ref=f17e63]:
+          - img "Kickboxing + BJJ" [ref=f17e65]
+          - generic [ref=f17e66]:
+            - heading [level=3] [ref=f17e67]:
+              - text: Kickboxing + BJJ @
+              - link "The Academy ↗" [ref=f17e68] [cursor=pointer]:
+                - /url: https://www.google.com/maps/place/The+Academy+Toronto/data=!4m2!3m1!1s0x0:0x2d3e94d392d94ea1?sa=X&ved=1t:2428&ictx=111
+            - paragraph [ref=f17e69]: I started both kickboxing and BJJ in June 2026 after years of being a dedicated UFC fan (Volk is my GOAT). It's been an important part of my discipline and athletic growth.
+        - article [ref=f17e70]:
+          - img "Rugby" [ref=f17e72]
+          - generic [ref=f17e73]:
+            - heading "Rugby" [level=3] [ref=f17e74]
+            - paragraph [ref=f17e75]: During my short career on the Varsity Rugby team I played as a right winger, and, on occasion, blindside flanker (scrum in the photo). As my first contact sport, it taught me resilience and endurance.
+        - article [ref=f17e76]:
+          - link "My Currently Reading shelf on Fable" [ref=f17e78] [cursor=pointer]:
+            - /url: https://fable.co/fabler/yianni-256745595137
+            - img "The Picture of Dorian Gray cover" [ref=f17e79]
+            - img "The Will to Power cover" [ref=f17e80]
+            - img "Another Country cover" [ref=f17e81]
+            - img "The Rebel cover" [ref=f17e82]
+          - generic [ref=f17e83]:
+            - heading "Reading" [level=3] [ref=f17e84]
+            - paragraph [ref=f17e85]: Currently reading
+            - list [ref=f17e86]:
+              - listitem [ref=f17e87]:
+                - emphasis [ref=f17e88]: The Picture of Dorian Gray
+                - generic [ref=f17e89]: — Oscar Wilde
+              - listitem [ref=f17e90]:
+                - emphasis [ref=f17e91]: The Will to Power
+                - generic [ref=f17e92]: — Friedrich Nietzsche
+              - listitem [ref=f17e93]:
+                - emphasis [ref=f17e94]: Another Country
+                - generic [ref=f17e95]: — James Baldwin
+              - listitem [ref=f17e96]:
+                - emphasis [ref=f17e97]: The Rebel
+                - generic [ref=f17e98]: — Albert Camus
+            - paragraph [ref=f17e99]:
+              - text: 12 books finished ·
+              - link "My shelf on Fable ↗" [ref=f17e100] [cursor=pointer]:
+                - /url: https://fable.co/fabler/yianni-256745595137
+        - article [ref=f17e101]:
+          - generic [ref=f17e102]:
+            - heading "Learning Languages" [level=3] [ref=f17e103]
+            - paragraph [ref=f17e104]: Speaking
+            - list [ref=f17e105]:
+              - listitem [ref=f17e106]: Spanish A2
+              - listitem [ref=f17e107]: French B2
+              - listitem [ref=f17e108]: Greek Native
+            - link "248-day Duolingo streak" [ref=f17e109] [cursor=pointer]:
+              - /url: https://www.duolingo.com/profile/Yianni868569
+              - generic [ref=f17e110]:
+                - generic [ref=f17e111]: Current Streak
+                - generic [ref=f17e112]:
+                  - img "Flag of Spain" [ref=f17e113]
+                  - generic [ref=f17e116]: 248 days
+              - img "My Duolingo avatar" [ref=f17e117]
+          - generic [ref=f17e118]:
+            - heading "Geography Nerding" [level=3] [ref=f17e119]
+            - generic [ref=f17e120]:
+              - generic [ref=f17e121]:
+                - paragraph [ref=f17e122]: I can type out all 44 countries of Europe in 0:57.
+                - generic [aria-hidden] [ref=f17e123]:
+                  - generic [ref=f17e124]: Europe speedrun
+                  - generic [ref=f17e125]: 0:00.0
+                - generic [ref=f17e128]: 0/44
+                - list [aria-hidden] [ref=f17e129]:
+                  - listitem [ref=f17e130]: Albania
+                  - listitem [ref=f17e131]: Andorra
+                  - listitem [ref=f17e132]: Austria
+                  - listitem [ref=f17e133]: Belarus
+                  - listitem [ref=f17e134]: Belgium
+                  - listitem [ref=f17e135]: Bosnia and Herzegovina
+                  - listitem [ref=f17e136]: Bulgaria
+                  - listitem [ref=f17e137]: Croatia
+                  - listitem [ref=f17e138]: Czechia
+                  - listitem [ref=f17e139]: Denmark
+                  - listitem [ref=f17e140]: Estonia
+                  - listitem [ref=f17e141]: Finland
+                  - listitem [ref=f17e142]: France
+                  - listitem [ref=f17e143]: Germany
+                  - listitem [ref=f17e144]: Greece
+                  - listitem [ref=f17e145]: Hungary
+                  - listitem [ref=f17e146]: Iceland
+                  - listitem [ref=f17e147]: Ireland
+                  - listitem [ref=f17e148]: Italy
+                  - listitem [ref=f17e149]: Latvia
+                  - listitem [ref=f17e150]: Liechtenstein
+                  - listitem [ref=f17e151]: Lithuania
+                  - listitem [ref=f17e152]: Luxembourg
+                  - listitem [ref=f17e153]: Malta
+                  - listitem [ref=f17e154]: Moldova
+                  - listitem [ref=f17e155]: Monaco
+                  - listitem [ref=f17e156]: Montenegro
+                  - listitem [ref=f17e157]: Netherlands
+                  - listitem [ref=f17e158]: North Macedonia
+                  - listitem [ref=f17e159]: Norway
+                  - listitem [ref=f17e160]: Poland
+                  - listitem [ref=f17e161]: Portugal
+                  - listitem [ref=f17e162]: Romania
+                  - listitem [ref=f17e163]: Russia
+                  - listitem [ref=f17e164]: San Marino
+                  - listitem [ref=f17e165]: Serbia
+                  - listitem [ref=f17e166]: Slovakia
+                  - listitem [ref=f17e167]: Slovenia
+                  - listitem [ref=f17e168]: Spain
+                  - listitem [ref=f17e169]: Sweden
+                  - listitem [ref=f17e170]: Switzerland
+                  - listitem [ref=f17e171]: Ukraine
+                  - listitem [ref=f17e172]: United Kingdom
+                  - listitem [ref=f17e173]: Vatican City
+                - button "Replay the Europe speedrun" [ref=f17e174] [cursor=pointer]: typing…
+              - generic [ref=f17e175]:
+                - paragraph [ref=f17e176]: I can also name all 197 countries of the world.
+                - generic [aria-hidden] [ref=f17e177]:
+                  - generic [ref=f17e178]: Every country in the world
+                  - generic [ref=f17e179]: 197/197
+                - generic [aria-hidden] [ref=f17e180]:
+                  - generic [ref=f17e181]:
+                    - generic [ref=f17e182]:
+                      - generic [ref=f17e183]:
+                        - generic [ref=f17e184]: ✓
+                        - text: Afghanistan
+                      - generic [ref=f17e185]:
+                        - generic [ref=f17e186]: ✓
+                        - text: Algeria
+                      - generic [ref=f17e187]:
+                        - generic [ref=f17e188]: ✓
+                        - text: Angola
+                      - generic [ref=f17e189]:
+                        - generic [ref=f17e190]: ✓
+                        - text: Argentina
+                      - generic [ref=f17e191]:
+                        - generic [ref=f17e192]: ✓
+                        - text: Australia
+                      - generic [ref=f17e193]:
+                        - generic [ref=f17e194]: ✓
+                        - text: Azerbaijan
+                      - generic [ref=f17e195]:
+                        - generic [ref=f17e196]: ✓
+                        - text: Bahrain
+                      - generic [ref=f17e197]:
+                        - generic [ref=f17e198]: ✓
+                        - text: Barbados
+                      - generic [ref=f17e199]:
+                        - generic [ref=f17e200]: ✓
+                        - text: Belgium
+                      - generic [ref=f17e201]:
+                        - generic [ref=f17e202]: ✓
+                        - text: Benin
+                      - generic [ref=f17e203]:
+                        - generic [ref=f17e204]: ✓
+                        - text: Bolivia
+                      - generic [ref=f17e205]:
+                        - generic [ref=f17e206]: ✓
+                        - text: Botswana
+                      - generic [ref=f17e207]:
+                        - generic [ref=f17e208]: ✓
+                        - text: Brunei
+                      - generic [ref=f17e209]:
+                        - generic [ref=f17e210]: ✓
+                        - text: Burkina Faso
+                      - generic [ref=f17e211]:
+                        - generic [ref=f17e212]: ✓
+                        - text: Cabo Verde
+                      - generic [ref=f17e213]:
+                        - generic [ref=f17e214]: ✓
+                        - text: Cameroon
+                      - generic [ref=f17e215]:
+                        - generic [ref=f17e216]: ✓
+                        - text: Central African Republic
+                      - generic [ref=f17e217]:
+                        - generic [ref=f17e218]: ✓
+                        - text: Chile
+                      - generic [ref=f17e219]:
+                        - generic [ref=f17e220]: ✓
+                        - text: Colombia
+                      - generic [ref=f17e221]:
+                        - generic [ref=f17e222]: ✓
+                        - text: Congo
+                      - generic [ref=f17e223]:
+                        - generic [ref=f17e224]: ✓
+                        - text: Côte d'Ivoire
+                      - generic [ref=f17e225]:
+                        - generic [ref=f17e226]: ✓
+                        - text: Cuba
+                      - generic [ref=f17e227]:
+                        - generic [ref=f17e228]: ✓
+                        - text: Czechia
+                      - generic [ref=f17e229]:
+                        - generic [ref=f17e230]: ✓
+                        - text: Denmark
+                      - generic [ref=f17e231]:
+                        - generic [ref=f17e232]: ✓
+                        - text: Dominica
+                      - generic [ref=f17e233]:
+                        - generic [ref=f17e234]: ✓
+                        - text: Ecuador
+                      - generic [ref=f17e235]:
+                        - generic [ref=f17e236]: ✓
+                        - text: El Salvador
+                      - generic [ref=f17e237]:
+                        - generic [ref=f17e238]: ✓
+                        - text: Eritrea
+                      - generic [ref=f17e239]:
+                        - generic [ref=f17e240]: ✓
+                        - text: Eswatini
+                      - generic [ref=f17e241]:
+                        - generic [ref=f17e242]: ✓
+                        - text: Fiji
+                      - generic [ref=f17e243]:
+                        - generic [ref=f17e244]: ✓
+                        - text: France
+                      - generic [ref=f17e245]:
+                        - generic [ref=f17e246]: ✓
+                        - text: Gambia
+                      - generic [ref=f17e247]:
+                        - generic [ref=f17e248]: ✓
+                        - text: Germany
+                      - generic [ref=f17e249]:
+                        - generic [ref=f17e250]: ✓
+                        - text: Greece
+                      - generic [ref=f17e251]:
+                        - generic [ref=f17e252]: ✓
+                        - text: Guatemala
+                      - generic [ref=f17e253]:
+                        - generic [ref=f17e254]: ✓
+                        - text: Guinea-Bissau
+                      - generic [ref=f17e255]:
+                        - generic [ref=f17e256]: ✓
+                        - text: Haiti
+                      - generic [ref=f17e257]:
+                        - generic [ref=f17e258]: ✓
+                        - text: Hungary
+                      - generic [ref=f17e259]:
+                        - generic [ref=f17e260]: ✓
+                        - text: India
+                      - generic [ref=f17e261]:
+                        - generic [ref=f17e262]: ✓
+                        - text: Iran
+                      - generic [ref=f17e263]:
+                        - generic [ref=f17e264]: ✓
+                        - text: Ireland
+                      - generic [ref=f17e265]:
+                        - generic [ref=f17e266]: ✓
+                        - text: Italy
+                      - generic [ref=f17e267]:
+                        - generic [ref=f17e268]: ✓
+                        - text: Japan
+                      - generic [ref=f17e269]:
+                        - generic [ref=f17e270]: ✓
+                        - text: Kazakhstan
+                      - generic [ref=f17e271]:
+                        - generic [ref=f17e272]: ✓
+                        - text: Kiribati
+                      - generic [ref=f17e273]:
+                        - generic [ref=f17e274]: ✓
+                        - text: Kuwait
+                      - generic [ref=f17e275]:
+                        - generic [ref=f17e276]: ✓
+                        - text: Laos
+                      - generic [ref=f17e277]:
+                        - generic [ref=f17e278]: ✓
+                        - text: Lebanon
+                      - generic [ref=f17e279]:
+                        - generic [ref=f17e280]: ✓
+                        - text: Liberia
+                      - generic [ref=f17e281]:
+                        - generic [ref=f17e282]: ✓
+                        - text: Liechtenstein
+                      - generic [ref=f17e283]:
+                        - generic [ref=f17e284]: ✓
+                        - text: Luxembourg
+                      - generic [ref=f17e285]:
+                        - generic [ref=f17e286]: ✓
+                        - text: Malawi
+                      - generic [ref=f17e287]:
+                        - generic [ref=f17e288]: ✓
+                        - text: Maldives
+                      - generic [ref=f17e289]:
+                        - generic [ref=f17e290]: ✓
+                        - text: Malta
+                      - generic [ref=f17e291]:
+                        - generic [ref=f17e292]: ✓
+                        - text: Mauritania
+                      - generic [ref=f17e293]:
+                        - generic [ref=f17e294]: ✓
+                        - text: Mexico
+                      - generic [ref=f17e295]:
+                        - generic [ref=f17e296]: ✓
+                        - text: Moldova
+                      - generic [ref=f17e297]:
+                        - generic [ref=f17e298]: ✓
+                        - text: Mongolia
+                      - generic [ref=f17e299]:
+                        - generic [ref=f17e300]: ✓
+                        - text: Morocco
+                      - generic [ref=f17e301]:
+                        - generic [ref=f17e302]: ✓
+                        - text: Myanmar
+                      - generic [ref=f17e303]:
+                        - generic [ref=f17e304]: ✓
+                        - text: Nauru
+                      - generic [ref=f17e305]:
+                        - generic [ref=f17e306]: ✓
+                        - text: Netherlands
+                      - generic [ref=f17e307]:
+                        - generic [ref=f17e308]: ✓
+                        - text: Nicaragua
+                      - generic [ref=f17e309]:
+                        - generic [ref=f17e310]: ✓
+                        - text: Nigeria
+                      - generic [ref=f17e311]:
+                        - generic [ref=f17e312]: ✓
+                        - text: North Macedonia
+                      - generic [ref=f17e313]:
+                        - generic [ref=f17e314]: ✓
+                        - text: Oman
+                      - generic [ref=f17e315]:
+                        - generic [ref=f17e316]: ✓
+                        - text: Palau
+                      - generic [ref=f17e317]:
+                        - generic [ref=f17e318]: ✓
+                        - text: Panama
+                      - generic [ref=f17e319]:
+                        - generic [ref=f17e320]: ✓
+                        - text: Paraguay
+                      - generic [ref=f17e321]:
+                        - generic [ref=f17e322]: ✓
+                        - text: Philippines
+                      - generic [ref=f17e323]:
+                        - generic [ref=f17e324]: ✓
+                        - text: Portugal
+                      - generic [ref=f17e325]:
+                        - generic [ref=f17e326]: ✓
+                        - text: Romania
+                      - generic [ref=f17e327]:
+                        - generic [ref=f17e328]: ✓
+                        - text: Rwanda
+                      - generic [ref=f17e329]:
+                        - generic [ref=f17e330]: ✓
+                        - text: Saint Lucia
+                      - generic [ref=f17e331]:
+                        - generic [ref=f17e332]: ✓
+                        - text: Samoa
+                      - generic [ref=f17e333]:
+                        - generic [ref=f17e334]: ✓
+                        - text: São Tomé and Príncipe
+                      - generic [ref=f17e335]:
+                        - generic [ref=f17e336]: ✓
+                        - text: Senegal
+                      - generic [ref=f17e337]:
+                        - generic [ref=f17e338]: ✓
+                        - text: Seychelles
+                      - generic [ref=f17e339]:
+                        - generic [ref=f17e340]: ✓
+                        - text: Singapore
+                      - generic [ref=f17e341]:
+                        - generic [ref=f17e342]: ✓
+                        - text: Slovenia
+                      - generic [ref=f17e343]:
+                        - generic [ref=f17e344]: ✓
+                        - text: Somalia
+                      - generic [ref=f17e345]:
+                        - generic [ref=f17e346]: ✓
+                        - text: South Korea
+                      - generic [ref=f17e347]:
+                        - generic [ref=f17e348]: ✓
+                        - text: Spain
+                      - generic [ref=f17e349]:
+                        - generic [ref=f17e350]: ✓
+                        - text: Sudan
+                      - generic [ref=f17e351]:
+                        - generic [ref=f17e352]: ✓
+                        - text: Sweden
+                      - generic [ref=f17e353]:
+                        - generic [ref=f17e354]: ✓
+                        - text: Syria
+                      - generic [ref=f17e355]:
+                        - generic [ref=f17e356]: ✓
+                        - text: Tajikistan
+                      - generic [ref=f17e357]:
+                        - generic [ref=f17e358]: ✓
+                        - text: Thailand
+                      - generic [ref=f17e359]:
+                        - generic [ref=f17e360]: ✓
+                        - text: Togo
+                      - generic [ref=f17e361]:
+                        - generic [ref=f17e362]: ✓
+                        - text: Trinidad and Tobago
+                      - generic [ref=f17e363]:
+                        - generic [ref=f17e364]: ✓
+                        - text: Turkey
+                      - generic [ref=f17e365]:
+                        - generic [ref=f17e366]: ✓
+                        - text: Tuvalu
+                      - generic [ref=f17e367]:
+                        - generic [ref=f17e368]: ✓
+                        - text: Ukraine
+                      - generic [ref=f17e369]:
+                        - generic [ref=f17e370]: ✓
+                        - text: United Kingdom
+                      - generic [ref=f17e371]:
+                        - generic [ref=f17e372]: ✓
+                        - text: Uruguay
+                      - generic [ref=f17e373]:
+                        - generic [ref=f17e374]: ✓
+                        - text: Vanuatu
+                      - generic [ref=f17e375]:
+                        - generic [ref=f17e376]: ✓
+                        - text: Venezuela
+                      - generic [ref=f17e377]:
+                        - generic [ref=f17e378]: ✓
+                        - text: Yemen
+                      - generic [ref=f17e379]:
+                        - generic [ref=f17e380]: ✓
+                        - text: Zimbabwe
+                    - generic [ref=f17e381]:
+                      - generic [ref=f17e382]:
+                        - generic [ref=f17e383]: ✓
+                        - text: Afghanistan
+                      - generic [ref=f17e384]:
+                        - generic [ref=f17e385]: ✓
+                        - text: Algeria
+                      - generic [ref=f17e386]:
+                        - generic [ref=f17e387]: ✓
+                        - text: Angola
+                      - generic [ref=f17e388]:
+                        - generic [ref=f17e389]: ✓
+                        - text: Argentina
+                      - generic [ref=f17e390]:
+                        - generic [ref=f17e391]: ✓
+                        - text: Australia
+                      - generic [ref=f17e392]:
+                        - generic [ref=f17e393]: ✓
+                        - text: Azerbaijan
+                      - generic [ref=f17e394]:
+                        - generic [ref=f17e395]: ✓
+                        - text: Bahrain
+                      - generic [ref=f17e396]:
+                        - generic [ref=f17e397]: ✓
+                        - text: Barbados
+                      - generic [ref=f17e398]:
+                        - generic [ref=f17e399]: ✓
+                        - text: Belgium
+                      - generic [ref=f17e400]:
+                        - generic [ref=f17e401]: ✓
+                        - text: Benin
+                      - generic [ref=f17e402]:
+                        - generic [ref=f17e403]: ✓
+                        - text: Bolivia
+                      - generic [ref=f17e404]:
+                        - generic [ref=f17e405]: ✓
+                        - text: Botswana
+                      - generic [ref=f17e406]:
+                        - generic [ref=f17e407]: ✓
+                        - text: Brunei
+                      - generic [ref=f17e408]:
+                        - generic [ref=f17e409]: ✓
+                        - text: Burkina Faso
+                      - generic [ref=f17e410]:
+                        - generic [ref=f17e411]: ✓
+                        - text: Cabo Verde
+                      - generic [ref=f17e412]:
+                        - generic [ref=f17e413]: ✓
+                        - text: Cameroon
+                      - generic [ref=f17e414]:
+                        - generic [ref=f17e415]: ✓
+                        - text: Central African Republic
+                      - generic [ref=f17e416]:
+                        - generic [ref=f17e417]: ✓
+                        - text: Chile
+                      - generic [ref=f17e418]:
+                        - generic [ref=f17e419]: ✓
+                        - text: Colombia
+                      - generic [ref=f17e420]:
+                        - generic [ref=f17e421]: ✓
+                        - text: Congo
+                      - generic [ref=f17e422]:
+                        - generic [ref=f17e423]: ✓
+                        - text: Côte d'Ivoire
+                      - generic [ref=f17e424]:
+                        - generic [ref=f17e425]: ✓
+                        - text: Cuba
+                      - generic [ref=f17e426]:
+                        - generic [ref=f17e427]: ✓
+                        - text: Czechia
+                      - generic [ref=f17e428]:
+                        - generic [ref=f17e429]: ✓
+                        - text: Denmark
+                      - generic [ref=f17e430]:
+                        - generic [ref=f17e431]: ✓
+                        - text: Dominica
+                      - generic [ref=f17e432]:
+                        - generic [ref=f17e433]: ✓
+                        - text: Ecuador
+                      - generic [ref=f17e434]:
+                        - generic [ref=f17e435]: ✓
+                        - text: El Salvador
+                      - generic [ref=f17e436]:
+                        - generic [ref=f17e437]: ✓
+                        - text: Eritrea
+                      - generic [ref=f17e438]:
+                        - generic [ref=f17e439]: ✓
+                        - text: Eswatini
+                      - generic [ref=f17e440]:
+                        - generic [ref=f17e441]: ✓
+                        - text: Fiji
+                      - generic [ref=f17e442]:
+                        - generic [ref=f17e443]: ✓
+                        - text: France
+                      - generic [ref=f17e444]:
+                        - generic [ref=f17e445]: ✓
+                        - text: Gambia
+                      - generic [ref=f17e446]:
+                        - generic [ref=f17e447]: ✓
+                        - text: Germany
+                      - generic [ref=f17e448]:
+                        - generic [ref=f17e449]: ✓
+                        - text: Greece
+                      - generic [ref=f17e450]:
+                        - generic [ref=f17e451]: ✓
+                        - text: Guatemala
+                      - generic [ref=f17e452]:
+                        - generic [ref=f17e453]: ✓
+                        - text: Guinea-Bissau
+                      - generic [ref=f17e454]:
+                        - generic [ref=f17e455]: ✓
+                        - text: Haiti
+                      - generic [ref=f17e456]:
+                        - generic [ref=f17e457]: ✓
+                        - text: Hungary
+                      - generic [ref=f17e458]:
+                        - generic [ref=f17e459]: ✓
+                        - text: India
+                      - generic [ref=f17e460]:
+                        - generic [ref=f17e461]: ✓
+                        - text: Iran
+                      - generic [ref=f17e462]:
+                        - generic [ref=f17e463]: ✓
+                        - text: Ireland
+                      - generic [ref=f17e464]:
+                        - generic [ref=f17e465]: ✓
+                        - text: Italy
+                      - generic [ref=f17e466]:
+                        - generic [ref=f17e467]: ✓
+                        - text: Japan
+                      - generic [ref=f17e468]:
+                        - generic [ref=f17e469]: ✓
+                        - text: Kazakhstan
+                      - generic [ref=f17e470]:
+                        - generic [ref=f17e471]: ✓
+                        - text: Kiribati
+                      - generic [ref=f17e472]:
+                        - generic [ref=f17e473]: ✓
+                        - text: Kuwait
+                      - generic [ref=f17e474]:
+                        - generic [ref=f17e475]: ✓
+                        - text: Laos
+                      - generic [ref=f17e476]:
+                        - generic [ref=f17e477]: ✓
+                        - text: Lebanon
+                      - generic [ref=f17e478]:
+                        - generic [ref=f17e479]: ✓
+                        - text: Liberia
+                      - generic [ref=f17e480]:
+                        - generic [ref=f17e481]: ✓
+                        - text: Liechtenstein
+                      - generic [ref=f17e482]:
+                        - generic [ref=f17e483]: ✓
+                        - text: Luxembourg
+                      - generic [ref=f17e484]:
+                        - generic [ref=f17e485]: ✓
+                        - text: Malawi
+                      - generic [ref=f17e486]:
+                        - generic [ref=f17e487]: ✓
+                        - text: Maldives
+                      - generic [ref=f17e488]:
+                        - generic [ref=f17e489]: ✓
+                        - text: Malta
+                      - generic [ref=f17e490]:
+                        - generic [ref=f17e491]: ✓
+                        - text: Mauritania
+                      - generic [ref=f17e492]:
+                        - generic [ref=f17e493]: ✓
+                        - text: Mexico
+                      - generic [ref=f17e494]:
+                        - generic [ref=f17e495]: ✓
+                        - text: Moldova
+                      - generic [ref=f17e496]:
+                        - generic [ref=f17e497]: ✓
+                        - text: Mongolia
+                      - generic [ref=f17e498]:
+                        - generic [ref=f17e499]: ✓
+                        - text: Morocco
+                      - generic [ref=f17e500]:
+                        - generic [ref=f17e501]: ✓
+                        - text: Myanmar
+                      - generic [ref=f17e502]:
+                        - generic [ref=f17e503]: ✓
+                        - text: Nauru
+                      - generic [ref=f17e504]:
+                        - generic [ref=f17e505]: ✓
+                        - text: Netherlands
+                      - generic [ref=f17e506]:
+                        - generic [ref=f17e507]: ✓
+                        - text: Nicaragua
+                      - generic [ref=f17e508]:
+                        - generic [ref=f17e509]: ✓
+                        - text: Nigeria
+                      - generic [ref=f17e510]:
+                        - generic [ref=f17e511]: ✓
+                        - text: North Macedonia
+                      - generic [ref=f17e512]:
+                        - generic [ref=f17e513]: ✓
+                        - text: Oman
+                      - generic [ref=f17e514]:
+                        - generic [ref=f17e515]: ✓
+                        - text: Palau
+                      - generic [ref=f17e516]:
+                        - generic [ref=f17e517]: ✓
+                        - text: Panama
+                      - generic [ref=f17e518]:
+                        - generic [ref=f17e519]: ✓
+                        - text: Paraguay
+                      - generic [ref=f17e520]:
+                        - generic [ref=f17e521]: ✓
+                        - text: Philippines
+                      - generic [ref=f17e522]:
+                        - generic [ref=f17e523]: ✓
+                        - text: Portugal
+                      - generic [ref=f17e524]:
+                        - generic [ref=f17e525]: ✓
+                        - text: Romania
+                      - generic [ref=f17e526]:
+                        - generic [ref=f17e527]: ✓
+                        - text: Rwanda
+                      - generic [ref=f17e528]:
+                        - generic [ref=f17e529]: ✓
+                        - text: Saint Lucia
+                      - generic [ref=f17e530]:
+                        - generic [ref=f17e531]: ✓
+                        - text: Samoa
+                      - generic [ref=f17e532]:
+                        - generic [ref=f17e533]: ✓
+                        - text: São Tomé and Príncipe
+                      - generic [ref=f17e534]:
+                        - generic [ref=f17e535]: ✓
+                        - text: Senegal
+                      - generic [ref=f17e536]:
+                        - generic [ref=f17e537]: ✓
+                        - text: Seychelles
+                      - generic [ref=f17e538]:
+                        - generic [ref=f17e539]: ✓
+                        - text: Singapore
+                      - generic [ref=f17e540]:
+                        - generic [ref=f17e541]: ✓
+                        - text: Slovenia
+                      - generic [ref=f17e542]:
+                        - generic [ref=f17e543]: ✓
+                        - text: Somalia
+                      - generic [ref=f17e544]:
+                        - generic [ref=f17e545]: ✓
+                        - text: South Korea
+                      - generic [ref=f17e546]:
+                        - generic [ref=f17e547]: ✓
+                        - text: Spain
+                      - generic [ref=f17e548]:
+                        - generic [ref=f17e549]: ✓
+                        - text: Sudan
+                      - generic [ref=f17e550]:
+                        - generic [ref=f17e551]: ✓
+                        - text: Sweden
+                      - generic [ref=f17e552]:
+                        - generic [ref=f17e553]: ✓
+                        - text: Syria
+                      - generic [ref=f17e554]:
+                        - generic [ref=f17e555]: ✓
+                        - text: Tajikistan
+                      - generic [ref=f17e556]:
+                        - generic [ref=f17e557]: ✓
+                        - text: Thailand
+                      - generic [ref=f17e558]:
+                        - generic [ref=f17e559]: ✓
+                        - text: Togo
+                      - generic [ref=f17e560]:
+                        - generic [ref=f17e561]: ✓
+                        - text: Trinidad and Tobago
+                      - generic [ref=f17e562]:
+                        - generic [ref=f17e563]: ✓
+                        - text: Turkey
+                      - generic [ref=f17e564]:
+                        - generic [ref=f17e565]: ✓
+                        - text: Tuvalu
+                      - generic [ref=f17e566]:
+                        - generic [ref=f17e567]: ✓
+                        - text: Ukraine
+                      - generic [ref=f17e568]:
+                        - generic [ref=f17e569]: ✓
+                        - text: United Kingdom
+                      - generic [ref=f17e570]:
+                        - generic [ref=f17e571]: ✓
+                        - text: Uruguay
+                      - generic [ref=f17e572]:
+                        - generic [ref=f17e573]: ✓
+                        - text: Vanuatu
+                      - generic [ref=f17e574]:
+                        - generic [ref=f17e575]: ✓
+                        - text: Venezuela
+                      - generic [ref=f17e576]:
+                        - generic [ref=f17e577]: ✓
+                        - text: Yemen
+                      - generic [ref=f17e578]:
+                        - generic [ref=f17e579]: ✓
+                        - text: Zimbabwe
+                  - generic [ref=f17e580]:
+                    - generic [ref=f17e581]:
+                      - generic [ref=f17e582]:
+                        - generic [ref=f17e583]: ✓
+                        - text: Albania
+                      - generic [ref=f17e584]:
+                        - generic [ref=f17e585]: ✓
+                        - text: Andorra
+                      - generic [ref=f17e586]:
+                        - generic [ref=f17e587]: ✓
+                        - text: Antigua and Barbuda
+                      - generic [ref=f17e588]:
+                        - generic [ref=f17e589]: ✓
+                        - text: Armenia
+                      - generic [ref=f17e590]:
+                        - generic [ref=f17e591]: ✓
+                        - text: Austria
+                      - generic [ref=f17e592]:
+                        - generic [ref=f17e593]: ✓
+                        - text: Bahamas
+                      - generic [ref=f17e594]:
+                        - generic [ref=f17e595]: ✓
+                        - text: Bangladesh
+                      - generic [ref=f17e596]:
+                        - generic [ref=f17e597]: ✓
+                        - text: Belarus
+                      - generic [ref=f17e598]:
+                        - generic [ref=f17e599]: ✓
+                        - text: Belize
+                      - generic [ref=f17e600]:
+                        - generic [ref=f17e601]: ✓
+                        - text: Bhutan
+                      - generic [ref=f17e602]:
+                        - generic [ref=f17e603]: ✓
+                        - text: Bosnia and Herzegovina
+                      - generic [ref=f17e604]:
+                        - generic [ref=f17e605]: ✓
+                        - text: Brazil
+                      - generic [ref=f17e606]:
+                        - generic [ref=f17e607]: ✓
+                        - text: Bulgaria
+                      - generic [ref=f17e608]:
+                        - generic [ref=f17e609]: ✓
+                        - text: Burundi
+                      - generic [ref=f17e610]:
+                        - generic [ref=f17e611]: ✓
+                        - text: Cambodia
+                      - generic [ref=f17e612]:
+                        - generic [ref=f17e613]: ✓
+                        - text: Canada
+                      - generic [ref=f17e614]:
+                        - generic [ref=f17e615]: ✓
+                        - text: Chad
+                      - generic [ref=f17e616]:
+                        - generic [ref=f17e617]: ✓
+                        - text: China
+                      - generic [ref=f17e618]:
+                        - generic [ref=f17e619]: ✓
+                        - text: Comoros
+                      - generic [ref=f17e620]:
+                        - generic [ref=f17e621]: ✓
+                        - text: Costa Rica
+                      - generic [ref=f17e622]:
+                        - generic [ref=f17e623]: ✓
+                        - text: Croatia
+                      - generic [ref=f17e624]:
+                        - generic [ref=f17e625]: ✓
+                        - text: Cyprus
+                      - generic [ref=f17e626]:
+                        - generic [ref=f17e627]: ✓
+                        - text: DR Congo
+                      - generic [ref=f17e628]:
+                        - generic [ref=f17e629]: ✓
+                        - text: Djibouti
+                      - generic [ref=f17e630]:
+                        - generic [ref=f17e631]: ✓
+                        - text: Dominican Republic
+                      - generic [ref=f17e632]:
+                        - generic [ref=f17e633]: ✓
+                        - text: Egypt
+                      - generic [ref=f17e634]:
+                        - generic [ref=f17e635]: ✓
+                        - text: Equatorial Guinea
+                      - generic [ref=f17e636]:
+                        - generic [ref=f17e637]: ✓
+                        - text: Estonia
+                      - generic [ref=f17e638]:
+                        - generic [ref=f17e639]: ✓
+                        - text: Ethiopia
+                      - generic [ref=f17e640]:
+                        - generic [ref=f17e641]: ✓
+                        - text: Finland
+                      - generic [ref=f17e642]:
+                        - generic [ref=f17e643]: ✓
+                        - text: Gabon
+                      - generic [ref=f17e644]:
+                        - generic [ref=f17e645]: ✓
+                        - text: Georgia
+                      - generic [ref=f17e646]:
+                        - generic [ref=f17e647]: ✓
+                        - text: Ghana
+                      - generic [ref=f17e648]:
+                        - generic [ref=f17e649]: ✓
+                        - text: Grenada
+                      - generic [ref=f17e650]:
+                        - generic [ref=f17e651]: ✓
+                        - text: Guinea
+                      - generic [ref=f17e652]:
+                        - generic [ref=f17e653]: ✓
+                        - text: Guyana
+                      - generic [ref=f17e654]:
+                        - generic [ref=f17e655]: ✓
+                        - text: Honduras
+                      - generic [ref=f17e656]:
+                        - generic [ref=f17e657]: ✓
+                        - text: Iceland
+                      - generic [ref=f17e658]:
+                        - generic [ref=f17e659]: ✓
+                        - text: Indonesia
+                      - generic [ref=f17e660]:
+                        - generic [ref=f17e661]: ✓
+                        - text: Iraq
+                      - generic [ref=f17e662]:
+                        - generic [ref=f17e663]: ✓
+                        - text: Israel
+                      - generic [ref=f17e664]:
+                        - generic [ref=f17e665]: ✓
+                        - text: Jamaica
+                      - generic [ref=f17e666]:
+                        - generic [ref=f17e667]: ✓
+                        - text: Jordan
+                      - generic [ref=f17e668]:
+                        - generic [ref=f17e669]: ✓
+                        - text: Kenya
+                      - generic [ref=f17e670]:
+                        - generic [ref=f17e671]: ✓
+                        - text: Kosovo
+                      - generic [ref=f17e672]:
+                        - generic [ref=f17e673]: ✓
+                        - text: Kyrgyzstan
+                      - generic [ref=f17e674]:
+                        - generic [ref=f17e675]: ✓
+                        - text: Latvia
+                      - generic [ref=f17e676]:
+                        - generic [ref=f17e677]: ✓
+                        - text: Lesotho
+                      - generic [ref=f17e678]:
+                        - generic [ref=f17e679]: ✓
+                        - text: Libya
+                      - generic [ref=f17e680]:
+                        - generic [ref=f17e681]: ✓
+                        - text: Lithuania
+                      - generic [ref=f17e682]:
+                        - generic [ref=f17e683]: ✓
+                        - text: Madagascar
+                      - generic [ref=f17e684]:
+                        - generic [ref=f17e685]: ✓
+                        - text: Malaysia
+                      - generic [ref=f17e686]:
+                        - generic [ref=f17e687]: ✓
+                        - text: Mali
+                      - generic [ref=f17e688]:
+                        - generic [ref=f17e689]: ✓
+                        - text: Marshall Islands
+                      - generic [ref=f17e690]:
+                        - generic [ref=f17e691]: ✓
+                        - text: Mauritius
+                      - generic [ref=f17e692]:
+                        - generic [ref=f17e693]: ✓
+                        - text: Micronesia
+                      - generic [ref=f17e694]:
+                        - generic [ref=f17e695]: ✓
+                        - text: Monaco
+                      - generic [ref=f17e696]:
+                        - generic [ref=f17e697]: ✓
+                        - text: Montenegro
+                      - generic [ref=f17e698]:
+                        - generic [ref=f17e699]: ✓
+                        - text: Mozambique
+                      - generic [ref=f17e700]:
+                        - generic [ref=f17e701]: ✓
+                        - text: Namibia
+                      - generic [ref=f17e702]:
+                        - generic [ref=f17e703]: ✓
+                        - text: Nepal
+                      - generic [ref=f17e704]:
+                        - generic [ref=f17e705]: ✓
+                        - text: New Zealand
+                      - generic [ref=f17e706]:
+                        - generic [ref=f17e707]: ✓
+                        - text: Niger
+                      - generic [ref=f17e708]:
+                        - generic [ref=f17e709]: ✓
+                        - text: North Korea
+                      - generic [ref=f17e710]:
+                        - generic [ref=f17e711]: ✓
+                        - text: Norway
+                      - generic [ref=f17e712]:
+                        - generic [ref=f17e713]: ✓
+                        - text: Pakistan
+                      - generic [ref=f17e714]:
+                        - generic [ref=f17e715]: ✓
+                        - text: Palestine
+                      - generic [ref=f17e716]:
+                        - generic [ref=f17e717]: ✓
+                        - text: Papua New Guinea
+                      - generic [ref=f17e718]:
+                        - generic [ref=f17e719]: ✓
+                        - text: Peru
+                      - generic [ref=f17e720]:
+                        - generic [ref=f17e721]: ✓
+                        - text: Poland
+                      - generic [ref=f17e722]:
+                        - generic [ref=f17e723]: ✓
+                        - text: Qatar
+                      - generic [ref=f17e724]:
+                        - generic [ref=f17e725]: ✓
+                        - text: Russia
+                      - generic [ref=f17e726]:
+                        - generic [ref=f17e727]: ✓
+                        - text: Saint Kitts and Nevis
+                      - generic [ref=f17e728]:
+                        - generic [ref=f17e729]: ✓
+                        - text: Saint Vincent and the Grenadines
+                      - generic [ref=f17e730]:
+                        - generic [ref=f17e731]: ✓
+                        - text: San Marino
+                      - generic [ref=f17e732]:
+                        - generic [ref=f17e733]: ✓
+                        - text: Saudi Arabia
+                      - generic [ref=f17e734]:
+                        - generic [ref=f17e735]: ✓
+                        - text: Serbia
+                      - generic [ref=f17e736]:
+                        - generic [ref=f17e737]: ✓
+                        - text: Sierra Leone
+                      - generic [ref=f17e738]:
+                        - generic [ref=f17e739]: ✓
+                        - text: Slovakia
+                      - generic [ref=f17e740]:
+                        - generic [ref=f17e741]: ✓
+                        - text: Solomon Islands
+                      - generic [ref=f17e742]:
+                        - generic [ref=f17e743]: ✓
+                        - text: South Africa
+                      - generic [ref=f17e744]:
+                        - generic [ref=f17e745]: ✓
+                        - text: South Sudan
+                      - generic [ref=f17e746]:
+                        - generic [ref=f17e747]: ✓
+                        - text: Sri Lanka
+                      - generic [ref=f17e748]:
+                        - generic [ref=f17e749]: ✓
+                        - text: Suriname
+                      - generic [ref=f17e750]:
+                        - generic [ref=f17e751]: ✓
+                        - text: Switzerland
+                      - generic [ref=f17e752]:
+                        - generic [ref=f17e753]: ✓
+                        - text: Taiwan
+                      - generic [ref=f17e754]:
+                        - generic [ref=f17e755]: ✓
+                        - text: Tanzania
+                      - generic [ref=f17e756]:
+                        - generic [ref=f17e757]: ✓
+                        - text: Timor-Leste
+                      - generic [ref=f17e758]:
+                        - generic [ref=f17e759]: ✓
+                        - text: Tonga
+                      - generic [ref=f17e760]:
+                        - generic [ref=f17e761]: ✓
+                        - text: Tunisia
+                      - generic [ref=f17e762]:
+                        - generic [ref=f17e763]: ✓
+                        - text: Turkmenistan
+                      - generic [ref=f17e764]:
+                        - generic [ref=f17e765]: ✓
+                        - text: Uganda
+                      - generic [ref=f17e766]:
+                        - generic [ref=f17e767]: ✓
+                        - text: United Arab Emirates
+                      - generic [ref=f17e768]:
+                        - generic [ref=f17e769]: ✓
+                        - text: United States
+                      - generic [ref=f17e770]:
+                        - generic [ref=f17e771]: ✓
+                        - text: Uzbekistan
+                      - generic [ref=f17e772]:
+                        - generic [ref=f17e773]: ✓
+                        - text: Vatican City
+                      - generic [ref=f17e774]:
+                        - generic [ref=f17e775]: ✓
+                        - text: Vietnam
+                      - generic [ref=f17e776]:
+                        - generic [ref=f17e777]: ✓
+                        - text: Zambia
+                    - generic [ref=f17e778]:
+                      - generic [ref=f17e779]:
+                        - generic [ref=f17e780]: ✓
+                        - text: Albania
+                      - generic [ref=f17e781]:
+                        - generic [ref=f17e782]: ✓
+                        - text: Andorra
+                      - generic [ref=f17e783]:
+                        - generic [ref=f17e784]: ✓
+                        - text: Antigua and Barbuda
+                      - generic [ref=f17e785]:
+                        - generic [ref=f17e786]: ✓
+                        - text: Armenia
+                      - generic [ref=f17e787]:
+                        - generic [ref=f17e788]: ✓
+                        - text: Austria
+                      - generic [ref=f17e789]:
+                        - generic [ref=f17e790]: ✓
+                        - text: Bahamas
+                      - generic [ref=f17e791]:
+                        - generic [ref=f17e792]: ✓
+                        - text: Bangladesh
+                      - generic [ref=f17e793]:
+                        - generic [ref=f17e794]: ✓
+                        - text: Belarus
+                      - generic [ref=f17e795]:
+                        - generic [ref=f17e796]: ✓
+                        - text: Belize
+                      - generic [ref=f17e797]:
+                        - generic [ref=f17e798]: ✓
+                        - text: Bhutan
+                      - generic [ref=f17e799]:
+                        - generic [ref=f17e800]: ✓
+                        - text: Bosnia and Herzegovina
+                      - generic [ref=f17e801]:
+                        - generic [ref=f17e802]: ✓
+                        - text: Brazil
+                      - generic [ref=f17e803]:
+                        - generic [ref=f17e804]: ✓
+                        - text: Bulgaria
+                      - generic [ref=f17e805]:
+                        - generic [ref=f17e806]: ✓
+                        - text: Burundi
+                      - generic [ref=f17e807]:
+                        - generic [ref=f17e808]: ✓
+                        - text: Cambodia
+                      - generic [ref=f17e809]:
+                        - generic [ref=f17e810]: ✓
+                        - text: Canada
+                      - generic [ref=f17e811]:
+                        - generic [ref=f17e812]: ✓
+                        - text: Chad
+                      - generic [ref=f17e813]:
+                        - generic [ref=f17e814]: ✓
+                        - text: China
+                      - generic [ref=f17e815]:
+                        - generic [ref=f17e816]: ✓
+                        - text: Comoros
+                      - generic [ref=f17e817]:
+                        - generic [ref=f17e818]: ✓
+                        - text: Costa Rica
+                      - generic [ref=f17e819]:
+                        - generic [ref=f17e820]: ✓
+                        - text: Croatia
+                      - generic [ref=f17e821]:
+                        - generic [ref=f17e822]: ✓
+                        - text: Cyprus
+                      - generic [ref=f17e823]:
+                        - generic [ref=f17e824]: ✓
+                        - text: DR Congo
+                      - generic [ref=f17e825]:
+                        - generic [ref=f17e826]: ✓
+                        - text: Djibouti
+                      - generic [ref=f17e827]:
+                        - generic [ref=f17e828]: ✓
+                        - text: Dominican Republic
+                      - generic [ref=f17e829]:
+                        - generic [ref=f17e830]: ✓
+                        - text: Egypt
+                      - generic [ref=f17e831]:
+                        - generic [ref=f17e832]: ✓
+                        - text: Equatorial Guinea
+                      - generic [ref=f17e833]:
+                        - generic [ref=f17e834]: ✓
+                        - text: Estonia
+                      - generic [ref=f17e835]:
+                        - generic [ref=f17e836]: ✓
+                        - text: Ethiopia
+                      - generic [ref=f17e837]:
+                        - generic [ref=f17e838]: ✓
+                        - text: Finland
+                      - generic [ref=f17e839]:
+                        - generic [ref=f17e840]: ✓
+                        - text: Gabon
+                      - generic [ref=f17e841]:
+                        - generic [ref=f17e842]: ✓
+                        - text: Georgia
+                      - generic [ref=f17e843]:
+                        - generic [ref=f17e844]: ✓
+                        - text: Ghana
+                      - generic [ref=f17e845]:
+                        - generic [ref=f17e846]: ✓
+                        - text: Grenada
+                      - generic [ref=f17e847]:
+                        - generic [ref=f17e848]: ✓
+                        - text: Guinea
+                      - generic [ref=f17e849]:
+                        - generic [ref=f17e850]: ✓
+                        - text: Guyana
+                      - generic [ref=f17e851]:
+                        - generic [ref=f17e852]: ✓
+                        - text: Honduras
+                      - generic [ref=f17e853]:
+                        - generic [ref=f17e854]: ✓
+                        - text: Iceland
+                      - generic [ref=f17e855]:
+                        - generic [ref=f17e856]: ✓
+                        - text: Indonesia
+                      - generic [ref=f17e857]:
+                        - generic [ref=f17e858]: ✓
+                        - text: Iraq
+                      - generic [ref=f17e859]:
+                        - generic [ref=f17e860]: ✓
+                        - text: Israel
+                      - generic [ref=f17e861]:
+                        - generic [ref=f17e862]: ✓
+                        - text: Jamaica
+                      - generic [ref=f17e863]:
+                        - generic [ref=f17e864]: ✓
+                        - text: Jordan
+                      - generic [ref=f17e865]:
+                        - generic [ref=f17e866]: ✓
+                        - text: Kenya
+                      - generic [ref=f17e867]:
+                        - generic [ref=f17e868]: ✓
+                        - text: Kosovo
+                      - generic [ref=f17e869]:
+                        - generic [ref=f17e870]: ✓
+                        - text: Kyrgyzstan
+                      - generic [ref=f17e871]:
+                        - generic [ref=f17e872]: ✓
+                        - text: Latvia
+                      - generic [ref=f17e873]:
+                        - generic [ref=f17e874]: ✓
+                        - text: Lesotho
+                      - generic [ref=f17e875]:
+                        - generic [ref=f17e876]: ✓
+                        - text: Libya
+                      - generic [ref=f17e877]:
+                        - generic [ref=f17e878]: ✓
+                        - text: Lithuania
+                      - generic [ref=f17e879]:
+                        - generic [ref=f17e880]: ✓
+                        - text: Madagascar
+                      - generic [ref=f17e881]:
+                        - generic [ref=f17e882]: ✓
+                        - text: Malaysia
+                      - generic [ref=f17e883]:
+                        - generic [ref=f17e884]: ✓
+                        - text: Mali
+                      - generic [ref=f17e885]:
+                        - generic [ref=f17e886]: ✓
+                        - text: Marshall Islands
+                      - generic [ref=f17e887]:
+                        - generic [ref=f17e888]: ✓
+                        - text: Mauritius
+                      - generic [ref=f17e889]:
+                        - generic [ref=f17e890]: ✓
+                        - text: Micronesia
+                      - generic [ref=f17e891]:
+                        - generic [ref=f17e892]: ✓
+                        - text: Monaco
+                      - generic [ref=f17e893]:
+                        - generic [ref=f17e894]: ✓
+                        - text: Montenegro
+                      - generic [ref=f17e895]:
+                        - generic [ref=f17e896]: ✓
+                        - text: Mozambique
+                      - generic [ref=f17e897]:
+                        - generic [ref=f17e898]: ✓
+                        - text: Namibia
+                      - generic [ref=f17e899]:
+                        - generic [ref=f17e900]: ✓
+                        - text: Nepal
+                      - generic [ref=f17e901]:
+                        - generic [ref=f17e902]: ✓
+                        - text: New Zealand
+                      - generic [ref=f17e903]:
+                        - generic [ref=f17e904]: ✓
+                        - text: Niger
+                      - generic [ref=f17e905]:
+                        - generic [ref=f17e906]: ✓
+                        - text: North Korea
+                      - generic [ref=f17e907]:
+                        - generic [ref=f17e908]: ✓
+                        - text: Norway
+                      - generic [ref=f17e909]:
+                        - generic [ref=f17e910]: ✓
+                        - text: Pakistan
+                      - generic [ref=f17e911]:
+                        - generic [ref=f17e912]: ✓
+                        - text: Palestine
+                      - generic [ref=f17e913]:
+                        - generic [ref=f17e914]: ✓
+                        - text: Papua New Guinea
+                      - generic [ref=f17e915]:
+                        - generic [ref=f17e916]: ✓
+                        - text: Peru
+                      - generic [ref=f17e917]:
+                        - generic [ref=f17e918]: ✓
+                        - text: Poland
+                      - generic [ref=f17e919]:
+                        - generic [ref=f17e920]: ✓
+                        - text: Qatar
+                      - generic [ref=f17e921]:
+                        - generic [ref=f17e922]: ✓
+                        - text: Russia
+                      - generic [ref=f17e923]:
+                        - generic [ref=f17e924]: ✓
+                        - text: Saint Kitts and Nevis
+                      - generic [ref=f17e925]:
+                        - generic [ref=f17e926]: ✓
+                        - text: Saint Vincent and the Grenadines
+                      - generic [ref=f17e927]:
+                        - generic [ref=f17e928]: ✓
+                        - text: San Marino
+                      - generic [ref=f17e929]:
+                        - generic [ref=f17e930]: ✓
+                        - text: Saudi Arabia
+                      - generic [ref=f17e931]:
+                        - generic [ref=f17e932]: ✓
+                        - text: Serbia
+                      - generic [ref=f17e933]:
+                        - generic [ref=f17e934]: ✓
+                        - text: Sierra Leone
+                      - generic [ref=f17e935]:
+                        - generic [ref=f17e936]: ✓
+                        - text: Slovakia
+                      - generic [ref=f17e937]:
+                        - generic [ref=f17e938]: ✓
+                        - text: Solomon Islands
+                      - generic [ref=f17e939]:
+                        - generic [ref=f17e940]: ✓
+                        - text: South Africa
+                      - generic [ref=f17e941]:
+                        - generic [ref=f17e942]: ✓
+                        - text: South Sudan
+                      - generic [ref=f17e943]:
+                        - generic [ref=f17e944]: ✓
+                        - text: Sri Lanka
+                      - generic [ref=f17e945]:
+                        - generic [ref=f17e946]: ✓
+                        - text: Suriname
+                      - generic [ref=f17e947]:
+                        - generic [ref=f17e948]: ✓
+                        - text: Switzerland
+                      - generic [ref=f17e949]:
+                        - generic [ref=f17e950]: ✓
+                        - text: Taiwan
+                      - generic [ref=f17e951]:
+                        - generic [ref=f17e952]: ✓
+                        - text: Tanzania
+                      - generic [ref=f17e953]:
+                        - generic [ref=f17e954]: ✓
+                        - text: Timor-Leste
+                      - generic [ref=f17e955]:
+                        - generic [ref=f17e956]: ✓
+                        - text: Tonga
+                      - generic [ref=f17e957]:
+                        - generic [ref=f17e958]: ✓
+                        - text: Tunisia
+                      - generic [ref=f17e959]:
+                        - generic [ref=f17e960]: ✓
+                        - text: Turkmenistan
+                      - generic [ref=f17e961]:
+                        - generic [ref=f17e962]: ✓
+                        - text: Uganda
+                      - generic [ref=f17e963]:
+                        - generic [ref=f17e964]: ✓
+                        - text: United Arab Emirates
+                      - generic [ref=f17e965]:
+                        - generic [ref=f17e966]: ✓
+                        - text: United States
+                      - generic [ref=f17e967]:
+                        - generic [ref=f17e968]: ✓
+                        - text: Uzbekistan
+                      - generic [ref=f17e969]:
+                        - generic [ref=f17e970]: ✓
+                        - text: Vatican City
+                      - generic [ref=f17e971]:
+                        - generic [ref=f17e972]: ✓
+                        - text: Vietnam
+                      - generic [ref=f17e973]:
+                        - generic [ref=f17e974]: ✓
+                        - text: Zambia
+    - generic [ref=f17e976]:
+      - heading "Writing" [level=2] [ref=f17e977]
+      - list [ref=f17e978]:
+        - listitem [ref=f17e979]:
+          - generic [ref=f17e980]:
+            - heading [level=3] [ref=f17e981]:
+              - link "What Yann LeCun Taught Me About the Limits of Language" [ref=f17e982] [cursor=pointer]:
+                - /url: /writing/yann-lecun-limits-of-language
+            - paragraph [ref=f17e983]: The data wall, model collapse, and why a four-year-old has seen more than an LLM
+          - generic [ref=f17e984]: Nov 11, 2026
+        - listitem [ref=f17e985]:
+          - generic [ref=f17e986]:
+            - heading [level=3] [ref=f17e987]:
+              - link "Critiquing Transactional Altruism and the Erosion of Genuine Community Service among Youth" [ref=f17e988] [cursor=pointer]:
+                - /url: /writing/transactional-altruism
+            - paragraph [ref=f17e989]: Thoughts on Uni Apps and their Effects on the pursuit of Altruism
+          - generic [ref=f17e990]: March 2026
+    - generic [ref=f17e993]:
+      - generic [ref=f17e994]:
+        - heading "my mind" [level=2] [ref=f17e995]
+        - paragraph [ref=f17e996]: The people, art and things that shape how I think.
+        - tablist "View" [ref=f17e997]:
+          - tab "carousel" [selected] [ref=f17e998] [cursor=pointer]
+          - tab "gallery" [ref=f17e1000] [cursor=pointer]
+      - generic [ref=f17e1002]:
+        - 'region "my mind: the blacker the berry the sweeter the juice" [ref=f17e1003]':
+          - generic:
+            - generic [ref=f17e1004] [cursor=pointer]:
+              - generic [ref=f17e1005]:
+                - img "the blacker the berry the sweeter the juice"
+              - generic [ref=f17e1006]:
+                - text: "001"
+                - heading "the blacker the berry the sweeter the juice" [level=3] [ref=f17e1007]
+                - paragraph [ref=f17e1008]: best rap album OAT
+            - generic [ref=f17e1009] [cursor=pointer]:
+              - generic [ref=f17e1010]:
+                - img "Yukio Mishima"
+              - generic [ref=f17e1011]:
+                - text: "002"
+                - heading "Yukio Mishima" [level=3] [ref=f17e1012]
+                - paragraph [ref=f17e1013]: the most conflicted person i've read
+            - generic [ref=f17e1014] [cursor=pointer]:
+              - generic [ref=f17e1015]:
+                - img "chicken joe"
+              - generic [ref=f17e1016]:
+                - text: "003"
+                - heading "chicken joe" [level=3] [ref=f17e1017]
+                - paragraph [ref=f17e1018]: the epitome of "chill"; my reminder to, sometimes, take things slow
+            - generic [ref=f17e1019] [cursor=pointer]:
+              - generic [ref=f17e1020]:
+                - img "cloud runners"
+              - generic [ref=f17e1021]:
+                - text: "004"
+                - heading "cloud runners" [level=3] [ref=f17e1022]
+                - paragraph [ref=f17e1023]: hands down the most comfortable sneakers ive ever worn (not sponsored)
+            - generic [ref=f17e1024] [cursor=pointer]:
+              - generic [ref=f17e1025]:
+                - img "mma gloves"
+              - generic [ref=f17e1026]:
+                - text: "005"
+                - heading "mma gloves" [level=3] [ref=f17e1027]
+                - paragraph [ref=f17e1028]: "my #1 instrument of stress-relief and discipline building"
+            - generic [ref=f17e1029] [cursor=pointer]:
+              - generic [ref=f17e1030]:
+                - img "backgammon board"
+              - generic [ref=f17e1031]:
+                - text: "006"
+                - heading "backgammon board" [level=3] [ref=f17e1032]
+                - paragraph [ref=f17e1033]: a game I played as a kid with my grandpa (παππού)
+            - generic [ref=f17e1034] [cursor=pointer]:
+              - generic [ref=f17e1035]:
+                - img "uniqlo blank hoodie"
+              - generic [ref=f17e1036]:
+                - text: "007"
+                - heading "uniqlo blank hoodie" [level=3] [ref=f17e1037]
+                - paragraph [ref=f17e1038]: my go-to sweatshirt
+            - generic [ref=f17e1039] [cursor=pointer]:
+              - generic [ref=f17e1040]:
+                - img "man united"
+              - generic [ref=f17e1041]:
+                - text: "008"
+                - heading "man united" [level=3] [ref=f17e1042]
+                - paragraph [ref=f17e1043]: "this club is an emotional rollercoaster #glazersout"
+            - generic [ref=f17e1044] [cursor=pointer]:
+              - generic [ref=f17e1045]:
+                - img "olympiacos"
+              - generic [ref=f17e1046]:
+                - text: "009"
+                - heading "olympiacos" [level=3] [ref=f17e1047]
+                - paragraph [ref=f17e1048]: είσαι στο μυαλοοοοοοοοο κάτι μαγικοοοοοοοοο...
+            - generic [ref=f17e1049] [cursor=pointer]:
+              - generic [ref=f17e1050]:
+                - img "ucl ball"
+              - generic [ref=f17e1051]:
+                - text: "010"
+                - heading "ucl ball" [level=3] [ref=f17e1052]
+                - paragraph [ref=f17e1053]: some of my best soccer memories was playing with the prime favela baller
+            - generic [ref=f17e1054] [cursor=pointer]:
+              - generic [ref=f17e1055]:
+                - img "hasty market"
+              - generic [ref=f17e1056]:
+                - text: "011"
+                - heading "hasty market" [level=3] [ref=f17e1057]
+                - paragraph [ref=f17e1058]: the best one's @ davisville station
+            - generic [ref=f17e1059] [cursor=pointer]:
+              - generic [ref=f17e1060]:
+                - img "γιουβαρλάκια"
+              - generic [ref=f17e1061]:
+                - text: "012"
+                - heading "γιουβαρλάκια" [level=3] [ref=f17e1062]
+                - paragraph [ref=f17e1063]: my favourite homecooked meal
+            - generic [ref=f17e1064] [cursor=pointer]:
+              - generic [ref=f17e1065]:
+                - img "Tobias Fünke"
+              - generic [ref=f17e1066]:
+                - text: "013"
+                - heading "Tobias Fünke" [level=3] [ref=f17e1067]
+                - paragraph [ref=f17e1068]: character from arrested development, top 3 david cross performances
+            - generic [ref=f17e1069] [cursor=pointer]:
+              - generic [ref=f17e1070]:
+                - img "λουξ"
+              - generic [ref=f17e1071]:
+                - text: "014"
+                - heading "λουξ" [level=3] [ref=f17e1072]
+                - paragraph [ref=f17e1073]: greek version of fanta
+            - generic [ref=f17e1074] [cursor=pointer]:
+              - generic [ref=f17e1075]:
+                - img "the mandem"
+              - generic [ref=f17e1076]:
+                - text: "015"
+                - heading "the mandem" [level=3] [ref=f17e1077]
+                - paragraph [ref=f17e1078]: or at least two of them
+            - generic [ref=f17e1079] [cursor=pointer]:
+              - generic [ref=f17e1080]:
+                - img "can of dc"
+              - generic [ref=f17e1081]:
+                - text: "016"
+                - heading "can of dc" [level=3] [ref=f17e1082]
+                - paragraph [ref=f17e1083]: best grey loot refreshment
+            - generic [ref=f17e1084] [cursor=pointer]:
+              - generic [ref=f17e1085]:
+                - img "curtis blue vinyl"
+              - generic [ref=f17e1086]:
+                - text: "017"
+                - heading "curtis blue vinyl" [level=3] [ref=f17e1087]
+                - paragraph [ref=f17e1088]: my first record bought on my first sf trip
+            - generic [ref=f17e1089] [cursor=pointer]:
+              - generic [ref=f17e1090]:
+                - img "slugterra"
+              - generic [ref=f17e1091]:
+                - text: "018"
+                - heading "slugterra" [level=3] [ref=f17e1092]
+                - paragraph [ref=f17e1093]: my favourite childhood show
+            - generic [ref=f17e1094] [cursor=pointer]:
+              - generic [ref=f17e1095]:
+                - img "pink polo"
+              - generic [ref=f17e1096]:
+                - text: "019"
+                - heading "pink polo" [level=3] [ref=f17e1097]
+                - paragraph [ref=f17e1098]: my favourite colour on my favourite shirt
+            - generic [ref=f17e1099] [cursor=pointer]:
+              - generic [ref=f17e1100]:
+                - img "skis"
+              - generic [ref=f17e1101]:
+                - text: "020"
+                - heading "skis" [level=3] [ref=f17e1102]
+                - paragraph [ref=f17e1103]: been skiing since i was 3 yrs
+        - generic [ref=f17e1104]:
+          - button "Spin backwards" [ref=f17e1105] [cursor=pointer]: ←
+          - generic [ref=f17e1106]: 001 / 020
+          - button "Spin forwards" [ref=f17e1107] [cursor=pointer]: →
+  - region "Banner" [ref=f17e1108]:
+    - generic [ref=f17e1110]:
+      - img [aria-hidden]:
+        - generic: "@YIANNI"
+  - contentinfo [ref=f17e1131]:
+    - generic [ref=f17e1134]:
+      - paragraph [ref=f17e1138]: © 2026 Yianni Karakoulas
+      - paragraph [ref=f17e1139]: Designed and built by Yianni Karakoulas.
+  - alert [ref=f17e1140]

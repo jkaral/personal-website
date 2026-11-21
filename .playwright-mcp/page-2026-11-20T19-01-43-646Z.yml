@@ -1,0 +1,127 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner:
+    - generic:
+      - link "Home" [ref=e3] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - button "Feedback group chat" [ref=e8] [cursor=pointer]
+          - generic [aria-hidden]:
+            - generic: as an engineer i'm always looking for feedback
+        - link "Email" [ref=e11] [cursor=pointer]:
+          - /url: mailto:j.karal2008@gmail.com
+        - link "GitHub" [ref=e14] [cursor=pointer]:
+          - /url: https://github.com/jkaral
+        - link "LinkedIn" [ref=e17] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/john-karakoulas
+        - link "X" [ref=e20] [cursor=pointer]:
+          - /url: https://x.com/yiannibuilds
+        - button "Hide the icons" [expanded] [ref=e23] [cursor=pointer]
+        - generic [aria-hidden] [ref=e24]: ⇧shift+y
+        - button "Toggle dark mode" [ref=e25] [cursor=pointer]
+  - complementary "Sections" [ref=e29]:
+    - navigation [ref=e30]:
+      - list [ref=e31]:
+        - listitem [ref=e32]:
+          - link "me" [ref=e33] [cursor=pointer]:
+            - /url: /#top
+        - listitem [ref=e34]:
+          - link "work ethic" [ref=e35] [cursor=pointer]:
+            - /url: /work-ethic
+        - listitem [ref=e36]:
+          - link "identity" [ref=e37] [cursor=pointer]:
+            - /url: /identity
+        - listitem [ref=e38]:
+          - link "contact" [ref=e39] [cursor=pointer]:
+            - /url: /contact
+        - listitem [ref=e40]:
+          - link "resume" [ref=e41] [cursor=pointer]:
+            - /url: /resume.pdf
+    - generic [ref=e42]:
+      - generic "Turntable (empty)" [ref=e43]
+      - generic [ref=e44]:
+        - button "Play" [disabled] [ref=e45]
+        - paragraph [ref=e48]:
+          - generic [ref=e49]: drag a record onto the player
+      - generic [ref=e51]:
+        - 'button "Shimmer by Fuel: put it on the turntable" [ref=e52]'
+        - 'button "Wonderful Tonight by Babyface: put it on the turntable" [ref=e53]'
+        - 'button "Heaven by Warrant: put it on the turntable" [ref=e54]'
+        - 'button "#skeptacore pt. 3 by Skepta, Ryder: put it on the turntable" [ref=e55]'
+        - 'button "The Heat by Alok & Jazzy: put it on the turntable" [ref=e56]'
+        - 'button "Max B by A$AP Rocky: put it on the turntable" [ref=e57]'
+  - main [ref=e58]:
+    - generic [ref=e61]:
+      - paragraph [ref=e62]: Hi, I'm
+      - heading "Yianni Karakoulas (Γιάννη)" [level=1] [ref=e63]:
+        - generic [ref=e65]:
+          - generic [ref=e66]: Yianni Karakoulas
+          - generic [aria-hidden] [ref=e67]: Yianni Karakoulas
+          - generic [aria-hidden] [ref=e68]: Yianni Karakoulas
+          - generic [aria-hidden] [ref=e69]: Yianni Karakoulas
+        - generic [aria-hidden] [ref=e70]: Γιάννη
+      - paragraph [ref=e72]: Computer Science @ UofT
+      - generic [ref=e73]:
+        - list [ref=e74]:
+          - listitem [ref=e75]:
+            - text: ">"
+            - generic [ref=e76]: nhl player market value modelling
+            - text: "@"
+            - link "The Quantitative Finance Club" [ref=e77] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/the-quantitative-finance-club-university-of-toronto/posts/?feedView=all
+          - listitem [ref=e79]:
+            - text: ">"
+            - mark [ref=e80]: auditing brain2qwerty
+            - text: alongside meta labs scientists @
+            - link "UTMIST" [ref=e81] [cursor=pointer]:
+              - /url: https://www.utmist.ca/
+            - text: and
+            - link "UTBIOME" [ref=e83] [cursor=pointer]:
+              - /url: https://utbiome.skule.ca/
+          - listitem [ref=e85]:
+            - text: "> working on"
+            - link "KAPSO" [ref=e86] [cursor=pointer]:
+              - /url: https://github.com/Leeroo-AI/kapso
+            - text: ","
+            - mark [ref=e88]: a recursive research engine
+            - text: "@"
+            - link "Leeroo-AI" [ref=e89] [cursor=pointer]:
+              - /url: https://www.ycombinator.com/companies/leeroo
+            - text: (YC P25)
+          - listitem [ref=e91]:
+            - text: "> currently"
+            - mark [ref=e92]: 1 of 20 internationally
+            - text: building with Claude Wildcard Scholarship,
+            - generic [ref=e93]: project coming dec 2nd
+          - listitem [ref=e94]:
+            - text: ">"
+            - generic [ref=e95]: seeking summer 2027 internships
+        - generic [ref=e96]:
+          - generic "Show all 6 recent photos and videos" [ref=e97] [cursor=pointer]:
+            - figure [ref=e98]:
+              - button [aria-hidden] [ref=e99]
+              - button "Turn sound on" [ref=e101]
+            - figure [ref=e104]:
+              - button [aria-hidden] [ref=e105]
+            - figure [ref=e106]:
+              - button [aria-hidden] [ref=e107]
+            - figure [ref=e108]:
+              - button [aria-hidden] [ref=e109]
+            - figure [ref=e110]:
+              - button [aria-hidden] [ref=e111]
+            - figure [ref=e112]:
+              - button [aria-hidden] [ref=e113]
+          - paragraph [ref=e114]:
+            - text: favella baller academy graduates from ucc summer camps '26
+            - generic [ref=e115]: Click to see all 6
+  - region "Banner" [ref=e116]:
+    - generic [ref=e118]:
+      - img [aria-hidden]:
+        - generic: "@YIANNI"
+  - contentinfo [ref=e139]:
+    - generic [ref=e142]:
+      - paragraph [ref=e146]: © 2026 Yianni Karakoulas
+      - paragraph [ref=e147]: Designed and built by Yianni Karakoulas.
+  - alert [ref=e148]

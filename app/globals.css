@@ -50,7 +50,10 @@ body {
 }
 a { color: inherit; }
 img { max-width: 100%; display: block; }
-h1, h2, h3 { color: var(--text); font-family: var(--font-serif), Georgia, serif; line-height: 1.15; margin: 0; }
+h1, h2, h3 { color: var(--text); font-family: var(--font-sans), sans-serif; line-height: 1.15; margin: 0; }
+/* the front-page name (components/NameCycle.js) keeps its original font setup, so its font cycling and
+   spacing are exactly as before */
+h1.name-swap { font-family: var(--font-serif), Georgia, serif; }
 p { margin: 0 0 1em; }
 .muted { color: var(--muted); }
 .small { font-size: 14px; }
@@ -94,7 +97,7 @@ p { margin: 0 0 1em; }
 
 /* ---- Logo with Greek swap ---- */
 .logo { position: relative; display: grid; width: 40px; height: 40px; border-radius: 6px; background: var(--accent); color: var(--on-accent); text-decoration: none; overflow: hidden; flex: none; }
-.logo > span { grid-area: 1 / 1; display: grid; place-items: center; font-family: var(--font-serif), serif; font-weight: 700; font-size: 16px; transition: transform .35s cubic-bezier(.2,.7,.2,1), opacity .35s; }
+.logo > span { grid-area: 1 / 1; display: grid; place-items: center; font-family: var(--font-sans), sans-serif; font-weight: 700; font-size: 16px; transition: transform .35s cubic-bezier(.2,.7,.2,1), opacity .35s; }
 .logo .gr { font-family: var(--font-greek), serif; transform: translateY(100%); opacity: 0; }
 .logo:hover .en, .logo:focus-visible .en { transform: translateY(-100%); opacity: 0; }
 .logo:hover .gr, .logo:focus-visible .gr { transform: none; opacity: 1; }
@@ -158,7 +161,7 @@ p { margin: 0 0 1em; }
 .logo-link img[src$="spiritofmath.png"] { border-radius: 50%; }
 .project .stack { margin: 4px 0 8px; }
 .quote { margin: 0 0 32px; padding-left: 20px; border-left: 2px solid var(--text); }
-.quote blockquote { margin: 0 0 6px; font-family: var(--font-greek), serif; font-weight: 700; font-size: clamp(24px, 3.4vw, 32px); line-height: 1.25; color: var(--text); }
+.quote blockquote { margin: 0 0 6px; font-family: var(--font-sans), sans-serif; font-weight: 700; font-size: clamp(24px, 3.4vw, 32px); line-height: 1.25; color: var(--text); }
 .quote figcaption { font-size: 15px; font-style: italic; color: var(--muted); }
 .quote figcaption span { font-style: normal; }
 .quote-line { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
@@ -319,14 +322,14 @@ p { margin: 0 0 1em; }
 @media (prefers-reduced-motion: reduce) { .cover-stack img { transition: none; } }
 .reading-list { list-style: none; padding: 0; margin: 0 0 14px; }
 .reading-list li { padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 15px; }
-.reading-list li em { color: var(--text); font-family: var(--font-serif), serif; font-size: 17px; }
+.reading-list li em { color: var(--text); font-family: var(--font-sans), sans-serif; font-size: 17px; }
 .reading-list li span { color: var(--muted); }
 
 /* Duolingo streak tracker: a compact card (label, flag of the current course + day count, avatar). No
    fill of its own: it takes the page background, and its text / outline follow the light / dark theme. */
 .streak-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: min(100%, 380px); margin-top: 4px;
   padding: 16px 18px 16px 20px; border: 1px solid var(--border); border-radius: 14px; background: transparent;
-  color: var(--text); text-decoration: none; font-family: var(--font-serif), Georgia, serif;
+  color: var(--text); text-decoration: none; font-family: var(--font-sans), sans-serif;
   transition: border-color .2s ease, transform .2s cubic-bezier(.2,.7,.2,1); }
 .streak-card:hover, .streak-card:focus-visible { border-color: var(--muted); transform: translateY(-2px); }
 .streak-copy { display: grid; gap: 8px; min-width: 0; }
@@ -361,7 +364,7 @@ p { margin: 0 0 1em; }
 .geo-run, .geo-world { position: relative; border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px 16px; background: transparent; }
 .geo-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
 .geo-label { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; font-weight: 600; color: var(--muted); }
-.geo-timer, .geo-count { font-family: var(--font-serif), Georgia, serif; font-size: 26px; line-height: 1; color: var(--text); font-variant-numeric: tabular-nums; }
+.geo-timer, .geo-count { font-family: var(--font-sans), sans-serif; font-size: 26px; line-height: 1; color: var(--text); font-variant-numeric: tabular-nums; }
 .geo-run.done .geo-timer { color: var(--accent); }
 .geo-input { display: flex; align-items: center; height: 38px; padding: 0 12px; margin-bottom: 12px; border: 1px solid var(--border); border-radius: 9px; font-size: 15px; color: var(--text); }
 .geo-placeholder { color: var(--muted); }
@@ -483,7 +486,7 @@ p { margin: 0 0 1em; }
 .prose h3 { font-size: 21px; margin: 1.4em 0 .4em; }
 .prose p { margin: 0 0 1.2em; }
 .prose a { color: var(--text); }
-.prose blockquote { margin: 1.4em 0; padding-left: 20px; border-left: 3px solid var(--text); font-family: var(--font-serif), serif; font-style: italic; font-size: 20px; color: var(--text); }
+.prose blockquote { margin: 1.4em 0; padding-left: 20px; border-left: 3px solid var(--text); font-family: var(--font-sans), sans-serif; font-style: italic; font-size: 20px; color: var(--text); }
 .prose code { font-size: .85em; background: var(--chip); padding: 2px 6px; border-radius: 4px; }
 .prose pre { background: var(--surface); border: 1px solid var(--border); padding: 16px; border-radius: 10px; overflow-x: auto; font-size: 14px; }
 .prose pre code { background: none; padding: 0; }
@@ -526,7 +529,7 @@ p { margin: 0 0 1em; }
 .wheel-text h3 { font-size: 22px; font-weight: 700; margin: 4px 0 6px; }
 .wheel-text p { font-size: 15px; color: var(--body); line-height: 1.5; margin: 0; max-width: 320px; }
 .wheel-controls { display: flex; justify-content: flex-end; align-items: center; gap: 14px; margin-top: 4px; }
-.wheel-controls button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 17px; cursor: pointer; }
+.wheel-controls button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-family: var(--font-sans), sans-serif; font-size: 17px; cursor: pointer; }
 .wheel-controls button:hover { background: var(--chip); }
 .wheel-count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; letter-spacing: .06em; }
 @media (max-width: 700px) {
@@ -612,8 +615,8 @@ p { margin: 0 0 1em; }
 .uses-bubble:hover { animation-play-state: paused; transform: scale(1.06); }
 .uses-bubble:focus-visible { outline: 3px solid var(--accent); outline-offset: 8px; }
 .uses-bubble-core { position: relative; display: grid; gap: 4px; place-items: center; height: 100%; }
-.uses-bubble-title { font-family: var(--font-serif), serif; font-size: 34px; font-weight: 700; line-height: 1; }
-.uses-bubble-sub { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .75; }
+.uses-bubble-title { font-family: var(--font-sans), sans-serif; font-size: 34px; font-weight: 700; line-height: 1; }
+.uses-bubble-sub { font-family: var(--font-sans), sans-serif; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .75; }
 /* app icons orbiting the bubble */
 .uses-orbit { position: absolute; top: 50%; left: 50%; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; background: var(--surface);
   box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--text) 35%, transparent);
